@@ -1,0 +1,1 @@
+const e=[{id:2,date:"August 22, 2025",title:"Forest Soil Amendments",description:"DPW and Bio4 and MFAB dug, mixed, and mulched soil.",status:"completed"},{id:3,date:"September 6, 2025",title:"Weed suppression",description:"Lay down cardboard and cover with wood chips",status:"upcoming"}],t={updates:e};export{t as default,e as updates};

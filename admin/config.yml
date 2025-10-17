@@ -1,0 +1,139 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: public/assets/images
+public_folder: public/assets/images
+
+collections:
+  # Add these collections to your existing config.yml
+
+  # Timeline Management
+  - name: "timeline"
+    label: "Project Timeline"
+    files:
+      - name: "timeline_updates"
+        label: "Project Updates"
+        file: "src/content/timeline.json"
+        fields:
+          - label: "Project Updates"
+            name: "updates"
+            widget: "list"
+            fields:
+              - label: "ID"
+                name: "id"
+                widget: "number"
+              - label: "Date"
+                name: "date"
+                widget: "string"
+                hint: "Format: Month YYYY (e.g., July 2025)"
+              - label: "Title"
+                name: "title"
+                widget: "string"
+              - label: "Description"
+                name: "description"
+                widget: "text"
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                options:
+                  - { label: "Completed", value: "completed" }
+                  - { label: "Upcoming", value: "upcoming" }
+                  - { label: "In Progress", value: "in-progress" }
+
+  - name: "Foster"
+    label: "Foster"
+    files:
+      - name: "gallery_images"
+        label: "Foster Images"
+        file: "src/content/fostered.json"
+        fields:
+          - label: "Foster Images"
+            name: "images"
+            widget: "list"
+            fields:
+              - label: "ID"
+                name: "id"
+                widget: "number"
+              - label: "Image"
+                name: "image"
+                widget: "image"
+              - label: "Caption"
+                name: "message"
+                widget: "string"
+              - label: "name"
+                name: "name"
+                widget: "string"
+              - label: "location"
+                name: "location"
+                widget: "string"
+              - label: "treeType"
+                name: "treeType"
+                widget: "string"
+
+  - name: "Gallery"
+    label: "Gallery"
+    files:
+      - name: "gallery_general"
+        label: "Gallery Images"
+        file: "src/content/gallery.json"
+        fields:
+          - label: "Foster Images"
+            name: "images"
+            widget: "list"
+            fields:
+              - label: "ID"
+                name: "id"
+                widget: "number"
+              - label: "Image"
+                name: "image"
+                widget: "image"
+              - label: "Caption"
+                name: "message"
+                widget: "string"
+              - label: "location"
+                name: "location"
+                widget: "string"
+  - name: "Supporters"
+    label: "Supporters"
+    files:
+      - name: "supporters"
+        label: "Supporters"
+        file: "src/content/supporters.json"
+        fields:
+          - label: "Supporters"
+            name: "supporters"
+            widget: "list"
+            fields:
+              - label: "Name"
+                name: "name"
+                widget: "string"
+
+  # # Project Statistics
+  # - name: "stats"
+  #   label: "Project Statistics"
+  #   files:
+  #     - name: "project_stats"
+  #       label: "Project Statistics"
+  #       file: "src/content/stats.json"
+  #       fields:
+  #         - label: "Volunteers Registered"
+  #           name: "volunteers_count"
+  #           widget: "number"
+  #           default: 47
+  #         - label: "Fundraising Goal"
+  #           name: "fundraising_goal"
+  #           widget: "number"
+  #           default: 15000
+  #         - label: "Amount Raised"
+  #           name: "amount_raised"
+  #           widget: "number"
+  #           default: 5250
+  #         - label: "Target Planting Date"
+  #           name: "target_date"
+  #           widget: "string"
+  #           default: "October 4, 2025"
+  #         - label: "Site Size"
+  #           name: "site_size"
+  #           widget: "string"
+  #           default: "3,000 sq ft"
