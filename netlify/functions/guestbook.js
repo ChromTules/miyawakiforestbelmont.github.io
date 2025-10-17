@@ -4,11 +4,11 @@ const crypto = require('crypto');
 exports.handler = async function (event) {
   const OWNER = process.env.GITHUB_REPO_OWNER;
   const REPO = process.env.GITHUB_REPO_NAME;
-  const FILE_PATH = process.env.GUESTBOOK_FILE_PATH || "src/content/guestbook.json";
+  const FILE_PATH = process.env.GUESTBOOK_FILE_PATH;
   const TOKEN = process.env.GITHUB_TOKEN;
   const COMMITTER = {
-    name: process.env.GUESTBOOK_COMMITTER_NAME || "Guestbook Bot",
-    email: process.env.GUESTBOOK_COMMITTER_EMAIL || "guestbook@noreply.github.com",
+    name: process.env.GUESTBOOK_COMMITTER_NAME,
+    email: process.env.GUESTBOOK_COMMITTER_EMAIL,
   };
 
   if (!OWNER || !REPO || !TOKEN) {
