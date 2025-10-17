@@ -204,7 +204,7 @@ function Gallery() {
               <div className="gallery-grid">
                 {currentImages.map((item) => (
                   <div
-                    key={item.id}
+                    key={item.date}
                     className="gallery-card"
                     onClick={() => setSelectedImage(item)}
                     style={{ cursor: "pointer" }}
@@ -216,7 +216,7 @@ function Gallery() {
                             ? item.image.split("public/")[1]
                             : item.image
                         }
-                        alt={`Progress update ${item.id}`}
+                        alt={`Progress update`}
                         // style={{
                         //   width: "100%",
                         //   height: "200px",
