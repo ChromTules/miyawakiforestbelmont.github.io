@@ -34,7 +34,7 @@ function Footer() {
               </li>
               <li>
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLScRDSFIKrJNC6zxtKziQb_s1JcpBHgwy1k5pStNhDgsBQfy3g/viewform"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScEmt1Bg0T-mhlZ_dE6TRlVrZ7EQ34nygG8D-ELzAwk5Alkzw/viewform"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -58,11 +58,11 @@ function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>
+          
             &copy; {new Date().getFullYear()} Miyawaki Forest Action Belmont.
             All rights reserved.
-          </p>
-          <p>Built with 💚 for a greener future</p>
+          <br></br>
+          Website created by Andrew Ma, and Michelle Oishi with the help of Holly Kong
         </div>
       </div>
     </footer>

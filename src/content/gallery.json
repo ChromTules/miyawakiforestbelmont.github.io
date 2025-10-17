@@ -4,67 +4,79 @@
       "id": 25051801,
       "image": "public/assets/images/20250518_130018.jpg",
       "message": "Native plant sale fundraiser",
-      "location": "Belmont"
+      "location": "Belmont", 
+      "date": "05/18/2025"
     },
     {
       "image": "public/assets/images/20250507-©david-mussina-012_5.9x7_.jpg",
       "id": 25050700,
       "message": "David Mussina's photo of the future forest",
-      "location": "Belmont High School"
+      "location": "Belmont High School",
+      "date": "05/07/2025"
+      
     },
     {
       "id": 25060401,
       "message": "Ready to relocate the native pollinator garden",
       "location": "BHS",
-      "image": "public/assets/images/20250604_144143.jpg"
+      "image": "public/assets/images/20250604_144143.jpg",
+      "date": "06/04/2025"
     },
     {
       "id": 25071001,
       "message": "Hartney Greymount installing erosion control",
       "location": "BHS",
-      "image": "public/assets/images/20250710_121401.jpg"
+      "image": "public/assets/images/20250710_121401.jpg",
+      "date": "07/10/2025"
     },
     {
       "id": 25070102,
       "message": "Securing erosion control wattles",
       "location": "BHS",
-      "image": "public/assets/images/20250710_130951.jpg"
+      "image": "public/assets/images/20250710_130951.jpg",
+      "date": "07/10/2025"
     },
     {
       "id": 250819001,
       "image": "public/assets/images/skimmingimg_2835.jpg",
       "message": "Digging site down 1 1/2 feet",
-      "location": "BHS"
+      "location": "BHS",
+      "date": "08/19/2025"
     },
     {
       "id": 25081900,
       "image": "public/assets/images/img_2506.jpg",
       "message": "Preparation for adding amendments to soil",
-      "location": "BHS"
+      "location": "BHS",
+      "date": "08/19/2025"
     },
     {
       "id": 25082201,
       "message": "Mulch spread over amended soil",
       "location": "BHS",
-      "image": "public/assets/images/img_7094.jpeg"
+      "image": "public/assets/images/img_7094.jpeg",
+      "date": "08/22/2025"
     },
     {
       "id": 25082202,
       "message": "Already a rainbow and a goldfinch visited the site",
       "location": "BHS",
-      "image": "public/assets/images/img_7080.jpeg"
+      "image": "public/assets/images/img_7080.jpeg",
+      "date": "08/22/2025"
     },
     {
       "id": 100401,
       "image": "public/assets/images/dsc_3771.jpg",
       "message": "Photo booth forest-makers",
-      "location": "BHS"
+      "location": "BHS",
+      "date": "10/04/2025"
     },
     {
       "id": 100402,
       "image": "public/assets/images/dji_0349-2.jpg",
       "message": "Prof. N. Geron's drone image before planting",
-      "location": "Belmont"
+      "location": "Belmont",
+      "date": "10/04/2025"
     }
   ]
 }

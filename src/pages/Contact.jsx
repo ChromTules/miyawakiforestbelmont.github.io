@@ -38,7 +38,7 @@ function Contact() {
 
   const handleVolunteerClick = () => {
     window.open(
-      "https://docs.google.com/forms/d/e/1FAIpQLScRDSFIKrJNC6zxtKziQb_s1JcpBHgwy1k5pStNhDgsBQfy3g/viewform",
+      "https://docs.google.com/forms/d/e/1FAIpQLScEmt1Bg0T-mhlZ_dE6TRlVrZ7EQ34nygG8D-ELzAwk5Alkzw/viewform",
       "_blank"
     );
   };
@@ -184,12 +184,13 @@ function Contact() {
 
             <div className="card" style={{ textAlign: "center" }}>
               <h2>Project Leadership</h2>
-              <div style={{ fontSize: "0.95rem", lineHeight: "1.4" }}>
-                Anne-Marie Lambert <br />
+              <br />
+              <div style={{ fontSize: "1.8rem", lineHeight: "1.4" }}>
                 Jean Devine <br />
                 Jess Hausman <br />
                 Ralph Jones <br />
                 Holly Kong <br />
+                Anne-Marie Lambert <br />
                 Ranganath Nayak <br />
                 Michelle Oishi <br />
                 Kirsten Waerstad <br />
@@ -209,15 +210,14 @@ function Contact() {
             <div className="card">
               <h3>How can I volunteer?</h3>
               <p>
-                To save a spot for Community Planting Day, please fill out our{" "}
+                To help us maintain the forest, please fill out our{" "}
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLScRDSFIKrJNC6zxtKziQb_s1JcpBHgwy1k5pStNhDgsBQfy3g/viewform"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScEmt1Bg0T-mhlZ_dE6TRlVrZ7EQ34nygG8D-ELzAwk5Alkzw/viewform"
                   target="_blank"
                 >
                   Volunteer Form
                 </a>
-                . You will be planting seedlings (this includes your own if you
-                fostered a tree), spreading mulch, and more!
+                . You will be weeding, monitoring, mulching, and more. Sign up and stayed tuned for more information.
               </p>
             </div>
 
@@ -260,7 +260,7 @@ function Contact() {
                 as part of our Potential Natural Vegetation (PNV) research, we
                 created a{" "}
                 <a
-                  href="https://docs.google.com/spreadsheets/d/1syhRZ63ChPEgocMSvLMKI1I8dlPWK-gWrdgI_yUPLos/edit?gid=1788290930#gid=1788290930"
+                  href="https://docs.google.com/document/d/1OHeL-6ni_3HXtFmkH7escEsVIfNIICZ8LTTFS8KppNY/edit?tab=t.0"
                   target="_blank"
                 >
                   plant list

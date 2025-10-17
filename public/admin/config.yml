@@ -78,13 +78,13 @@ collections:
         label: "Gallery Images"
         file: "src/content/gallery.json"
         fields:
-          - label: "Foster Images"
+          - label: "Gallery Images"
             name: "images"
             widget: "list"
             fields:
-              - label: "ID"
-                name: "id"
-                widget: "number"
+              - label: "Date"
+                name: "date"
+                widget: "string"
               - label: "Image"
                 name: "image"
                 widget: "image"

@@ -7,6 +7,7 @@ import {
   Target,
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Chrono } from "react-chrono";
 
 function Updates() {
   const [timelineUpdates, setTimelineUpdates] = useState([]);
@@ -79,6 +80,72 @@ function Updates() {
       icon: <TreePine size={24} />,
     },
   ];
+
+  const items = [
+    {
+      title: "November 12, 2024",
+      cardTitle: "School Committee Meeting",
+    },
+    {
+      title: "April 23, 2025",
+      cardTitle: "Potential Natural Vegetation Research for the Planting List ",
+      cardSubtitle: "Research Phase",
+      cardDetailedText:
+        "Based on the soil conditions at the Belmont High School site, botanist Walter Kittredge recommended using a High-terrace Floodplain Forest as a model. This forest community now serves as the reference and inspiration for our planting list.",
+    },
+    {
+      title: "March 26, 2025",
+      cardTitle: "Site Assessment",
+      cardSubtitle: "Assessment",
+      cardDetailedText:
+        "While assessing the soil with Bio4Climate, we encountered a layer of clay at a depth of ~12 inches. A lab test of the soil showed that the top layer is sandy loam. We confirmed the soil texture with a simple ribbon test. We then surveyed the existing vegetation on the site, around the pond, and in a nearby grove as part of our Potential Natural Vegetation (PNV) research",
+    },
+    {
+      title: "October 4th, 2025",
+      cardTitle: "Community Planting Day",
+    },
+    // {
+    //   title: "Future",
+    //   cardTitle: "Perennial Collar Installation",
+    // },
+  ];
+
+  const customForestTheme = {
+    // Base colors - lighter for better readability
+    cardBgColor: "#ffffff", // Pure white for cards
+    toolbarBgColor: "#ffffff", // White toolbar
+    toolbarBtnBgColor: "#f8f9fa", // Light gray for toolbar buttons
+
+    // Enhanced theme properties with lighter forest colors
+    iconColor: "#28502e", // --forest-green for better contrast
+    buttonHoverBgColor: "#e8f5e8", // Very light green hover
+    buttonActiveBgColor: "#47682c", // --sage-green active state
+    buttonActiveIconColor: "#ffffff", // White icon on sage-green
+
+    // Borders and effects using lighter forest theme
+    buttonBorderColor: "rgba(40, 80, 46, 0.1)", // Very light forest-green border
+    buttonHoverBorderColor: "#47682c", // --sage-green
+    shadowColor: "rgba(27, 47, 51, 0.1)", // Very light shadow
+    glowColor: "rgba(71, 104, 44, 0.2)", // Light sage-green glow
+
+    // Search and dark toggle with lighter colors
+    searchHighlightColor: "rgba(71, 104, 44, 0.1)", // Very light sage-green
+    darkToggleActiveBgColor: "#f8f9fa", // Light gray
+    darkToggleActiveIconColor: "#28502e", // Forest-green icon
+
+    // Text colors - darker for readability
+    titleColor: "#1b2f33", // --text-dark for good contrast
+    titleColorActive: "#28502e", // --forest-green
+    cardTitleColor: "#1b2f33", // --text-dark
+    cardSubtitleColor: "#47682c", // --text-light
+    cardTextColor: "#1b2f33", // --text-dark
+
+    // Additional light theme properties
+    primary: "#28502e", // --forest-green
+    secondary: "#47682c", // --sage-green
+    background: "#ffffff", // White background
+    foreground: "#1b2f33", // Dark text
+  };
 
   useEffect(() => {
     const loadContent = async () => {
@@ -168,10 +235,34 @@ function Updates() {
       <section className="hero">
         <div className="container">
           <div className="hero-content">
-            <h1>Project Updates</h1>
+            <h1>Project Progress</h1>
             <p className="subtitle" style={{ paddingTop: "40px" }}>
-              Track our progress as we build our community forest
+              Track the development of our community forest
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className="section-alt">
+        <div className="container">
+          <div className="card">
+            <h3>What is the forest's timeline?</h3>
+            {/* <p>
+                      We're planning our community planting day for Fall 2025. The
+                      exact date will be announced once we complete our fundraising
+                      goal and soil preparation work.
+                    </p> */}
+            <div style={{ width: "auto", height: "auto" }}>
+              <Chrono
+                items={items}
+                mode="HORIZONTAL"
+                theme={customForestTheme}
+                textDensity="HIGH"
+                timelinePointDimension={22}
+              />
+            </div>
+            Click a dot in the timeline to get more information
           </div>
         </div>
       </section>

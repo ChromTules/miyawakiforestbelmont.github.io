@@ -68,6 +68,7 @@ function Gallery() {
       <section>
         <div className="container">
           <h2>Photos</h2>
+          Click to Enlarge
 
           {galleryImages.length === 0 ? (
             <div
@@ -103,7 +104,7 @@ function Gallery() {
                       alignItems: "center",
                       gap: "0.5rem",
                       padding: "0.5rem 1rem",
-                      backgroundColor: "var(--forest-green)",
+                      backgroundColor: "#458115ff",
                       color: "white",
                       border: "none",
                       borderRadius: "25px",
@@ -112,14 +113,14 @@ function Gallery() {
                       transition: "background-color 0.3s ease",
                     }}
                     onMouseEnter={(e) =>
-                      (e.target.style.backgroundColor = "var(--sage-green)")
+                      (e.target.style.backgroundColor = "#7fab5b")
                     }
                     onMouseLeave={(e) =>
-                      (e.target.style.backgroundColor = "var(--forest-green)")
+                      (e.target.style.backgroundColor = "#458115ff")
                     }
                   >
                     <ChevronLeft size={16} />
-                    Previous
+                    
                   </button>
 
                   <div
@@ -140,8 +141,8 @@ function Gallery() {
                           border: "none",
                           backgroundColor:
                             currentPage === index + 1
-                              ? "var(--forest-green)"
-                              : "var(--sage-green)",
+                              ? "#458115ff"
+                              : "#7fab5b",
                           color: "white",
                           cursor: "pointer",
                           fontSize: "0.9rem",
@@ -165,7 +166,7 @@ function Gallery() {
                       alignItems: "center",
                       gap: "0.5rem",
                       padding: "0.5rem 1rem",
-                      backgroundColor: "var(--forest-green)",
+                      backgroundColor: "#458115ff",
                       color: "white",
                       border: "none",
                       borderRadius: "25px",
@@ -174,13 +175,12 @@ function Gallery() {
                       transition: "background-color 0.3s ease",
                     }}
                     onMouseEnter={(e) =>
-                      (e.target.style.backgroundColor = "var(--sage-green)")
+                      (e.target.style.backgroundColor = "#7fab5b")
                     }
                     onMouseLeave={(e) =>
-                      (e.target.style.backgroundColor = "var(--forest-green)")
+                      (e.target.style.backgroundColor = "#458115ff")
                     }
                   >
-                    Next
                     <ChevronRight size={16} />
                   </button>
                 </div>
@@ -217,11 +217,11 @@ function Gallery() {
                       </div> */}
                     </div>
                     <div className="gallery-info">
-                      <h4>Progress Update #{item.id}</h4>
+                      <h4>Progress Update</h4>
                       <p className="message">{item.message}</p>
                       <div className="location">
                         <MapPin size={14} />
-                        <span>{item.location}</span>
+                        <span>{item.date}</span>
                       </div>
                     </div>
                   </div>
@@ -248,16 +248,6 @@ function Gallery() {
         </div>
       </section>
 
-      {/* Submit your own */}
-      <div
-        className="cta-buttons"
-        style={{ textAlign: "center", margin: "0 40%" }}
-      >
-        <button onClick={handleSubmitClick} className="btn btn-primary">
-          <ExternalLink size={20} />
-          Submit Your Own Progress Photos
-        </button>
-      </div>
 
       {/* About Progress Updates */}
       <section className="section-alt">

@@ -36,7 +36,7 @@ function Home() {
 
   const handleVolunteerClick = () => {
     window.open(
-      "https://docs.google.com/forms/d/e/1FAIpQLScRDSFIKrJNC6zxtKziQb_s1JcpBHgwy1k5pStNhDgsBQfy3g/viewform",
+      "https://docs.google.com/forms/d/e/1FAIpQLScEmt1Bg0T-mhlZ_dE6TRlVrZ7EQ34nygG8D-ELzAwk5Alkzw/viewform",
       "_blank"
     );
   };
@@ -57,23 +57,22 @@ function Home() {
           <div className="hero-content">
             <div className="hero-image-container">
               <img
-                src="/mainpic.png"
-                alt="Community members gathered around the forest site"
+                src="/mainpic.jpg"
+                alt="Post-planting drone shots"
                 className="hero-image"
                 onClick={() =>
                   openFullscreen(
-                    "/mainpic.png",
-                    "Community members gathered around the forest site"
+                    "/mainpic.jpg",
+                    "Post-planting drone shots"
                   )
                 }
               />
               <p className="hero-caption">
                 <span style={{ fontStyle: "italic" }}>
-                  Community members outlining the upcoming shape of the
-                  mini-forest!
+                  Post-planting drone shots!
                 </span>{" "}
                 <br />
-                Photo by David Mussina
+                Photo by Nick Geron and Donovan
               </p>
             </div>
             <div className="hero-text">
@@ -110,15 +109,10 @@ function Home() {
             className="card"
             style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto" }}
           >
-            <h2>Community Planting Day</h2>
+            <h2>We Planted The Forest!</h2>
             <p style={{ fontSize: "1.6rem", color: "#496914ff" }}>
               <br />
-              Our planting date is <strong>
-                Saturday, October 4th 2025
-              </strong>{" "}
-              from <br />
-              <strong>10 AM to 6 PM</strong> at the Triangle in front of Belmont
-              High School by Clay Pit Pond, 221 Concord Ave.
+On Saturday, October 4th 2025, MFAB and 275 volunteers planted 1,140 saplings at Belmont High School.
             </p>
             <p style={{ fontSize: "1.2rem", lineHeight: "1.5" }}>
               <br></br>Our rain date is October 5th
@@ -177,10 +171,12 @@ function Home() {
                         usual time.
                       </p>
                       <p>
-                        The native trees create an ecosystem that accelerates
+                        Our 1,140 trees from 32 different native species will create an ecosystem that accelerates
                         the plants' growth and provides a biodiverse habitat for
                         native pollinators.
                       </p>
+                      Our species list: <a href="https://docs.google.com/document/d/1OHeL-6ni_3HXtFmkH7escEsVIfNIICZ8LTTFS8KppNY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">View Document</a>
+                      <br />
                       <p
                         style={{
                           fontStyle: "italic",

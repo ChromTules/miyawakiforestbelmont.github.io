@@ -7,7 +7,6 @@ import {
   ChevronRight,
   ExternalLink,
 } from "lucide-react";
-import { Chrono } from "react-chrono";
 
 function Fosters() {
   const [fosterTreePeople, setFosterTreePeople] = useState([]);
@@ -90,71 +89,7 @@ function Fosters() {
     setCurrentPage(pageNumber);
   };
 
-  const items = [
-    {
-      title: "November 12, 2024",
-      cardTitle: "School Committee Meeting",
-    },
-    {
-      title: "April 23, 2025",
-      cardTitle: "Potential Natural Vegetation Research for the Planting List ",
-      cardSubtitle: "Research Phase",
-      cardDetailedText:
-        "Based on the soil conditions at the Belmont High School site, botanist Walter Kittredge recommended using a High-terrace Floodplain Forest as a model. This forest community now serves as the reference and inspiration for our planting list.",
-    },
-    {
-      title: "March 26, 2025",
-      cardTitle: "Site Assessment",
-      cardSubtitle: "Assessment",
-      cardDetailedText:
-        "While assessing the soil with Bio4Climate, we encountered a layer of clay at a depth of ~12 inches. A lab test of the soil showed that the top layer is sandy loam. We confirmed the soil texture with a simple ribbon test. We then surveyed the existing vegetation on the site, around the pond, and in a nearby grove as part of our Potential Natural Vegetation (PNV) research",
-    },
-    {
-      title: "October 4th, 2025",
-      cardTitle: "Community Planting Day",
-    },
-    // {
-    //   title: "Future",
-    //   cardTitle: "Perennial Collar Installation",
-    // },
-  ];
-
-  const customForestTheme = {
-    // Base colors - lighter for better readability
-    cardBgColor: "#ffffff", // Pure white for cards
-    toolbarBgColor: "#ffffff", // White toolbar
-    toolbarBtnBgColor: "#f8f9fa", // Light gray for toolbar buttons
-
-    // Enhanced theme properties with lighter forest colors
-    iconColor: "#28502e", // --forest-green for better contrast
-    buttonHoverBgColor: "#e8f5e8", // Very light green hover
-    buttonActiveBgColor: "#47682c", // --sage-green active state
-    buttonActiveIconColor: "#ffffff", // White icon on sage-green
-
-    // Borders and effects using lighter forest theme
-    buttonBorderColor: "rgba(40, 80, 46, 0.1)", // Very light forest-green border
-    buttonHoverBorderColor: "#47682c", // --sage-green
-    shadowColor: "rgba(27, 47, 51, 0.1)", // Very light shadow
-    glowColor: "rgba(71, 104, 44, 0.2)", // Light sage-green glow
-
-    // Search and dark toggle with lighter colors
-    searchHighlightColor: "rgba(71, 104, 44, 0.1)", // Very light sage-green
-    darkToggleActiveBgColor: "#f8f9fa", // Light gray
-    darkToggleActiveIconColor: "#28502e", // Forest-green icon
-
-    // Text colors - darker for readability
-    titleColor: "#1b2f33", // --text-dark for good contrast
-    titleColorActive: "#28502e", // --forest-green
-    cardTitleColor: "#1b2f33", // --text-dark
-    cardSubtitleColor: "#47682c", // --text-light
-    cardTextColor: "#1b2f33", // --text-dark
-
-    // Additional light theme properties
-    primary: "#28502e", // --forest-green
-    secondary: "#47682c", // --sage-green
-    background: "#ffffff", // White background
-    foreground: "#1b2f33", // Dark text
-  };
+  
 
   return (
     <div className="gallery">
@@ -174,7 +109,7 @@ function Fosters() {
       {/* Gallery Grid */}
       <section>
         <div className="container">
-          <h2>Event photos</h2>
+          <h2>Photos</h2>
 
           {/* Pagination Controls */}
           {totalPages > 1 && (
@@ -343,77 +278,6 @@ function Fosters() {
         </button>
       </div>
 
-      {/* Timeline */}
-      <section className="section-alt">
-        <div className="container">
-          <div className="card">
-            <h3>What is the forest's timeline?</h3>
-            {/* <p>
-                      We're planning our community planting day for Fall 2025. The
-                      exact date will be announced once we complete our fundraising
-                      goal and soil preparation work.
-                    </p> */}
-            <div style={{ width: "auto", height: "auto" }}>
-              <Chrono
-                items={items}
-                mode="HORIZONTAL"
-                theme={customForestTheme}
-                textDensity="HIGH"
-                timelinePointDimension={22}
-              />
-            </div>
-            Click a dot in the timeline to get more information
-          </div>
-        </div>
-      </section>
-
-      {/* How to Foster */}
-      <section className="section-alt">
-        <div className="container">
-          <div
-            className="card"
-            style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto" }}
-          >
-            <h2>Want to Foster a Tree?</h2>
-            <p>
-              Join our Foster a Tree program! When you foster a sapling, you're
-              not just supporting our forest project – you're becoming part of a
-              community of environmental stewards dedicated to creating a
-              greener future.
-            </p>
-            <div style={{ marginTop: "2rem" }}>
-              <button
-                className="btn btn-primary"
-                onClick={() =>
-                  window.open(
-                    "https://aalslasq.donorsupport.co/page/httpsbio4climateorgm",
-                    "_blank"
-                  )
-                }
-              >
-                Foster a Tree Today
-              </button>
-            </div>
-            <div
-              style={{
-                marginTop: "1rem",
-                fontSize: "0.9rem",
-                color: "var(--text-light)",
-              }}
-            >
-              <p>Foster packages start at $25 and include:</p>
-              <ul
-                style={{ listStyle: "none", padding: 0, marginTop: "0.5rem" }}
-              >
-                <li>• Your photo in our gallery</li>
-                <li>• Progress updates on your tree</li>
-                <li>• Recognition at our planting event</li>
-                <li>• Certificate of environmental stewardship</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Modal for selected person */}
       {selectedPerson && (
