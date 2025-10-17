@@ -7,6 +7,7 @@ import {
   Send,
   ExternalLink,
 } from "lucide-react";
+import Guestbook from "../components/Guestbook";
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -278,8 +279,7 @@ function Contact() {
           <div className="card" style={{ maxWidth: "800px", margin: "0 auto" }}>
             <h2>Ready to Make a Difference?</h2>
             <p>
-              Your support will turn this forest into reality, benefitting both
-              human and non-human communities.
+              Your support will benefit the forest, improving both human and non-human communities.
             </p>
             <div className="cta-buttons">
               <button onClick={handleDonateClick} className="btn btn-primary">
@@ -311,6 +311,9 @@ function Contact() {
           </div>
         </div>
       </section>
+
+      {/* Guestbook */}
+      <Guestbook />
     </div>
   );
 }

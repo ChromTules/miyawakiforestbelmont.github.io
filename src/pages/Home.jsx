@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ExternalLink, Users, TreePine, Target, X } from "lucide-react";
+import Guestbook from "../components/Guestbook";
 
 function Home() {
   const [activeTab, setActiveTab] = useState("info");
@@ -102,7 +103,6 @@ function Home() {
           </div>
         </div>
       </section>
-      {/* Community Planting Day Section */}
       <section className="section-alt">
         <div className="container">
           <div
@@ -112,27 +112,80 @@ function Home() {
             <h2>We Planted The Forest!</h2>
             <p style={{ fontSize: "1.6rem", color: "#496914ff" }}>
               <br />
-On Saturday, October 4th 2025, MFAB and 275 volunteers planted 1,140 saplings at Belmont High School.
+              On Saturday, October 4th 2025, MFAB and 275 volunteers planted 1,140
+              saplings at Belmont High School.
             </p>
+
             <p style={{ fontSize: "1.2rem", lineHeight: "1.5" }}>
-              <br></br>Our rain date is October 5th
-              <br></br>
-              <br></br>
-              We are seeking volunteers to help bring Belmont's first
-              mini-forest to life by planting hundreds of native plants. If
-              you’d like to be part of this transformative project, please fill
-              out this sign-up form to express your interest in volunteering.
-              The forest will need stewards and volunteers to plant seedlings,
-              spread mulch, and organize materials. All ages able to participate
-              in planting are encouraged to join!
-              <br></br>
-              <br></br>
+              <br />
+              Our rain date is October 5th
+              <br />
+              <br />
+              We are seeking volunteers to help bring Belmont's first mini-forest to
+              life by planting hundreds of native plants. If you’d like to be part
+              of this transformative project, please fill out this sign-up form to
+              express your interest in volunteering. The forest will need stewards
+              and volunteers to plant seedlings, spread mulch, and organize
+              materials. All ages able to participate in planting are encouraged to
+              join!
+              <br />
+              <br />
               After the planting, for the next three growing seasons, volunteers
-              will maintain and monitor the forest. This including weeding,
-              litter removal and data collection. More information on how to get
-              involved with post-planting will be released later!
+              will maintain and monitor the forest. This includes weeding, litter
+              removal and data collection. More information on how to get involved
+              with post-planting will be released later!
             </p>
-            {/* More content will be added here later */}
+
+            <h3 style={{ marginTop: "1.5rem" }}>
+              We're not done yet... Sign up to volunteer Spring 2026!
+            </h3>
+
+            <p style={{ fontSize: "1.05rem", lineHeight: "1.6", marginTop: "0.5rem" }}>
+              Want to learn more about the forest? For an up close and personal
+              experience, come get your hands dirty and help take care of our forest
+              in its three-year infancy so that it can grow up to be a beautiful
+              contribution to our community!
+            </p>
+
+            <div
+              style={{
+                fontWeight: 700,
+                fontSize: "1.05rem",
+                marginTop: "1rem",
+              }}
+            >
+              We need volunteers for two types of activities starting next spring
+              (2026)
+              <ul style={{ listStyle: "disc", textAlign: "left", margin: "0.5rem auto", maxWidth: "560px" }}>
+                <li>maintenance and monitoring</li>
+                <li>planting a native perennial collar around it</li>
+              </ul>
+            </div>
+
+            <p style={{ fontSize: "0.95rem", lineHeight: "1.5", marginTop: "0.75rem" }}>
+              Volunteers will be trained in care of the forest, so{" "}
+              <span style={{ textDecoration: "underline" }}>
+                no need for extensive gardening experience,
+              </span>{" "}
+              just interest in helping the forest to succeed!
+            </p>
+
+            <p style={{ fontSize: "0.95rem", lineHeight: "1.5", marginTop: "0.5rem" }}>
+              Team up with your friends, family, organization or sports team, to
+              come at least once a season (three times a year). This would be a
+              great way to keep in touch with the forest and its progress!
+            </p>
+
+            <h3 style={{ fontSize: "1.2rem", fontWeight: 800, marginTop: "1.25rem" }}>
+              Sign up for your place to be part of the forest growing experience!
+            </h3>
+
+            <div className="cta-buttons" style={{ justifyContent: "center", marginTop: "1rem" }}>
+              <button onClick={handleVolunteerClick} className="btn btn-secondary">
+                <ExternalLink size={20} />
+                Join Us As a Volunteer
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -554,6 +607,48 @@ On Saturday, October 4th 2025, MFAB and 275 volunteers planted 1,140 saplings at
           </div>
         </div>
       )}
+
+      {/* Resources Section */}
+      <section className="section-alt">
+        <div className="container">
+          <div className="card" style={{ maxWidth: "800px", margin: "0 auto" }}>
+            <h2>Ready to Make a Difference?</h2>
+            <p>
+              Your support will benefit the forest, improving both human and non-human communities.
+            </p>
+            <div className="cta-buttons">
+              <button onClick={handleDonateClick} className="btn btn-primary">
+                <ExternalLink size={20} />
+                Donate To Support Our Forest
+              </button>
+              <button
+                onClick={handleVolunteerClick}
+                className="btn btn-secondary"
+              >
+                <ExternalLink size={20} />
+                Join Us As a Volunteer
+              </button>
+            </div>
+            <br />
+
+            <div
+              className="contact-info"
+              style={{ textAlign: "center", marginTop: "30px" }}
+            >
+              <h4>Have questions about volunteering and more?</h4>
+              <p>
+                Contact Us:{" "}
+                <a href="mailto:miniforestbelmont@gmail.com">
+                  miniforestbelmont@gmail.com
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Guestbook */}
+      <Guestbook />
     </div>
   );
 }

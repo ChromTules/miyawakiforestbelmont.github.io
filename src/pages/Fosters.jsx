@@ -7,6 +7,7 @@ import {
   ChevronRight,
   ExternalLink,
 } from "lucide-react";
+import Guestbook from "../components/Guestbook";
 
 function Fosters() {
   const [fosterTreePeople, setFosterTreePeople] = useState([]);
@@ -89,6 +90,19 @@ function Fosters() {
     setCurrentPage(pageNumber);
   };
 
+  const handleDonateClick = () => {
+    window.open(
+      "https://aalslasq.donorsupport.co/page/httpsbio4climateorgm",
+      "_blank"
+    );
+  };
+
+  const handleVolunteerClick = () => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLScEmt1Bg0T-mhlZ_dE6TRlVrZ7EQ34nygG8D-ELzAwk5Alkzw/viewform",
+      "_blank"
+    );
+  };
   
 
   return (
@@ -213,6 +227,30 @@ function Fosters() {
           )}
 
           <div className="gallery-grid">
+            {/* Program Description Card */}
+            <div
+              className="gallery-card"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                padding: "2rem",
+                backgroundColor: "var(--cream)",
+                minHeight: "200px",
+              }}
+            >
+              <p style={{ fontSize: "1.1rem", lineHeight: "1.6", margin: 0 }}>
+                The Foster a Tree Program introduced over 100 saplings to
+                Belmont residents to take care of in the summer of 2025.
+                <br />
+                <br />
+                By fostering, they not only supported MFAB's project, but also
+                became part of a community of environmental stewards dedicated
+                to creating a greener future.
+              </p>
+            </div>
+
+            {/* Foster Photos */}
             {currentPhotos.map((person) => (
               <div
                 key={person.id}
@@ -312,6 +350,48 @@ function Fosters() {
           </div>
         </div>
       )}
+
+      {/* Resources Section */}
+      <section className="section-alt">
+        <div className="container">
+          <div className="card" style={{ maxWidth: "800px", margin: "0 auto" }}>
+            <h2>Ready to Make a Difference?</h2>
+            <p>
+              Your support will benefit the forest, improving both human and non-human communities.
+            </p>
+            <div className="cta-buttons">
+              <button onClick={handleDonateClick} className="btn btn-primary">
+                <ExternalLink size={20} />
+                Donate To Support Our Forest
+              </button>
+              <button
+                onClick={handleVolunteerClick}
+                className="btn btn-secondary"
+              >
+                <ExternalLink size={20} />
+                Join Us As a Volunteer
+              </button>
+            </div>
+            <br />
+
+            <div
+              className="contact-info"
+              style={{ textAlign: "center", marginTop: "30px" }}
+            >
+              <h4>Have questions about volunteering and more?</h4>
+              <p>
+                Contact Us:{" "}
+                <a href="mailto:miniforestbelmont@gmail.com">
+                  miniforestbelmont@gmail.com
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Guestbook */}
+      <Guestbook />
     </div>
   );
 }
