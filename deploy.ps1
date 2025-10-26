@@ -7,12 +7,12 @@ npm run build
 Write-Host "Adding images to build..." -ForegroundColor Green
 # Copy images to dist with the expected filenames from the build
 Copy-Item "src\assets\logo.png" "dist\assets\logo-CTUL2qC9.png" -Force
-Copy-Item "src\assets\mainpic.jpg" "dist\assets\mainpic-BtbLI4Xp.png" -Force
+Copy-Item "src\assets\mainpic.png" "dist\assets\mainpic-BtbLI4Xp.png" -Force
 
 Write-Host "Adding images to build..." -ForegroundColor Green
 # Copy images to dist with the expected filenames from the build
 Copy-Item "src\assets\logo.png" "dist\assets\logo-CTUL2qC9.png" -Force
-Copy-Item "src\assets\mainpic.jpg" "dist\assets\mainpic-BtbLI4Xp.png" -Force
+Copy-Item "src\assets\mainpic.png" "dist\assets\mainpic-BtbLI4Xp.png" -Force
 
 Write-Host "Cleaning up old built files..." -ForegroundColor Yellow
 # Remove old built files (but keep source files)

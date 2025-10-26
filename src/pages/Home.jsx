@@ -53,53 +53,23 @@ function Home() {
   return (
     <div className="home">
       {/* Hero Section */}
-      <section className="hero">
-        <div className="container">
-          <div className="hero-content">
-            <div className="hero-image-container">
-              <img
-                src="/mainpic.jpg"
-                alt="Post-planting drone shots"
-                className="hero-image"
-                onClick={() =>
-                  openFullscreen(
-                    "/mainpic.jpg",
-                    "Post-planting drone shots"
-                  )
-                }
-              />
-              <p className="hero-caption">
-                <span style={{ fontStyle: "italic" }}>
-                  Post-planting drone shots!
-                </span>{" "}
-                <br />
-                Photo by Nick Geron and Donovan
-              </p>
-            </div>
-            <div className="hero-text">
-              <h1 style={{ textAlign: "left", marginTop: "-3rem" }}>
-                Miyawaki Forest Action Belmont
-              </h1>
-              <p
-                className="subtitle"
-                style={{ fontSize: "1.4rem", textAlign: "left" }}
-              >
-                Join the Movement, Boosting Biodiversity In Belmont!
-              </p>
-              <div className="cta-buttons">
-                <button onClick={handleDonateClick} className="btn btn-primary">
-                  <ExternalLink size={20} />
-                  Donate To Support Our Forest
-                </button>
-                <button
-                  onClick={handleVolunteerClick}
-                  className="btn btn-secondary"
-                >
-                  <ExternalLink size={20} />
-                  Join Us As a Volunteer
-                </button>
-              </div>
-            </div>
+      <section className="hero home-hero" style={{ backgroundImage: 'url(/mainpic.png)' }}>
+        <div className="hero-overlay">
+          <p className="hero-caption">
+            Photo by Nick Geron
+          </p>
+          <div className="cta-buttons">
+            <button onClick={handleDonateClick} className="btn btn-primary">
+              <ExternalLink size={20} />
+              Donate To Support Our Forest
+            </button>
+            <button
+              onClick={handleVolunteerClick}
+              className="btn btn-secondary"
+            >
+              <ExternalLink size={20} />
+              Join Us As a Volunteer
+            </button>
           </div>
         </div>
       </section>
