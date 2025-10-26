@@ -1,3 +1,15 @@
 {
-  "comments": []
+  "comments": [
+    {
+      "name": "Test",
+      "relations": [
+        "Belmont resident",
+        "BHMS student",
+        "Planting day volunteer"
+      ],
+      "message": "Test",
+      "replies": [],
+      "id": "03f4b0cf679f92cc"
+    }
+  ]
 }
