@@ -75,86 +75,80 @@ function Home() {
       </section>
       <section className="section-alt">
         <div className="container">
-          <div
-            className="card"
-            style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto" }}
-          >
-            <h2>We Planted The Forest!</h2>
-            <p style={{ fontSize: "1.6rem", color: "#496914ff" }}>
-              <br />
-              On Saturday, October 4th 2025, MFAB and 275 volunteers planted 1,140
-              saplings at Belmont High School.
-            </p>
-
-            <p style={{ fontSize: "1.2rem", lineHeight: "1.5" }}>
-              <br />
-              Our rain date is October 5th
-              <br />
-              <br />
-              We are seeking volunteers to help bring Belmont's first mini-forest to
-              life by planting hundreds of native plants. If you’d like to be part
-              of this transformative project, please fill out this sign-up form to
-              express your interest in volunteering. The forest will need stewards
-              and volunteers to plant seedlings, spread mulch, and organize
-              materials. All ages able to participate in planting are encouraged to
-              join!
-              <br />
-              <br />
-              After the planting, for the next three growing seasons, volunteers
-              will maintain and monitor the forest. This includes weeding, litter
-              removal and data collection. More information on how to get involved
-              with post-planting will be released later!
-            </p>
-
-            <h3 style={{ marginTop: "1.5rem" }}>
-              We're not done yet... Sign up to volunteer Spring 2026!
-            </h3>
-
-            <p style={{ fontSize: "1.05rem", lineHeight: "1.6", marginTop: "0.5rem" }}>
-              Want to learn more about the forest? For an up close and personal
-              experience, come get your hands dirty and help take care of our forest
-              in its three-year infancy so that it can grow up to be a beautiful
-              contribution to our community!
-            </p>
-
+          <div style={{ display: "flex", gap: "2rem", maxWidth: "1200px", margin: "0 auto" }}>
+            {/* First Card - We Planted The Forest */}
             <div
-              style={{
-                fontWeight: 700,
-                fontSize: "1.05rem",
-                marginTop: "1rem",
-              }}
+              className="card"
+              style={{ flex: 1, textAlign: "center" }}
             >
-              We need volunteers for two types of activities starting next spring
-              (2026)
-              <ul style={{ listStyle: "disc", textAlign: "left", margin: "0.5rem auto", maxWidth: "560px" }}>
-                <li>maintenance and monitoring</li>
-                <li>planting a native perennial collar around it</li>
-              </ul>
+              <h2>We Planted The Forest!</h2>
+              <p style={{ fontSize: "1.6rem", color: "#496914ff" }}>
+                <br />
+                On Saturday, October 4th 2025, MFAB and <strong>275 volunteers</strong> planted <strong>over 1,100
+                saplings</strong> at Belmont High School.
+              </p>
+
+              <p style={{ fontSize: "0.9rem", color: "#666", marginTop: "0.5rem" }}>
+                See this great two minute video our high school students made{" "}
+                <a href="https://youtu.be/-snRZlOdbms" target="_blank" rel="noopener noreferrer">
+                  https://youtu.be/-snRZlOdbms
+                </a>
+              </p>
             </div>
 
-            <p style={{ fontSize: "0.95rem", lineHeight: "1.5", marginTop: "0.75rem" }}>
-              Volunteers will be trained in care of the forest, so{" "}
-              <span style={{ textDecoration: "underline" }}>
-                no need for extensive gardening experience,
-              </span>{" "}
-              just interest in helping the forest to succeed!
-            </p>
+            {/* Second Card - We're not done yet */}
+            <div
+              className="card"
+              style={{ flex: 1, textAlign: "center" }}
+            >
+              <h3 style={{ marginTop: "1.5rem" }}>
+                We're not done yet... 
+                <br></br>
+                Sign up to volunteer <br />Spring 2026!
+              </h3>
 
-            <p style={{ fontSize: "0.95rem", lineHeight: "1.5", marginTop: "0.5rem" }}>
-              Team up with your friends, family, organization or sports team, to
-              come at least once a season (three times a year). This would be a
-              great way to keep in touch with the forest and its progress!
-            </p>
+              <div style={{ textAlign: "left", marginLeft: "2rem" }}>
+                <p style={{ fontSize: "1.05rem", lineHeight: "1.6", marginTop: "0.5rem" }}>
+                  Want to learn more about the forest? For an up close and personal
+                  experience, come get your hands dirty and help take care of our forest
+                  in its three-year infancy so that it can grow up to be a beautiful
+                  contribution to our community!
+                </p>
 
-            <h3 style={{ fontSize: "1.2rem", fontWeight: 800, marginTop: "1.25rem" }}>
-              Sign up for your place to be part of the forest growing experience!
-            </h3>
+                <div
+                  style={{
+                    fontWeight: 700,
+                    fontSize: "1.05rem",
+                    marginTop: "1rem",
+                  }}
+                >
+                  We need volunteers for two types of activities starting next spring
+                  (2026)
+                  <ul style={{ listStyle: "disc", textAlign: "left", margin: "0.25rem 0", maxWidth: "560px" }}>
+                    <li>maintenance and monitoring</li>
+                    <li>planting a native perennial collar around it</li>
+                  </ul>
+                </div>
 
-            <div className="cta-buttons" style={{ justifyContent: "center", marginTop: "1rem" }}>
-              <button onClick={handleVolunteerClick} className="btn btn-secondary">
-                <ExternalLink size={20} />
-                Join Us As a Volunteer
-              </button>
+                <p style={{ fontSize: "0.95rem", lineHeight: "1.5", marginTop: "0.75rem" }}>
+                  Volunteers will be trained in care of the forest, so{" "}
+                  <span style={{ textDecoration: "underline" }}>
+                    no need for extensive gardening experience,
+                  </span>{" "}
+                  just interest in helping the forest to succeed!
+                </p>
+
+                <h3 style={{ fontSize: "1.2rem", fontWeight: 800, marginTop: "1.25rem", textAlign: "center" }}>
+                  Sign up for your place to be part of the forest growing experience!
+                </h3>
+
+                <div className="cta-buttons" style={{ justifyContent: "center", marginTop: "1rem" }}>
+                  <button onClick={handleVolunteerClick} className="btn btn-secondary">
+                    <ExternalLink size={20} />
+                    Join Us As a Volunteer
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -194,12 +188,13 @@ function Home() {
                         usual time.
                       </p>
                       <p>
-                        Our 1,140 trees from 32 different native species will create an ecosystem that accelerates
+                        Our 1,145 trees from 32 different native species will create an ecosystem that accelerates
                         the plants' growth and provides a biodiverse habitat for
                         native pollinators.
                       </p>
-                      Our species list: <a href="https://docs.google.com/document/d/1OHeL-6ni_3HXtFmkH7escEsVIfNIICZ8LTTFS8KppNY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">View Document</a>
+                      <a href="https://docs.google.com/document/d/1OHeL-6ni_3HXtFmkH7escEsVIfNIICZ8LTTFS8KppNY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Our species list</a>
                       <br />
+                      ️<br />
                       <p
                         style={{
                           fontStyle: "italic",

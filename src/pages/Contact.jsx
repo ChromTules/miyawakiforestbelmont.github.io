@@ -186,7 +186,7 @@ function Contact() {
             <div className="card" style={{ textAlign: "center" }}>
               <h2>Project Leadership</h2>
               <br />
-              <div style={{ fontSize: "1.8rem", lineHeight: "1.4" }}>
+              <div style={{ fontSize: "1.5rem", lineHeight: "1.6" }}>
                 Jean Devine <br />
                 Jess Hausman <br />
                 Ralph Jones <br />

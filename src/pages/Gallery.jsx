@@ -83,7 +83,9 @@ function Gallery() {
       <section>
         <div className="container">
           <h2>Photos</h2>
-          Click to Enlarge
+          <p style={{ fontStyle: "italic", color: "#666", marginTop: "-0.5rem" }}>
+            Click to Enlarge
+          </p>
 
           {galleryImages.length === 0 ? (
             <div
@@ -119,7 +121,7 @@ function Gallery() {
                       alignItems: "center",
                       gap: "0.5rem",
                       padding: "0.5rem 1rem",
-                      backgroundColor: "#458115ff",
+                      backgroundColor: "#719354",
                       color: "white",
                       border: "none",
                       borderRadius: "25px",
@@ -131,7 +133,7 @@ function Gallery() {
                       (e.target.style.backgroundColor = "#7fab5b")
                     }
                     onMouseLeave={(e) =>
-                      (e.target.style.backgroundColor = "#458115ff")
+                      (e.target.style.backgroundColor = "#719354")
                     }
                   >
                     <ChevronLeft size={16} />
@@ -156,7 +158,7 @@ function Gallery() {
                           border: "none",
                           backgroundColor:
                             currentPage === index + 1
-                              ? "#458115ff"
+                              ? "#719354"
                               : "#7fab5b",
                           color: "white",
                           cursor: "pointer",
@@ -181,7 +183,7 @@ function Gallery() {
                       alignItems: "center",
                       gap: "0.5rem",
                       padding: "0.5rem 1rem",
-                      backgroundColor: "#458115ff",
+                      backgroundColor: "#719354",
                       color: "white",
                       border: "none",
                       borderRadius: "25px",
@@ -193,7 +195,7 @@ function Gallery() {
                       (e.target.style.backgroundColor = "#7fab5b")
                     }
                     onMouseLeave={(e) =>
-                      (e.target.style.backgroundColor = "#458115ff")
+                      (e.target.style.backgroundColor = "#719354")
                     }
                   >
                     <ChevronRight size={16} />
@@ -209,7 +211,7 @@ function Gallery() {
                     onClick={() => setSelectedImage(item)}
                     style={{ cursor: "pointer" }}
                   >
-                    <div className="gallery-image">
+                    <div className="gallery-image" style={{ position: "relative", width: "100%", paddingTop: "75%", overflow: "hidden", borderRadius: "8px 8px 0 0" }}>
                       <img
                         src={
                           item.image.startsWith("public/assets/images/")
@@ -217,19 +219,15 @@ function Gallery() {
                             : item.image
                         }
                         alt={`Progress update`}
-                        // style={{
-                        //   width: "100%",
-                        //   height: "200px",
-                        //   objectFit: "cover",
-                        //   borderRadius: "8px 8px 0 0",
-                        // }}
+                        style={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
                       />
-                      {/* <div className="gallery-overlay">
-                        <h4>Update #{item.id}</h4>
-                        <p>
-                          <MapPin size={16} /> {item.location}
-                        </p>
-                      </div> */}
                     </div>
                     <div className="gallery-info">
                       <h4>Progress Update</h4>
@@ -265,7 +263,7 @@ function Gallery() {
 
 
       {/* About Progress Updates */}
-      <section className="section-alt">
+      <section>
         <div className="container">
           <div
             className="card"
@@ -324,6 +322,13 @@ function Gallery() {
                 }
                 alt={`Progress update ${selectedImage.id}`}
                 className="modal-image"
+                style={{
+                  maxWidth: "100%",
+                  maxHeight: "70vh",
+                  width: "auto",
+                  height: "auto",
+                  objectFit: "contain",
+                }}
               />
               <div className="modal-info">
                 <h3>Progress Update #{selectedImage.id}</h3>

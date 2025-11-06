@@ -124,6 +124,9 @@ function Fosters() {
       <section>
         <div className="container">
           <h2>Photos</h2>
+          <p style={{ fontStyle: "italic", color: "#666", marginTop: "-0.5rem" }}>
+            Click to Enlarge
+          </p>
 
           {/* Pagination Controls */}
           {totalPages > 1 && (
@@ -240,7 +243,7 @@ function Fosters() {
               }}
             >
               <p style={{ fontSize: "1.1rem", lineHeight: "1.6", margin: 0 }}>
-                The Foster a Tree Program introduced over 100 saplings to
+                The Foster a Tree Program introduced over <strong style={{ fontSize: "1.3rem" }}>100 saplings</strong> to
                 Belmont residents to take care of in the summer of 2025.
                 <br />
                 <br />
@@ -314,6 +317,7 @@ function Fosters() {
           <ExternalLink size={20} />
           Submit Your Own Pictures
         </button>
+        <br />
       </div>
 
 

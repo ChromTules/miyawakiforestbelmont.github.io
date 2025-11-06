@@ -159,6 +159,183 @@ exports.handler = async function (event) {
       };
     }
 
+    // PUT - Update an existing comment
+    if (event.httpMethod === "PUT") {
+      const commentId = event.queryStringParameters?.id;
+      const payload = event.body ? JSON.parse(event.body) : {};
+      
+      if (!commentId) {
+        return { 
+          statusCode: 400, 
+          body: JSON.stringify({ error: "Comment ID required" }) 
+        };
+      }
+      
+      if (!payload.name || !payload.message) {
+        return { 
+          statusCode: 400, 
+          body: JSON.stringify({ error: "Invalid update: name and message required" }) 
+        };
+      }
+
+      // Fetch current file
+      const getRes = await fetch(apiUrl, { headers });
+      
+      if (getRes.status !== 200) {
+        return { 
+          statusCode: 404, 
+          body: JSON.stringify({ error: "Guestbook file not found" }) 
+        };
+      }
+      
+      const getData = await getRes.json();
+      const sha = getData.sha;
+      const content = Buffer.from(getData.content, "base64").toString("utf-8");
+      const current = JSON.parse(content);
+      
+      if (!Array.isArray(current.comments)) {
+        return { 
+          statusCode: 404, 
+          body: JSON.stringify({ error: "No comments found" }) 
+        };
+      }
+
+      // Find and update the comment
+      let commentFound = false;
+      let updatedComment = null;
+      
+      current.comments = current.comments.map(comment => {
+        if (comment.id === commentId) {
+          commentFound = true;
+          updatedComment = {
+            ...comment,
+            name: payload.name.trim(),
+            relations: payload.relations || [],
+            message: payload.message.trim(),
+          };
+          return updatedComment;
+        }
+        return comment;
+      });
+
+      if (!commentFound) {
+        return { 
+          statusCode: 404, 
+          body: JSON.stringify({ error: "Comment not found" }) 
+        };
+      }
+
+      // Commit updated content to GitHub
+      const newContentBase64 = Buffer.from(JSON.stringify(current, null, 2)).toString("base64");
+      
+      const putRes = await fetch(apiUrl, {
+        method: "PUT",
+        headers: { ...headers, "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: `Update comment ${commentId}`,
+          content: newContentBase64,
+          sha: sha,
+          committer: COMMITTER,
+        }),
+      });
+
+      if (!putRes.ok) {
+        const err = await putRes.text();
+        console.error("Failed to commit update to GitHub:", err);
+        return { 
+          statusCode: 500, 
+          body: JSON.stringify({ error: "Failed updating comment on GitHub" }) 
+        };
+      }
+
+      return { 
+        statusCode: 200, 
+        body: JSON.stringify({ 
+          success: true, 
+          comment: updatedComment,
+          message: "Comment updated successfully" 
+        }),
+        headers: { "Content-Type": "application/json" }
+      };
+    }
+
+    // DELETE - Remove a comment
+    if (event.httpMethod === "DELETE") {
+      const commentId = event.queryStringParameters?.id;
+      
+      if (!commentId) {
+        return { 
+          statusCode: 400, 
+          body: JSON.stringify({ error: "Comment ID required" }) 
+        };
+      }
+
+      // Fetch current file
+      const getRes = await fetch(apiUrl, { headers });
+      
+      if (getRes.status !== 200) {
+        return { 
+          statusCode: 404, 
+          body: JSON.stringify({ error: "Guestbook file not found" }) 
+        };
+      }
+      
+      const getData = await getRes.json();
+      const sha = getData.sha;
+      const content = Buffer.from(getData.content, "base64").toString("utf-8");
+      const current = JSON.parse(content);
+      
+      if (!Array.isArray(current.comments)) {
+        return { 
+          statusCode: 404, 
+          body: JSON.stringify({ error: "No comments found" }) 
+        };
+      }
+
+      // Find and remove the comment
+      const originalLength = current.comments.length;
+      current.comments = current.comments.filter(comment => comment.id !== commentId);
+
+      if (current.comments.length === originalLength) {
+        return { 
+          statusCode: 404, 
+          body: JSON.stringify({ error: "Comment not found" }) 
+        };
+      }
+
+      // Commit updated content to GitHub
+      const newContentBase64 = Buffer.from(JSON.stringify(current, null, 2)).toString("base64");
+      
+      const putRes = await fetch(apiUrl, {
+        method: "PUT",
+        headers: { ...headers, "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: `Delete comment ${commentId}`,
+          content: newContentBase64,
+          sha: sha,
+          committer: COMMITTER,
+        }),
+      });
+
+      if (!putRes.ok) {
+        const err = await putRes.text();
+        console.error("Failed to commit deletion to GitHub:", err);
+        return { 
+          statusCode: 500, 
+          body: JSON.stringify({ error: "Failed deleting comment on GitHub" }) 
+        };
+      }
+
+      return { 
+        statusCode: 200, 
+        body: JSON.stringify({ 
+          success: true,
+          message: "Comment deleted successfully" 
+        }),
+        headers: { "Content-Type": "application/json" }
+      };
+    }
+
     return { 
       statusCode: 405, 
       body: JSON.stringify({ error: "Method not allowed" }) 
