@@ -84,7 +84,7 @@ function Home() {
               <h2>We Planted The Forest!</h2>
               <p style={{ fontSize: "1.6rem", color: "#496914ff" }}>
                 <br />
-                On Saturday, October 4th 2025, MFAB and <strong>275 volunteers</strong> planted <strong>over 1,100
+                On Saturday, October 4th 2025, MFAB and <strong>175 volunteers</strong> planted <strong>over 1,100
                 saplings</strong> at Belmont High School.
               </p>
 
