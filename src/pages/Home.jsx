@@ -81,19 +81,33 @@ function Home() {
               className="card"
               style={{ flex: 1, textAlign: "center" }}
             >
-              <h2>We Planted The Forest!</h2>
-              <p style={{ fontSize: "1.6rem", color: "#496914ff" }}>
+              <h3 style={{ marginTop: "1.5rem"}}>We Planted The Forest!</h3>
+              <p style={{ fontSize: "1.6rem", color: "#496914ff", marginTop: "-2rem"}}>
                 <br />
                 On Saturday, October 4th 2025, MFAB and <strong>275 volunteers</strong> planted <strong>over 1,100
                 saplings</strong> at Belmont High School.
               </p>
 
-              <p style={{ fontSize: "0.9rem", color: "#666", marginTop: "0.5rem" }}>
-                See this great two minute video our high school students made{" "}
-                <a href="https://youtu.be/-snRZlOdbms" target="_blank" rel="noopener noreferrer">
-                  https://youtu.be/-snRZlOdbms
-                </a>
+              <a href="https://youtu.be/-snRZlOdbms" target="_blank" rel="noopener noreferrer">
+                <img 
+                  src="/digging.png" 
+                  alt="Volunteers digging - Click to watch video" 
+                  style={{ 
+                    width: "100%", 
+                    maxWidth: "500px", 
+                    margin: "1.5rem auto 0", 
+                    display: "block",
+                    borderRadius: "8px",
+                    cursor: "pointer"
+                  }} 
+                />
+              </a>
+              <p style={{ fontSize: "1.6rem", color: "#666", marginTop: "0.5rem" }}>
+                See this great two minute video our high school students made <br></br>{" "}
+             
               </p>
+
+
             </div>
 
             {/* Second Card - We're not done yet */}
@@ -104,16 +118,27 @@ function Home() {
               <h3 style={{ marginTop: "1.5rem" }}>
                 We're not done yet... 
                 <br></br>
-                Sign up to volunteer <br />Spring 2026!
+                Sign up to volunteer in<br />Spring 2026!
               </h3>
+              <br />
 
               <div style={{ textAlign: "left", marginLeft: "2rem" }}>
-                <p style={{ fontSize: "1.05rem", lineHeight: "1.6", marginTop: "0.5rem" }}>
+                <p style={{ fontSize: "1.05rem", lineHeight: "1.6", marginTop: "0.5rem", color: "#496914" }}>
                   Want to learn more about the forest? For an up close and personal
                   experience, come get your hands dirty and help take care of our forest
                   in its three-year infancy so that it can grow up to be a beautiful
                   contribution to our community!
                 </p>
+                <h3 style={{ fontSize: "1.2rem", fontWeight: 800, marginTop: "1.25rem", textAlign: "center" }}>
+                  Sign up for your place to be part of the forest growing experience!
+                </h3>
+
+                <div className="cta-buttons" style={{ justifyContent: "center", marginTop: "1rem" }}>
+                  <button onClick={handleVolunteerClick} className="btn btn-secondary">
+                    <ExternalLink size={20} />
+                    Join Us As a Volunteer
+                  </button>
+                </div>
 
                 <div
                   style={{
@@ -122,11 +147,10 @@ function Home() {
                     marginTop: "1rem",
                   }}
                 >
-                  We need volunteers for two types of activities starting next spring
-                  (2026)
+                  Volunteers will participate in:
                   <ul style={{ listStyle: "disc", textAlign: "left", margin: "0.25rem 0", maxWidth: "560px" }}>
-                    <li>maintenance and monitoring</li>
-                    <li>planting a native perennial collar around it</li>
+                    <li>Maintenance and monitoring trees</li>
+                    <li>Planting a native perennial collar around the forest</li>
                   </ul>
                 </div>
 
@@ -138,16 +162,6 @@ function Home() {
                   just interest in helping the forest to succeed!
                 </p>
 
-                <h3 style={{ fontSize: "1.2rem", fontWeight: 800, marginTop: "1.25rem", textAlign: "center" }}>
-                  Sign up for your place to be part of the forest growing experience!
-                </h3>
-
-                <div className="cta-buttons" style={{ justifyContent: "center", marginTop: "1rem" }}>
-                  <button onClick={handleVolunteerClick} className="btn btn-secondary">
-                    <ExternalLink size={20} />
-                    Join Us As a Volunteer
-                  </button>
-                </div>
               </div>
             </div>
           </div>
@@ -576,7 +590,7 @@ function Home() {
       {/* Resources Section */}
       <section className="section-alt">
         <div className="container">
-          <div className="card" style={{ maxWidth: "800px", margin: "0 auto" }}>
+          <div className="card" style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
             <h2>Ready to Make a Difference?</h2>
             <p>
               Your support will benefit the forest, improving both human and non-human communities.

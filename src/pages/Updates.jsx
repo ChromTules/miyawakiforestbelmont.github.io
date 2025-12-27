@@ -428,7 +428,7 @@ function Updates() {
       {/* Resources Section */}
       <section className="section-alt">
         <div className="container">
-          <div className="card" style={{ maxWidth: "800px", margin: "0 auto" }}>
+          <div className="card" style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
             <h2>Ready to Make a Difference?</h2>
             <p>
               Your support will benefit the forest, improving both human and non-human communities.

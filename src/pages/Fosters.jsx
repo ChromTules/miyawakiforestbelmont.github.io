@@ -242,7 +242,7 @@ function Fosters() {
                 minHeight: "200px",
               }}
             >
-              <p style={{ fontSize: "1.1rem", lineHeight: "1.6", margin: 0 }}>
+              <p style={{ fontSize: "1.1rem", lineHeight: "1.6", margin: 0, color:"#496914" }}>
                 The Foster a Tree Program introduced over <strong style={{ fontSize: "1.3rem" }}>100 saplings</strong> to
                 Belmont residents to take care of in the summer of 2025.
                 <br />
@@ -358,7 +358,7 @@ function Fosters() {
       {/* Resources Section */}
       <section className="section-alt">
         <div className="container">
-          <div className="card" style={{ maxWidth: "800px", margin: "0 auto" }}>
+          <div className="card" style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
             <h2>Ready to Make a Difference?</h2>
             <p>
               Your support will benefit the forest, improving both human and non-human communities.

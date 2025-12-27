@@ -93,9 +93,13 @@ exports.handler = async function (event) {
         };
       }
 
-      // Generate unique ID
-      const newId = crypto.randomBytes(8).toString("hex");
+      // Generate unique ID and timestamp
+      const newId = crypto.randomBytes(8).toString('hex');
+      const userIdentifier = crypto.createHash('sha256').update(event.headers['x-forwarded-for'] || event.headers['client-ip'] || 'anonymous').digest('hex').substring(0, 16);
+      
       incomingComment.id = newId;
+      incomingComment.timestamp = new Date().toISOString();
+      incomingComment.userId = userIdentifier;
       
       // If it's a reply, add to the parent comment's replies array
       if (replyToId) {

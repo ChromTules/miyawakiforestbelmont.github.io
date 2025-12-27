@@ -57,9 +57,16 @@ function Guestbook() {
     "Planting day volunteer",
   ];
 
-  // Load comments from backend
+  // Load comments from backend and set user ID
   useEffect(() => {
     fetchComments();
+    
+    // Generate or retrieve user ID for comment ownership
+    let userId = localStorage.getItem('guestbook_userId');
+    if (!userId) {
+      userId = 'user_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+      localStorage.setItem('guestbook_userId', userId);
+    }
   }, []);
 
   const fetchComments = async () => {
@@ -215,6 +222,16 @@ function Guestbook() {
   };
 
   const handleDeleteComment = async (commentId) => {
+    const comment = comments.find(c => c.id === commentId);
+    if (!comment) return;
+    
+    // Check if user owns this comment
+    const userId = localStorage.getItem('guestbook_userId');
+    if (comment.userId && userId && comment.userId !== userId) {
+      alert("You can only delete your own comments.");
+      return;
+    }
+    
     if (!confirm("Are you sure you want to delete this comment?")) {
       return;
     }
@@ -243,6 +260,13 @@ function Guestbook() {
   };
 
   const handleEditComment = (comment) => {
+    // Check if user owns this comment
+    const userId = localStorage.getItem('guestbook_userId');
+    if (comment.userId && userId && comment.userId !== userId) {
+      alert("You can only edit your own comments.");
+      return;
+    }
+    
     setEditingComment(comment.id);
     setEditText({
       name: comment.name,
@@ -742,37 +766,62 @@ function Guestbook() {
                                 </span>
                               )}
                             </div>
-                            <div style={{ display: "flex", gap: "0.5rem" }}>
-                              <button
-                                onClick={() => handleEditComment(comment)}
-                                style={{
-                                  background: "none",
-                                  border: "none",
-                                  color: "#666",
-                                  cursor: "pointer",
-                                  padding: "0.25rem",
-                                  display: "flex",
-                                  alignItems: "center",
-                                }}
-                                title="Edit comment"
-                              >
-                                <Edit2 size={16} />
-                              </button>
-                              <button
-                                onClick={() => handleDeleteComment(comment.id)}
-                                style={{
-                                  background: "none",
-                                  border: "none",
-                                  color: "#d32f2f",
-                                  cursor: "pointer",
-                                  padding: "0.25rem",
-                                  display: "flex",
-                                  alignItems: "center",
-                                }}
-                                title="Delete comment"
-                              >
-                                <Trash2 size={16} />
-                              </button>
+                            <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+                              {comment.timestamp && (
+                                <span
+                                  style={{
+                                    fontSize: "0.75rem",
+                                    color: "#999",
+                                    marginRight: "0.5rem"
+                                  }}
+                                >
+                                  {new Date(comment.timestamp).toLocaleDateString('en-US', { 
+                                    month: 'short', 
+                                    day: 'numeric', 
+                                    year: 'numeric',
+                                    hour: 'numeric',
+                                    minute: '2-digit'
+                                  })}
+                                </span>
+                              )}
+                              {(() => {
+                                const userId = localStorage.getItem('guestbook_userId');
+                                const canEdit = !comment.userId || (userId && comment.userId === userId);
+                                return canEdit ? (
+                                  <>
+                                    <button
+                                      onClick={() => handleEditComment(comment)}
+                                      style={{
+                                        background: "none",
+                                        border: "none",
+                                        color: "#666",
+                                        cursor: "pointer",
+                                        padding: "0.25rem",
+                                        display: "flex",
+                                        alignItems: "center",
+                                      }}
+                                      title="Edit comment"
+                                    >
+                                      <Edit2 size={16} />
+                                    </button>
+                                    <button
+                                      onClick={() => handleDeleteComment(comment.id)}
+                                      style={{
+                                        background: "none",
+                                        border: "none",
+                                        color: "#d32f2f",
+                                        cursor: "pointer",
+                                        padding: "0.25rem",
+                                        display: "flex",
+                                        alignItems: "center",
+                                      }}
+                                      title="Delete comment"
+                                    >
+                                      <Trash2 size={16} />
+                                    </button>
+                                  </>
+                                ) : null;
+                              })()}
                             </div>
                           </div>
                           <p style={{ margin: "0.5rem 0 1rem 0" }}>
