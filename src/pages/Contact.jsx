@@ -17,6 +17,7 @@ function Contact() {
     message: "",
   });
   const [openFAQ, setOpenFAQ] = useState(null);
+  const [modalFAQ, setModalFAQ] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,7 +48,11 @@ function Contact() {
   };
 
   const toggleFAQ = (index) => {
-    setOpenFAQ(openFAQ === index ? null : index);
+    setModalFAQ(index);
+  };
+
+  const closeModal = () => {
+    setModalFAQ(null);
   };
 
   const faqData = [
@@ -186,96 +191,6 @@ function Contact() {
                 to see our page on bio4climate.
               </p>
             </div>
-            <div className="card">
-              <h2>References and Resources</h2>
-              <ul>
-                <li>
-                  <a
-                    href="https://homegrownnationalpark.org/symbiotic-schoolyard/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Homegrown National Park
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.sugiproject.com/forests/danehy-park-forest"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    SUGi
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://bio4climate.org/miyawaki-forest-program/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Bio4Climate Miyawaki Forest Program
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://pixnio.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Photo by Hagerty Ryan, USFWS
-                  </a>
-                </li>
-                <li>Image from Google Maps - last update 2022</li>
-                <li>
-                  Bio4Climate's{" "}
-                  <a
-                    href="https://www.youtube.com/playlist?list=PLsWWRqCX9eSaeVvsc-zUsK4HPt0enmRcc"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Miyawaki Forest video playlist
-                  </a>
-                </li>
-                <li>
-                  '
-                  <a
-                    href="https://www.csmonitor.com/Environment/2023/0922/Miyawaki-A-little-forest-with-a-towering-task-video"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    A Little Forest with a Towering Task
-                  </a>
-                  ' - Short documentary on the Miyawaki planting process and the
-                  'grounded hope' behind the work
-                </li>
-                <li>
-                  '
-                  <a
-                    href="https://www.nytimes.com/2023/08/24/climate/tiny-forests-climate-miyawaki.html?unlocked_article_code=S_xwWpdQcIVJSDpMaNcyo-EH_Y2Lw6tOH6xwX_NE6AwkO_FWy8YH_hJdLatSfnn70lg8twstZFrav63MlEM9pPc3d6092cif7kGnuhiFYu8NzMbHBdgveuElb7HdfFvnhIAV_hsq9oaiWB6w00t92Drj7pbUnnzbP-oGoRY4sr0Kx5BXcr0VCLzL7CYXyvYfIoBcZVe9h_9MKEl9f-yEcz_Li0NKOGKr7Bmuch0m6RkWl3sd6AK0WKXd6joit-Q3tAJlQdA-EozMxnFNbRGedk_Iwtq_XUlOUzNuaBELtI6OvvoxJOCl1UVvKsY3KoBg3PCn1xNZmmwtdW8FIDBN_kx5BfQY-WU&smid=url-share"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Tiny Forests with Big Benefits
-                  </a>
-                  ' - A feature of our Cambridge forests and other Miyawaki
-                  plantings in <em>The New York Times</em>
-                </li>
-                <li>
-                  <em>
-                    <a
-                      href="https://www.chelseagreen.com/product/mini-forest-revolution/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Mini-Forest Revolution: Using the Miyawaki Method to
-                      Rapidly Rewild the World
-                    </a>
-                  </em>{" "}
-                  by Hannah Lewis, published by Chelsea Green in June 2022
-                </li>
-              </ul>
-            </div>
-
             <div className="card" style={{ textAlign: "center" }}>
               <h2>Project Leadership</h2>
               <br />
@@ -317,7 +232,7 @@ function Contact() {
                     boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
                     cursor: "pointer",
                     transition: "all 0.3s ease",
-                    minHeight: "120px",
+                    height: "160px",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
@@ -344,36 +259,90 @@ function Contact() {
                   <span 
                     style={{ 
                       marginTop: "0.5rem",
-                      color: openFAQ === index ? "var(--forest-green)" : "#999",
+                      color: "#999",
                       fontSize: "0.9rem",
                       fontWeight: "500",
                       transition: "color 0.3s ease"
                     }} 
                   >
-                    Answer
+                    Click to read answer
                   </span>
                 </div>
-                {openFAQ === index && (
-                  <div
-                    style={{
-                      backgroundColor: "white",
-                      padding: "1.5rem",
-                      borderRadius: "8px",
-                      boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-                      marginTop: "0.5rem",
-                      animation: "slideDown 0.3s ease"
-                    }}
-                  >
-                    <p style={{ margin: 0, lineHeight: "1.6", color: "#333" }}>
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Modal for FAQ */}
+      {modalFAQ !== null && (
+        <div
+          onClick={closeModal}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.7)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 1000,
+            padding: "2rem",
+            animation: "fadeIn 0.3s ease"
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              backgroundColor: "white",
+              padding: "2.5rem",
+              borderRadius: "12px",
+              maxWidth: "700px",
+              maxHeight: "80vh",
+              overflow: "auto",
+              boxShadow: "0 10px 40px rgba(0,0,0,0.3)",
+              animation: "slideUp 0.3s ease",
+              position: "relative"
+            }}
+          >
+            <button
+              onClick={closeModal}
+              style={{
+                position: "absolute",
+                top: "1rem",
+                right: "1rem",
+                background: "none",
+                border: "none",
+                fontSize: "1.5rem",
+                cursor: "pointer",
+                color: "#666",
+                padding: "0.5rem",
+                lineHeight: 1
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.color = "var(--forest-green)"}
+              onMouseLeave={(e) => e.currentTarget.style.color = "#666"}
+            >
+              ×
+            </button>
+            <h2 style={{ 
+              color: "var(--forest-green)", 
+              marginBottom: "1.5rem",
+              paddingRight: "2rem"
+            }}>
+              {faqData[modalFAQ].question}
+            </h2>
+            <p style={{ 
+              lineHeight: "1.8", 
+              color: "#333",
+              fontSize: "1.05rem"
+            }}>
+              {faqData[modalFAQ].answer}
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* Resources Section */}
       <section className="section-alt">

@@ -117,10 +117,9 @@ function Home() {
             >
               <h3 style={{ marginTop: "1.5rem" }}>
                 We're not done yet... 
-                <br></br>
+                
                 Sign up to volunteer in<br />Spring 2026!
               </h3>
-              <br />
 
               <div style={{ textAlign: "left", marginLeft: "2rem" }}>
                 <p style={{ fontSize: "1.05rem", lineHeight: "1.6", marginTop: "0.5rem", color: "#496914" }}>
@@ -129,6 +128,7 @@ function Home() {
                   in its three-year infancy so that it can grow up to be a beautiful
                   contribution to our community!
                 </p>
+                <br />
                 <h3 style={{ fontSize: "1.2rem", fontWeight: 800, marginTop: "1.25rem", textAlign: "center" }}>
                   Sign up for your place to be part of the forest growing experience!
                 </h3>

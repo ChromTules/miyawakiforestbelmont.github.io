@@ -262,30 +262,6 @@ function Updates() {
       {/* Timeline */}
       <section className="section-alt">
         <div className="container">
-          <div className="card">
-            <h3>What is the forest's timeline?</h3>
-            {/* <p>
-                      We're planning our community planting day for Fall 2025. The
-                      exact date will be announced once we complete our fundraising
-                      goal and soil preparation work.
-                    </p> */}
-            <div style={{ width: "auto", height: "auto" }}>
-              <Chrono
-                items={items}
-                mode="HORIZONTAL"
-                theme={customForestTheme}
-                textDensity="HIGH"
-                timelinePointDimension={22}
-              />
-            </div>
-            Click a dot in the timeline to get more information
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="section-alt">
-        <div className="container">
           <div className="timeline">
             {timelineUpdates.map((update, index) => (
               <div key={update.id} className="timeline-item">

@@ -6,6 +6,7 @@ import Fosters from "./pages/Fosters";
 import Updates from "./pages/Updates";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
+import Resources from "./pages/Resources";
 import "./App.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/fosters" element={<Fosters />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/updates" element={<Updates />} />
+            <Route path="/resources" element={<Resources />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

@@ -123,7 +123,7 @@ function Fosters() {
       {/* Gallery Grid */}
       <section>
         <div className="container">
-          <h2>Photos</h2>
+          <h2>Fosters</h2>
           <p style={{ fontStyle: "italic", color: "#666", marginTop: "-0.5rem" }}>
             Click to Enlarge
           </p>
@@ -278,13 +278,13 @@ function Fosters() {
                   </div> */}
                 </div>
                 <div className="gallery-info">
-                  <h4>{person.name}</h4>
-                  <p className="tree-type">{person.treeType}</p>
-                  <p className="message">{person.message}</p>
+                  <h3>{person.name}</h3>
+                  <h3 style={{fontSize:"1.4rem", marginBottom:"0.2rem"}}>{person.treeType}</h3>
+                  {/* <p className="message">{person.message}</p>
                   <div className="location">
                     <MapPin size={14} />
                     <span>{person.location}</span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}

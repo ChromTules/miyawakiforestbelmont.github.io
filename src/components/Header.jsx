@@ -8,16 +8,39 @@ function Header() {
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [mobileDropdown, setMobileDropdown] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
 
   const navItems = [
     { path: "/", label: "Home" },
-    { path: "/updates", label: "Updates" },
-    { path: "/fosters", label: "Fosters" },
-    { path: "/gallery", label: "Gallery" },
-    { path: "/contact", label: "Contact" },
+    {
+      label: "The Forest",
+      dropdown: [
+        { path: "/planting-day", label: "Planting Day" },
+        { path: "/gallery", label: "Photos" },
+        { path: "/fosters", label: "Fosters" },
+      ],
+    },
+    {
+      label: "Programs",
+      dropdown: [
+        { path: "/studying-forest", label: "Studying the Forest" },
+        { path: "/programs-tbd", label: "TBD" },
+      ],
+    },
+    {
+      label: "Updates",
+      dropdown: [{ path: "/updates", label: "News" }],
+    },
+    { path: "/resources", label: "Resources" },
+    { path: "/contact", label: "About Us" },
   ];
+
+  const handleMobileDropdownToggle = (index) => {
+    setMobileDropdown(mobileDropdown === index ? null : index);
+  };
 
   // Searchable content from the website
   const searchableContent = [
@@ -179,67 +202,66 @@ function Header() {
             </Link>
 
             <div className="nav-right">
-              {/* Search Bar */}
-              <div className="search-container">
-                <div
-                  className={`search-input-wrapper ${
-                    isSearchExpanded ? "search-expanded" : "search-collapsed"
-                  }`}
-                >
-                  <Search
-                    size={20}
-                    className="search-icon"
-                    onClick={handleSearchIconClick}
-                    style={{ cursor: "pointer" }}
-                  />
-                  {isSearchExpanded && (
-                    <input
-                      type="text"
-                      placeholder="Search this site..."
-                      className="search-input"
-                      value={searchQuery}
-                      onChange={(e) => handleSearch(e.target.value)}
-                      onFocus={() =>
-                        searchResults.length > 0 && setShowSearchResults(true)
-                      }
-                      onBlur={handleSearchBlur}
-                      autoFocus
-                    />
-                  )}
-                </div>
-
-                {showSearchResults && searchResults.length > 0 && (
-                  <div className="search-results">
-                    {searchResults.map((result, index) => (
-                      <div
-                        key={index}
-                        className="search-result-item"
-                        onClick={() => handleSearchResultClick(result.url)}
-                      >
-                        <div className="search-result-title">
-                          {result.title}
-                        </div>
-                        <div className="search-result-section">
-                          {result.section}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
+              
 
               <div className={`nav-menu ${isMenuOpen ? "nav-menu-open" : ""}`}>
-                {navItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    className={`nav-link ${
-                      location.pathname === item.path ? "nav-link-active" : ""
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
+                {navItems.map((item, index) => (
+                  <div
+                    key={index}
+                    className="nav-item"
+                    onMouseEnter={() =>
+                      item.dropdown && setActiveDropdown(index)
+                    }
+                    onMouseLeave={() => item.dropdown && setActiveDropdown(null)}
                   >
-                    {item.label}
-                  </Link>
+                    {item.path ? (
+                      <Link
+                        to={item.path}
+                        className={`nav-link ${
+                          location.pathname === item.path
+                            ? "nav-link-active"
+                            : ""
+                        }`}
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          setMobileDropdown(null);
+                        }}
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <span
+                        className="nav-link nav-link-dropdown"
+                        onClick={() => handleMobileDropdownToggle(index)}
+                      >
+                        {item.label}
+                      </span>
+                    )}
+                    {item.dropdown &&
+                      (activeDropdown === index ||
+                        mobileDropdown === index) && (
+                        <div className="dropdown-menu">
+                          {item.dropdown.map((subItem, subIndex) => (
+                            <Link
+                              key={subIndex}
+                              to={subItem.path}
+                              className={`dropdown-item ${
+                                location.pathname === subItem.path
+                                  ? "dropdown-item-active"
+                                  : ""
+                              }`}
+                              onClick={() => {
+                                setIsMenuOpen(false);
+                                setActiveDropdown(null);
+                                setMobileDropdown(null);
+                              }}
+                            >
+                              {subItem.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                  </div>
                 ))}
               </div>
 
