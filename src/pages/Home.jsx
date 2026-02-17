@@ -1,11 +1,26 @@
 import { useState, useEffect } from "react";
-import { ExternalLink, Users, TreePine, Target, X } from "lucide-react";
+import { ExternalLink, Users, TreePine, Target, X, ChevronLeft, ChevronRight } from "lucide-react";
 import Guestbook from "../components/Guestbook";
 
 function Home() {
   const [activeTab, setActiveTab] = useState("info");
   const [fullscreenImage, setFullscreenImage] = useState(null);
   const [supporters, setSupporters] = useState([]);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    { image: '/slide0.jpg', caption: 'Photo by Nick Geron' },
+    { image: '/slide1.png', caption: 'Slide 1' },
+    { image: '/slide2.png', caption: 'Slide 2' }
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
 
   useEffect(() => {
     const loadSupporters = async () => {
@@ -53,10 +68,89 @@ function Home() {
   return (
     <div className="home">
       {/* Hero Section */}
-      <section className="hero home-hero" style={{ backgroundImage: 'url(/mainpic.png)' }}>
+      <section className="hero home-hero" style={{ backgroundImage: `url(${slides[currentSlide].image})` }}>
         <div className="hero-overlay">
+          {/* Title Text Box */}
+          <div
+            style={{
+              position: "absolute",
+              top: "2rem",
+              left: "20%",
+              transform: "translateX(-50%)",
+              background: "linear-gradient(to right, rgba(31, 56, 45, 0.99), rgba(95, 130, 75, 0.99))",
+              padding: "1.5rem 3rem",
+              borderRadius: "8px",
+              maxWidth: "90%",
+            }}
+          >
+            <h1
+              style={{
+                fontSize: "3.5rem",
+                fontWeight: "700",
+                textAlign: "left",
+                color: "white",
+                margin: 0,
+                lineHeight: 1.2,
+                fontFamily: "'Chakra Petch', sans-serif",
+              }}
+            >
+              Miyawaki Forest <br />Action Belmont
+            </h1>
+          </div>
+          
+          {/* Navigation Arrows */}
+          <button
+            onClick={prevSlide}
+            style={{
+              position: "absolute",
+              left: "2rem",
+              top: "50%",
+              transform: "translateY(-50%)",
+              background: "rgba(255, 255, 255, 0.8)",
+              border: "none",
+              borderRadius: "50%",
+              width: "50px",
+              height: "50px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: "pointer",
+              transition: "background 0.3s",
+              zIndex: 10,
+            }}
+            onMouseEnter={(e) => e.target.style.background = "rgba(255, 255, 255, 1)"}
+            onMouseLeave={(e) => e.target.style.background = "rgba(255, 255, 255, 0.8)"}
+          >
+            <ChevronLeft size={30} color="#2d5016" />
+          </button>
+          
+          <button
+            onClick={nextSlide}
+            style={{
+              position: "absolute",
+              right: "2rem",
+              top: "50%",
+              transform: "translateY(-50%)",
+              background: "rgba(255, 255, 255, 0.8)",
+              border: "none",
+              borderRadius: "50%",
+              width: "50px",
+              height: "50px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: "pointer",
+              transition: "background 0.3s",
+              zIndex: 10,
+            }}
+            onMouseEnter={(e) => e.target.style.background = "rgba(255, 255, 255, 1)"}
+            onMouseLeave={(e) => e.target.style.background = "rgba(255, 255, 255, 0.8)"}
+          >
+            <ChevronRight size={30} color="#2d5016" />
+          </button>
+          
           <p className="hero-caption">
-            Photo by Nick Geron
+            {slides[currentSlide].caption}
           </p>
           <div className="cta-buttons">
             <button onClick={handleDonateClick} className="btn btn-primary">
@@ -102,7 +196,7 @@ function Home() {
                   }} 
                 />
               </a>
-              <p style={{ fontSize: "1.6rem", color: "#666", marginTop: "0.5rem" }}>
+              <p style={{ fontSize: "1rem", color: "#666", marginTop: "0.5rem" }}>
                 See this great two minute video our high school students made <br></br>{" "}
              
               </p>
@@ -117,19 +211,19 @@ function Home() {
             >
               <h3 style={{ marginTop: "1.5rem" }}>
                 We're not done yet... 
-                
+                <br />
                 Sign up to volunteer in<br />Spring 2026!
               </h3>
 
               <div style={{ textAlign: "left", marginLeft: "2rem" }}>
-                <p style={{ fontSize: "1.05rem", lineHeight: "1.6", marginTop: "0.5rem", color: "#496914" }}>
+                <p style={{ fontSize: "1.3rem", lineHeight: "1.6", marginTop: "0.5rem", color: "#496914" }}>
                   Want to learn more about the forest? For an up close and personal
                   experience, come get your hands dirty and help take care of our forest
                   in its three-year infancy so that it can grow up to be a beautiful
                   contribution to our community!
                 </p>
                 <br />
-                <h3 style={{ fontSize: "1.2rem", fontWeight: 800, marginTop: "1.25rem", textAlign: "center" }}>
+                <h3 style={{ fontSize: "1.6rem", fontWeight: 800, marginTop: "1.25rem", textAlign: "center" }}>
                   Sign up for your place to be part of the forest growing experience!
                 </h3>
 
@@ -138,20 +232,6 @@ function Home() {
                     <ExternalLink size={20} />
                     Join Us As a Volunteer
                   </button>
-                </div>
-
-                <div
-                  style={{
-                    fontWeight: 700,
-                    fontSize: "1.05rem",
-                    marginTop: "1rem",
-                  }}
-                >
-                  Volunteers will participate in:
-                  <ul style={{ listStyle: "disc", textAlign: "left", margin: "0.25rem 0", maxWidth: "560px" }}>
-                    <li>Maintenance and monitoring trees</li>
-                    <li>Planting a native perennial collar around the forest</li>
-                  </ul>
                 </div>
 
                 <p style={{ fontSize: "0.95rem", lineHeight: "1.5", marginTop: "0.75rem" }}>

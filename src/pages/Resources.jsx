@@ -1,4 +1,20 @@
+import { ExternalLink } from "lucide-react";
+
 function Resources() {
+  const handleDonateClick = () => {
+    window.open(
+      "https://www.paypal.com/donate/?hosted_button_id=AWPNZ5U6E5SEA",
+      "_blank"
+    );
+  };
+
+  const handleVolunteerClick = () => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSc3wTa8GBYXXi5MYTqd0_zApMnH-Q-fZEIpIKF_Y_4HrAqrWQ/viewform",
+      "_blank"
+    );
+  };
+
   return (
     <div className="resources">
       {/* Hero Section */}
@@ -19,6 +35,17 @@ function Resources() {
           <div className="card">
             <h2>References and Resources</h2>
             <ul>
+              <li>
+                
+                <a
+                  href="https://www.csmonitor.com/Environment/2023/0922/Miyawaki-A-little-forest-with-a-towering-task-video"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Bio4Climate's blog post 
+                </a>
+                 - Bio4Climate's blog post documenting the making of the forest
+              </li>
               <li>
                 <a
                   href="https://homegrownnationalpark.org/symbiotic-schoolyard/"
@@ -55,7 +82,6 @@ function Resources() {
                   Photo by Hagerty Ryan, USFWS
                 </a>
               </li>
-              <li>Image from Google Maps - last update 2022</li>
               <li>
                 Bio4Climate's{" "}
                 <a
@@ -105,6 +131,44 @@ function Resources() {
               </li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* Ready to Make a Difference Section */}
+      <section
+        style={{
+          backgroundImage: "url('/difference.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          minHeight: "500px",
+          position: "relative",
+          display: "flex",
+          alignItems: "flex-end",
+          justifyContent: "flex-end",
+          padding: "2rem",
+        }}
+      >
+        <div
+          className="cta-buttons"
+          style={{
+            display: "flex",
+            gap: "1rem",
+            flexDirection: "column",
+            alignItems: "flex-end",
+          }}
+        >
+          <button onClick={handleDonateClick} className="btn btn-primary">
+            <ExternalLink size={20} />
+            Donate To Support Our Forest
+          </button>
+          <button
+            onClick={handleVolunteerClick}
+            className="btn btn-secondary"
+          >
+            <ExternalLink size={20} />
+            Join Us As a Volunteer
+          </button>
         </div>
       </section>
     </div>

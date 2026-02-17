@@ -83,10 +83,30 @@ function Gallery() {
       <section>
         <div className="container">
           <h2>Photos</h2>
-          <p style={{ fontStyle: "italic", color: "#666", marginTop: "-0.5rem" }}>
+
+          
+          <div style={{ 
+            backgroundColor: "white", 
+            padding: "1.5rem", 
+            borderRadius: "8px", 
+            marginBottom: "2rem",
+            boxShadow: "0 2px 4px rgba(0,0,0,0.1)"
+          }}>
+            <p style={{ margin: 0, textAlign: "center", color: "#333" }}>
+              To view more photos from our site visits, pre-planting and post-planting, planting day, and more, visit this{" "}
+              <a 
+                href="https://drive.google.com/drive/folders/1cADl3kJpkhvnod9IyHFp3ikT5oIBrJet?usp=sharing" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ color: "#719354", textDecoration: "underline" }}
+              >
+                link
+              </a>.
+            </p>
+          </div>
+          <p style={{ fontStyle: "italic", color: "#666", marginTop: "1rem", marginBottom: "1.5rem" }}>
             Click to Enlarge
           </p>
-
           {galleryImages.length === 0 ? (
             <div
               style={{
