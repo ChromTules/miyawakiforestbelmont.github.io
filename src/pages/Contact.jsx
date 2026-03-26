@@ -345,14 +345,14 @@ function Contact() {
       )}
 
       {/* Resources Section */}
-      <section className="section-alt">
-        <div className="container">
-          <div className="card" style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
+      <section className="ready-difference-section">
+        <div className="container" style={{ width: "100%" }}>
+          <div className="ready-difference-overlay">
             <h2>Ready to Make a Difference?</h2>
             <p>
-              Your support will benefit the forest, improving both human and non-human communities.
+              Your support will benefit the<br /> forest, improving both human<br /> and non-human communities.
             </p>
-            <div className="cta-buttons">
+            <div className="ready-difference-actions">
               <button onClick={handleDonateClick} className="btn btn-primary">
                 <ExternalLink size={20} />
                 Donate To Support Our Forest
@@ -367,10 +367,7 @@ function Contact() {
             </div>
             <br />
 
-            <div
-              className="contact-info"
-              style={{ textAlign: "center", marginTop: "30px" }}
-            >
+            <div className="ready-difference-contact">
               <h4>Have questions about volunteering and more?</h4>
               <p>
                 Contact Us:{" "}

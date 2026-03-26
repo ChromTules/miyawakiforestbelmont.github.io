@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import {
-  ChevronLeft,
-  ChevronRight,
   MapPin,
-  Calendar,
   ExternalLink
 } from "lucide-react";
 import Guestbook from "../components/Guestbook";
@@ -11,8 +8,6 @@ import Guestbook from "../components/Guestbook";
 function Gallery() {
   const [galleryImages, setGalleryImages] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const imagesPerPage = 6;
 
   useEffect(() => {
     const loadContent = async () => {
@@ -28,24 +23,6 @@ function Gallery() {
     };
     loadContent();
   }, []);
-
-  // Calculate pagination
-  const totalPages = Math.ceil(galleryImages.length / imagesPerPage);
-  const startIndex = (currentPage - 1) * imagesPerPage;
-  const endIndex = startIndex + imagesPerPage;
-  const currentImages = galleryImages.slice(startIndex, endIndex);
-
-  const goToNextPage = () => {
-    setCurrentPage((prev) => (prev < totalPages ? prev + 1 : 1));
-  };
-
-  const goToPrevPage = () => {
-    setCurrentPage((prev) => (prev > 1 ? prev - 1 : totalPages));
-  };
-
-  const goToPage = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
 
   const handleDonateClick = () => {
     window.open(
@@ -71,9 +48,9 @@ function Gallery() {
       <section className="hero">
         <div className="container">
           <div className="hero-content">
-            <h1>Progress Gallery</h1>
+            <h1>Photos</h1>
             <p className="subtitle" style={{ paddingTop: "40px" }}>
-              Follow our journey as we grow the Miyawaki forest together
+             Documenting our forest together as it grows
             </p>
           </div>
         </div>
@@ -82,7 +59,6 @@ function Gallery() {
       {/* Gallery Grid */}
       <section>
         <div className="container">
-          <h2>Photos</h2>
 
           
           <div style={{ 
@@ -121,110 +97,8 @@ function Gallery() {
             </div>
           ) : (
             <>
-              {/* Pagination Controls */}
-              {totalPages > 1 && (
-                <div
-                  className="pagination-controls"
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    gap: "1rem",
-                    marginBottom: "2rem",
-                  }}
-                >
-                  <button
-                    onClick={goToPrevPage}
-                    className="pagination-btn"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.5rem",
-                      padding: "0.5rem 1rem",
-                      backgroundColor: "#719354",
-                      color: "white",
-                      border: "none",
-                      borderRadius: "25px",
-                      cursor: "pointer",
-                      fontSize: "0.9rem",
-                      transition: "background-color 0.3s ease",
-                    }}
-                    onMouseEnter={(e) =>
-                      (e.target.style.backgroundColor = "#7fab5b")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.target.style.backgroundColor = "#719354")
-                    }
-                  >
-                    <ChevronLeft size={16} />
-                    
-                  </button>
-
-                  <div
-                    className="page-indicators"
-                    style={{
-                      display: "flex",
-                      gap: "0.5rem",
-                    }}
-                  >
-                    {Array.from({ length: totalPages }, (_, index) => (
-                      <button
-                        key={index + 1}
-                        onClick={() => goToPage(index + 1)}
-                        style={{
-                          width: "35px",
-                          height: "35px",
-                          borderRadius: "50%",
-                          border: "none",
-                          backgroundColor:
-                            currentPage === index + 1
-                              ? "#719354"
-                              : "#7fab5b",
-                          color: "white",
-                          cursor: "pointer",
-                          fontSize: "0.9rem",
-                          transition: "all 0.3s ease",
-                          transform:
-                            currentPage === index + 1
-                              ? "scale(1.1)"
-                              : "scale(1)",
-                        }}
-                      >
-                        {index + 1}
-                      </button>
-                    ))}
-                  </div>
-
-                  <button
-                    onClick={goToNextPage}
-                    className="pagination-btn"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.5rem",
-                      padding: "0.5rem 1rem",
-                      backgroundColor: "#719354",
-                      color: "white",
-                      border: "none",
-                      borderRadius: "25px",
-                      cursor: "pointer",
-                      fontSize: "0.9rem",
-                      transition: "background-color 0.3s ease",
-                    }}
-                    onMouseEnter={(e) =>
-                      (e.target.style.backgroundColor = "#7fab5b")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.target.style.backgroundColor = "#719354")
-                    }
-                  >
-                    <ChevronRight size={16} />
-                  </button>
-                </div>
-              )}
-
               <div className="gallery-grid">
-                {currentImages.map((item) => (
+                {galleryImages.map((item) => (
                   <div
                     key={item.date}
                     className="gallery-card"
@@ -260,22 +134,6 @@ function Gallery() {
                   </div>
                 ))}
               </div>
-
-              {/* Page Info */}
-              {totalPages > 1 && (
-                <div
-                  style={{
-                    textAlign: "center",
-                    marginTop: "1.5rem",
-                    color: "var(--text-light)",
-                    fontSize: "0.9rem",
-                  }}
-                >
-                  Showing {startIndex + 1}-
-                  {Math.min(endIndex, galleryImages.length)} of{" "}
-                  {galleryImages.length} progress updates
-                </div>
-              )}
             </>
           )}
         </div>
@@ -364,14 +222,14 @@ function Gallery() {
       )}
 
       {/* Resources Section */}
-      <section className="section-alt">
-        <div className="container">
-          <div className="card" style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
+      <section className="ready-difference-section">
+        <div className="container" style={{ width: "100%" }}>
+          <div className="ready-difference-overlay">
             <h2>Ready to Make a Difference?</h2>
             <p>
-              Your support will benefit the forest, improving both human and non-human communities.
+              Your support will benefit the<br /> forest, improving both human<br /> and non-human communities.
             </p>
-            <div className="cta-buttons">
+            <div className="ready-difference-actions">
               <button onClick={handleDonateClick} className="btn btn-primary">
                 <ExternalLink size={20} />
                 Donate To Support Our Forest
@@ -386,10 +244,7 @@ function Gallery() {
             </div>
             <br />
 
-            <div
-              className="contact-info"
-              style={{ textAlign: "center", marginTop: "30px" }}
-            >
+            <div className="ready-difference-contact">
               <h4>Have questions about volunteering and more?</h4>
               <p>
                 Contact Us:{" "}

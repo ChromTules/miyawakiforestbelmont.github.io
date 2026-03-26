@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ExternalLink, Users, TreePine, Target, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { ExternalLink, Users, TreePine, Target, Calendar, X, ChevronLeft, ChevronRight } from "lucide-react";
 import Guestbook from "../components/Guestbook";
 
 function Home() {
@@ -40,6 +40,7 @@ function Home() {
   const tabs = [
     { id: "info", label: "Miyawaki Forest Info", icon: <TreePine size={20} /> },
     { id: "location", label: "Where To Find It", icon: <Target size={20} /> },
+    { id: "updates", label: "Planting Day", icon: <Calendar size={20} /> },
     { id: "about", label: "Supporters", icon: <Users size={20} /> },
   ];
 
@@ -248,7 +249,7 @@ function Home() {
         </div>
       </section>
       {/* Tabbed Content Section */}
-      <section>
+      <section className="home-tabs-section">
         <div className="container">
           <div className="tabs-container">
             <div className="tabs-nav">
@@ -430,13 +431,22 @@ function Home() {
                       <br />
                       <div style={{ fontSize: "1.2rem", lineHeight: "1.5" }}>
                         <p>
-                          Mini-forest with surrounding mantle of perennials.
+                          <em>Diagram on right</em>: Mini-forest with surrounding mantle of perennials.
                           North and south native plant gardens outlined in blue.
                         </p>
                         <p style={{ fontSize: "1rem" }}>
                           Belmont High School's front lawn
                           <br />
                           221 Concord Ave, Belmont MA 02478
+                        </p>
+                        <p style={{ fontSize: "1rem", marginTop: "0.5rem" }}>
+                          <a
+                            href="https://maps.app.goo.gl/oshWXVLb8u6Jf28d9"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Find on Google Maps
+                          </a>
                         </p>
                       </div>
                     </div>
@@ -470,6 +480,10 @@ function Home() {
 
               {activeTab === "updates" && (
                 <div className="tab-panel">
+                  <div className="planting-day-hero">
+                    <img src="/assets/planting.jpg" alt="Planting Day" />
+                    <h2 className="planting-day-title">Planting Day</h2>
+                  </div>
                   <h2>Latest Updates & Upcoming Events</h2>
                   <div className="timeline-compact">
                     <div className="timeline-item-compact completed">
@@ -668,40 +682,26 @@ function Home() {
       )}
 
       {/* Resources Section */}
-      <section className="section-alt">
-        <div className="container">
-          <div className="card" style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
+      <section className="ready-difference-section">
+        <div className="container ready-difference-buttons-wrap ready-difference-home-layout" style={{ width: "100%" }}>
+          <div className="ready-difference-copy">
             <h2>Ready to Make a Difference?</h2>
             <p>
-              Your support will benefit the forest, improving both human and non-human communities.
+              Your support will benefit the<br /> forest. Improving both human<br /> and non-human communities.
             </p>
-            <div className="cta-buttons">
-              <button onClick={handleDonateClick} className="btn btn-primary">
-                <ExternalLink size={20} />
-                Donate To Support Our Forest
-              </button>
-              <button
-                onClick={handleVolunteerClick}
-                className="btn btn-secondary"
-              >
-                <ExternalLink size={20} />
-                Join Us As a Volunteer
-              </button>
-            </div>
-            <br />
-
-            <div
-              className="contact-info"
-              style={{ textAlign: "center", marginTop: "30px" }}
+          </div>
+          <div className="ready-difference-actions ready-difference-actions-corner">
+            <button onClick={handleDonateClick} className="btn btn-primary">
+              <ExternalLink size={20} />
+              Donate To Support Our Forest
+            </button>
+            <button
+              onClick={handleVolunteerClick}
+              className="btn btn-secondary"
             >
-              <h4>Have questions about volunteering and more?</h4>
-              <p>
-                Contact Us:{" "}
-                <a href="mailto:miniforestbelmont@gmail.com">
-                  miniforestbelmont@gmail.com
-                </a>
-              </p>
-            </div>
+              <ExternalLink size={20} />
+              Join Us As a Volunteer
+            </button>
           </div>
         </div>
       </section>

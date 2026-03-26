@@ -33,7 +33,6 @@ function Resources() {
       <section>
         <div className="container">
           <div className="card">
-            <h2>References and Resources</h2>
             <ul>
               <li>
                 
@@ -135,40 +134,38 @@ function Resources() {
       </section>
 
       {/* Ready to Make a Difference Section */}
-      <section
-        style={{
-          backgroundImage: "url('/difference.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          minHeight: "500px",
-          position: "relative",
-          display: "flex",
-          alignItems: "flex-end",
-          justifyContent: "flex-end",
-          padding: "2rem",
-        }}
-      >
-        <div
-          className="cta-buttons"
-          style={{
-            display: "flex",
-            gap: "1rem",
-            flexDirection: "column",
-            alignItems: "flex-end",
-          }}
-        >
-          <button onClick={handleDonateClick} className="btn btn-primary">
-            <ExternalLink size={20} />
-            Donate To Support Our Forest
-          </button>
-          <button
-            onClick={handleVolunteerClick}
-            className="btn btn-secondary"
-          >
-            <ExternalLink size={20} />
-            Join Us As a Volunteer
-          </button>
+      <section className="ready-difference-section">
+        <div className="container" style={{ width: "100%" }}>
+          <div className="ready-difference-overlay">
+            <h2>Ready to Make a Difference?</h2>
+            <p>
+              Your support will benefit the<br /> forest, improving both human<br /> and non-human communities.
+            </p>
+            <div className="ready-difference-actions">
+              <button onClick={handleDonateClick} className="btn btn-primary">
+                <ExternalLink size={20} />
+                Donate To Support Our Forest
+              </button>
+              <button
+                onClick={handleVolunteerClick}
+                className="btn btn-secondary"
+              >
+                <ExternalLink size={20} />
+                Join Us As a Volunteer
+              </button>
+            </div>
+            <br />
+
+            <div className="ready-difference-contact">
+              <h4>Have questions about volunteering and more?</h4>
+              <p>
+                Contact Us:{" "}
+                <a href="mailto:miniforestbelmont@gmail.com">
+                  miniforestbelmont@gmail.com
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
