@@ -4,7 +4,7 @@
       "id": 25051801,
       "image": "public/assets/images/20250518_130018.jpg",
       "message": "Native plant sale fundraiser",
-      "location": "Belmont", 
+      "location": "Belmont",
       "date": "05/18/2025"
     },
     {
@@ -13,7 +13,6 @@
       "message": "David Mussina's photo of the future forest",
       "location": "Belmont High School",
       "date": "05/07/2025"
-      
     },
     {
       "id": 25060401,
@@ -44,13 +43,6 @@
       "date": "08/19/2025"
     },
     {
-      "id": 25081900,
-      "image": "public/assets/images/img_2506.jpg",
-      "message": "Preparation for adding amendments to soil",
-      "location": "BHS",
-      "date": "08/19/2025"
-    },
-    {
       "id": 25082201,
       "message": "Mulch spread over amended soil",
       "location": "BHS",
@@ -58,24 +50,10 @@
       "date": "08/22/2025"
     },
     {
-      "id": 25082202,
-      "message": "Already a rainbow and a goldfinch visited the site",
-      "location": "BHS",
-      "image": "public/assets/images/img_7080.jpeg",
-      "date": "08/22/2025"
-    },
-    {
       "id": 100401,
       "image": "public/assets/images/dsc_3771.jpg",
       "message": "Photo booth forest-makers",
       "location": "BHS",
-      "date": "10/04/2025"
-    },
-    {
-      "id": 100402,
-      "image": "public/assets/images/dji_0349-2.jpg",
-      "message": "Prof. N. Geron's drone image before planting",
-      "location": "Belmont",
       "date": "10/04/2025"
     }
   ]
