@@ -170,7 +170,7 @@ function Home() {
       </section>
       <section className="section-alt">
         <div className="container">
-          <div style={{ display: "flex", gap: "2rem", maxWidth: "1200px", margin: "0 auto" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "2rem", maxWidth: "900px", margin: "0 auto" }}>
             {/* First Card - We Planted The Forest */}
             <div
               className="card"
@@ -211,36 +211,23 @@ function Home() {
               style={{ flex: 1, textAlign: "center" }}
             >
               <h3 style={{ marginTop: "1.5rem" }}>
-                We're not done yet... 
-                <br />
-                Sign up to volunteer in<br />Spring 2026!
+                Collect data for the Phenology Project!
               </h3>
 
-              <div style={{ textAlign: "left", marginLeft: "2rem" }}>
+              <div style={{ textAlign: "left", margin: "0 auto", maxWidth: "680px" }}>
                 <p style={{ fontSize: "1.3rem", lineHeight: "1.6", marginTop: "0.5rem", color: "#496914" }}>
-                  Want to learn more about the forest? For an up close and personal
-                  experience, come get your hands dirty and help take care of our forest
-                  in its three-year infancy so that it can grow up to be a beautiful
-                  contribution to our community!
+                  The Mini-forest needs you to observe and collect data on seasonal phenomena like bud break, leaf growth, flowering, fruiting, and leaf drop, starting <b>April 2026!</b>
+                  <br />
+                  <br />
+                  This data contributes to the National Phenology Network's research in studying trends in climate change.
                 </p>
                 <br />
-                <h3 style={{ fontSize: "1.6rem", fontWeight: 800, marginTop: "1.25rem", textAlign: "center" }}>
-                  Sign up for your place to be part of the forest growing experience!
-                </h3>
 
-                <div className="cta-buttons" style={{ justifyContent: "center", marginTop: "1rem" }}>
-                  <button onClick={handleVolunteerClick} className="btn btn-secondary">
-                    <ExternalLink size={20} />
-                    Join Us As a Volunteer
-                  </button>
-                </div>
-
-                <p style={{ fontSize: "0.95rem", lineHeight: "1.5", marginTop: "0.75rem" }}>
-                  Volunteers will be trained in care of the forest, so{" "}
-                  <span style={{ textDecoration: "underline" }}>
-                    no need for extensive gardening experience,
-                  </span>{" "}
-                  just interest in helping the forest to succeed!
+                <p style={{ fontSize: "1.1rem", lineHeight: "1.5", marginTop: "0.75rem" }}>
+                  See this short <a href="https://www.youtube.com/watch?v=Eo3rVgEePfw" target="_blank" rel="noopener noreferrer">video</a> for more information.
+                  <br></br>
+                  <br></br>
+                  <i>More information under Programs</i>
                 </p>
 
               </div>
