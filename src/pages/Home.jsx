@@ -72,29 +72,8 @@ function Home() {
       <section className="hero home-hero" style={{ backgroundImage: `url(${slides[currentSlide].image})` }}>
         <div className="hero-overlay">
           {/* Title Text Box */}
-          <div
-            style={{
-              position: "absolute",
-              top: "2rem",
-              left: "20%",
-              transform: "translateX(-50%)",
-              background: "linear-gradient(to right, rgba(31, 56, 45, 0.99), rgba(95, 130, 75, 0.99))",
-              padding: "1.5rem 3rem",
-              borderRadius: "8px",
-              maxWidth: "90%",
-            }}
-          >
-            <h1
-              style={{
-                fontSize: "3.5rem",
-                fontWeight: "700",
-                textAlign: "left",
-                color: "white",
-                margin: 0,
-                lineHeight: 1.2,
-                fontFamily: "'Chakra Petch', sans-serif",
-              }}
-            >
+          <div className="home-hero-title-box">
+            <h1 className="home-hero-title">
               Miyawaki Forest <br />Action Belmont
             </h1>
           </div>
@@ -102,50 +81,16 @@ function Home() {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            style={{
-              position: "absolute",
-              left: "2rem",
-              top: "50%",
-              transform: "translateY(-50%)",
-              background: "rgba(255, 255, 255, 0.8)",
-              border: "none",
-              borderRadius: "50%",
-              width: "50px",
-              height: "50px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: "pointer",
-              transition: "background 0.3s",
-              zIndex: 10,
-            }}
-            onMouseEnter={(e) => e.target.style.background = "rgba(255, 255, 255, 1)"}
-            onMouseLeave={(e) => e.target.style.background = "rgba(255, 255, 255, 0.8)"}
+            className="hero-nav-arrow hero-nav-arrow-left"
+            aria-label="Previous slide"
           >
             <ChevronLeft size={30} color="#2d5016" />
           </button>
           
           <button
             onClick={nextSlide}
-            style={{
-              position: "absolute",
-              right: "2rem",
-              top: "50%",
-              transform: "translateY(-50%)",
-              background: "rgba(255, 255, 255, 0.8)",
-              border: "none",
-              borderRadius: "50%",
-              width: "50px",
-              height: "50px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: "pointer",
-              transition: "background 0.3s",
-              zIndex: 10,
-            }}
-            onMouseEnter={(e) => e.target.style.background = "rgba(255, 255, 255, 1)"}
-            onMouseLeave={(e) => e.target.style.background = "rgba(255, 255, 255, 0.8)"}
+            className="hero-nav-arrow hero-nav-arrow-right"
+            aria-label="Next slide"
           >
             <ChevronRight size={30} color="#2d5016" />
           </button>
@@ -170,7 +115,7 @@ function Home() {
       </section>
       <section className="section-alt">
         <div className="container">
-          <div style={{ display: "flex", flexDirection: "column", gap: "2rem", maxWidth: "900px", margin: "0 auto" }}>
+          <div className="home-intro-stack">
             {/* First Card - We Planted The Forest */}
             <div
               className="card"
@@ -320,13 +265,7 @@ function Home() {
                       <h2 style={{ marginLeft: "-1rem" }}>
                         The Mini-Forest will:
                       </h2>
-                      <div
-                        style={{
-                          display: "flex",
-                          gap: "1rem",
-                          alignItems: "flex-start",
-                        }}
-                      >
+                      <div className="home-benefits-layout">
                         <ul
                           className="benefits-list"
                           style={{ flex: "1", margin: "0" }}
@@ -353,14 +292,7 @@ function Home() {
                           <img
                             src="/forestbenefits.png"
                             alt="Forest benefits illustration"
-                            style={{
-                              width: "600px",
-                              height: "auto",
-                              borderRadius: "8px",
-                              flexShrink: 0,
-                              marginTop: "-3rem",
-                              cursor: "pointer",
-                            }}
+                            className="home-benefits-image"
                             onClick={() =>
                               openFullscreen(
                                 "/forestbenefits.png",
@@ -383,13 +315,9 @@ function Home() {
               {activeTab === "location" && (
                 <div className="tab-panel" id="location">
                   <div
-                    style={{
-                      display: "flex",
-                      gap: "1rem",
-                      alignItems: "flex-start",
-                    }}
+                    className="home-location-layout"
                   >
-                    <div style={{ flex: "1" }}>
+                    <div className="home-location-main">
                       <figure>
                         <img
                           src="/3dview.png"
@@ -441,13 +369,7 @@ function Home() {
                       <img
                         src="/2dview.png"
                         alt="2D view of forest location"
-                        style={{
-                          width: "300px",
-                          height: "400px",
-                          borderRadius: "8px",
-                          flexShrink: 0,
-                          cursor: "pointer",
-                        }}
+                        className="home-location-secondary"
                         onClick={() =>
                           openFullscreen(
                             "/2dview.png",
@@ -599,7 +521,7 @@ function Home() {
                       <br />
                       <div
                         className="grid grid-2"
-                        style={{ marginLeft: "7rem" }}
+                        style={{ marginLeft: "0" }}
                       >
                         {supporters.length > 0 ? (
                           <>

@@ -196,7 +196,7 @@ function Header() {
                 alt="Miyawaki Forest Action Belmont Logo"
                 className="logo-image"
               />
-              <span style={{ fontSize: "0.9rem" }}>
+              <span className="logo-text">
                 Miyawaki Forest Action Belmont
               </span>
             </Link>

@@ -136,6 +136,7 @@ function Fosters() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                flexWrap: "wrap",
                 gap: "1rem",
                 marginBottom: "2rem",
               }}
@@ -311,7 +312,7 @@ function Fosters() {
       {/* Submit your own */}
       <div
         className="cta-buttons"
-        style={{ textAlign: "center", margin: "0 40%" }}
+        style={{ textAlign: "center", justifyContent: "center", margin: "0 auto", padding: "0 1rem" }}
       >
         <button onClick={handleSubmitClick} className="btn btn-primary">
           <ExternalLink size={20} />

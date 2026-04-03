@@ -215,16 +215,12 @@ function Contact() {
         <div className="container">
           <h2>Frequently Asked Questions</h2>
 
-          <div style={{ 
-            display: "grid", 
-            gridTemplateColumns: "repeat(3, 1fr)", 
-            gap: "1rem", 
-            marginTop: "2rem" 
-          }}>
+          <div className="faq-grid">
             {faqData.map((faq, index) => (
               <div key={index}>
                 <div
                   onClick={() => toggleFAQ(index)}
+                  className="faq-card"
                   style={{
                     backgroundColor: "white",
                     padding: "1.5rem",
@@ -237,7 +233,7 @@ function Contact() {
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
-                    textAlign: "center"
+                    textAlign: "center",
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "translateY(-4px)";
