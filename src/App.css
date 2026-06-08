@@ -145,11 +145,24 @@ main {
 }
 
 .home-intro-stack {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
+}
+
+.home-intro-card {
+  height: 100%;
+}
+
+.home-intro-card-wide {
+  grid-column: 1 / -1;
+}
+
+.home-intro-container {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .home-benefits-layout,
@@ -455,7 +468,7 @@ main {
 }
 
 .home-tabs-section {
-  background: #e5ffcf;
+  background: #8ab495ff;
   border-radius: 12px;
   padding: 1.5rem;
 }
@@ -477,13 +490,23 @@ main {
 
 .planting-day-title {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 3rem;
+  left: 3rem;
   margin: 0;
   color: white;
   font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 800;
   text-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+.planting-day-caption {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 1);
+  font-size: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .ready-difference-section {
@@ -697,6 +720,19 @@ main {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .home-intro-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .home-intro-card-wide {
+    grid-column: auto;
+  }
+
+  .home-intro-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;

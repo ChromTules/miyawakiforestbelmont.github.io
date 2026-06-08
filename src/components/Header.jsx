@@ -27,7 +27,7 @@ function Header() {
       label: "Programs",
       dropdown: [
         { path: "/studying-forest", label: "Studying the Forest" },
-        { path: "/programs-tbd", label: "TBD" },
+        { path: "/programs-poetry", label: "Poetry Contest" },
       ],
     },
     {
@@ -70,7 +70,7 @@ function Header() {
       content:
         "Community planting event volunteers training planting techniques October 2025",
       section: "Events",
-      url: "/updates",
+      url: "/planting-day",
     },
     {
       title: "Project Updates",

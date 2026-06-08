@@ -7,6 +7,8 @@ import Updates from "./pages/Updates";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Resources from "./pages/Resources";
+import ProgramsPoetry from "./pages/ProgramsPoetry";
+import PlantingDay from "./pages/PlantingDay";
 import "./App.css";
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
             <Route path="/updates" element={<Updates />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/programs-poetry" element={<ProgramsPoetry />} />
+            <Route path="/planting-day" element={<PlantingDay />} />
           </Routes>
         </main>
         <Footer />

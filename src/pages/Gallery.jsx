@@ -68,7 +68,7 @@ function Gallery() {
             marginBottom: "2rem",
             boxShadow: "0 2px 4px rgba(0,0,0,0.1)"
           }}>
-            <p style={{ margin: 0, textAlign: "center", color: "#333" }}>
+            <p style={{ margin: 0, textAlign: "center", color: "#131313" }}>
               To view more photos from our site visits, pre-planting and post-planting, planting day, and more, visit this{" "}
               <a 
                 href="https://drive.google.com/drive/folders/1cADl3kJpkhvnod9IyHFp3ikT5oIBrJet?usp=sharing" 

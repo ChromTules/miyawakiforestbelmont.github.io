@@ -279,8 +279,8 @@ function Fosters() {
                   </div> */}
                 </div>
                 <div className="gallery-info">
-                  <h3>{person.name}</h3>
-                  <h3 style={{fontSize:"1.4rem", marginBottom:"0.2rem"}}>{person.treeType}</h3>
+                  <p style={{fontSize:"1.5rem"}}>{person.name}</p>
+                  <p style={{fontSize:"1.1rem", marginBottom:"0.2rem"}}>{person.treeType}</p>
                   {/* <p className="message">{person.message}</p>
                   <div className="location">
                     <MapPin size={14} />

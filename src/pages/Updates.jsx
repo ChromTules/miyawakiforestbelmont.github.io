@@ -251,91 +251,16 @@ function Updates() {
       <section className="hero">
         <div className="container">
           <div className="hero-content">
-            <h1>Project Progress</h1>
+            <h1>News Archive</h1>
             <p className="subtitle" style={{ paddingTop: "40px" }}>
-              Track the development of our community forest
+              Our news and publicity for the forest
             </p>
           </div>
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="section-alt">
-        <div className="container">
-          <div className="timeline">
-            {timelineUpdates.map((update, index) => (
-              <div key={update.id} className="timeline-item">
-                <div className="timeline-content">
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.5rem",
-                      marginBottom: "0.5rem",
-                    }}
-                  >
-                    <div
-                      style={{
-                        color:
-                          update.status === "completed"
-                            ? "var(--forest-green)"
-                            : "var(--soft-blue)",
-                      }}
-                    >
-                      {update.icon}
-                    </div>
-                    <span
-                      style={{
-                        color: "var(--text-light)",
-                        fontSize: "0.9rem",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "0.25rem",
-                      }}
-                    >
-                      <Calendar size={16} />
-                      {update.date}
-                    </span>
-                  </div>
-                  <h3>{update.title}</h3>
-                  <p>{update.description}</p>
-                  <div
-                    style={{
-                      marginTop: "0.5rem",
-                      padding: "0.25rem 0.75rem",
-                      borderRadius: "20px",
-                      fontSize: "0.8rem",
-                      fontWeight: "500",
-                      display: "inline-block",
-                      backgroundColor:
-                        update.status === "completed"
-                          ? "rgba(45, 90, 61, 0.1)"
-                          : "rgba(107, 141, 181, 0.1)",
-                      color:
-                        update.status === "completed"
-                          ? "var(--forest-green)"
-                          : "var(--soft-blue)",
-                    }}
-                  >
-                    {update.status === "completed"
-                      ? "✓ Completed"
-                      : "⏳ Upcoming"}
-                  </div>
-                </div>
-                <div
-                  className="timeline-dot"
-                  style={{
-                    backgroundColor:
-                      update.status === "completed"
-                        ? "var(--forest-green)"
-                        : "var(--soft-blue)",
-                  }}
-                ></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
+
 
       {/* CMS News Updates */}
       {newsUpdates.length > 0 && (

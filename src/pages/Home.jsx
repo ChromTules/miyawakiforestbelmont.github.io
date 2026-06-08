@@ -10,8 +10,8 @@ function Home() {
 
   const slides = [
     { image: '/slide0.jpg', caption: 'Photo by Nick Geron' },
-    { image: '/slide1.png', caption: 'Slide 1' },
-    { image: '/slide2.png', caption: 'Slide 2' }
+    { image: '/slide1.png', caption: 'Student Photo-Op in anticipation of the forest. Photo by David Mussina' },
+    { image: '/slide2.png', caption: 'MFAB and volunteers building the winter fence!' }
   ];
 
   const nextSlide = () => {
@@ -40,7 +40,6 @@ function Home() {
   const tabs = [
     { id: "info", label: "Miyawaki Forest Info", icon: <TreePine size={20} /> },
     { id: "location", label: "Where To Find It", icon: <Target size={20} /> },
-    { id: "updates", label: "Planting Day", icon: <Calendar size={20} /> },
     { id: "about", label: "Supporters", icon: <Users size={20} /> },
   ];
 
@@ -114,11 +113,11 @@ function Home() {
         </div>
       </section>
       <section className="section-alt">
-        <div className="container">
+        <div className="container home-intro-container">
           <div className="home-intro-stack">
             {/* First Card - We Planted The Forest */}
             <div
-              className="card"
+              className="card home-intro-card"
               style={{ flex: 1, textAlign: "center" }}
             >
               <h3 style={{ marginTop: "1.5rem"}}>We Planted The Forest!</h3>
@@ -150,9 +149,28 @@ function Home() {
 
             </div>
 
+            {/* Announcements Card */}
+            <div
+              className="card home-intro-card"
+              style={{ flex: 1, textAlign: "center" }}
+            >
+              <h3 style={{ marginTop: "1.5rem" }}>Announcements</h3>
+              <p style={{ fontSize: "1.6rem", color: "#496914ff", marginTop: "-2rem" }}>
+                <br />
+                We invite all Belmont students to participate in our 2026 Mini-Poetry Contest!
+                <br />
+                Prompt: What you are observing in or near the forest?
+              </p><h3>
+                Submit to this <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFBv0lQYjxVebCbBkjFc5aEe0z_seKovkqDng6RLHWg2sogg/viewform">form</a> by September 4, 2026.</h3>
+              <p style={{ fontSize: "1.1rem", lineHeight: "1.5", marginTop: "0.75rem" }}>
+                <br />
+                For more information, visit Programs Tab.
+              </p>
+            </div>
+
             {/* Second Card - We're not done yet */}
             <div
-              className="card"
+              className="card home-intro-card home-intro-card-wide"
               style={{ flex: 1, textAlign: "center" }}
             >
               <h3 style={{ marginTop: "1.5rem" }}>
@@ -387,80 +405,6 @@ function Home() {
                 </div>
               )}
 
-              {activeTab === "updates" && (
-                <div className="tab-panel">
-                  <div className="planting-day-hero">
-                    <img src="/assets/planting.jpg" alt="Planting Day" />
-                    <h2 className="planting-day-title">Planting Day</h2>
-                  </div>
-                  <h2>Latest Updates & Upcoming Events</h2>
-                  <div className="timeline-compact">
-                    <div className="timeline-item-compact completed">
-                      <div className="timeline-date">July 2025</div>
-                      <div className="timeline-content-compact">
-                        <h4>Project Website Launch</h4>
-                        <p>
-                          Our official website is now live! Share it to help
-                          spread awareness.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="timeline-item-compact completed">
-                      <div className="timeline-date">June 2025</div>
-                      <div className="timeline-content-compact">
-                        <h4>Site Selection Completed</h4>
-                        <p>
-                          Perfect 3,000 sq ft location selected with optimal
-                          conditions.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="timeline-item-compact upcoming">
-                      <div className="timeline-date">August 2025</div>
-                      <div className="timeline-content-compact">
-                        <h4>Volunteer Training Program</h4>
-                        <p>
-                          Training sessions for volunteers on planting
-                          techniques.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="timeline-item-compact upcoming">
-                      <div className="timeline-date">October 2025</div>
-                      <div className="timeline-content-compact">
-                        <h4>Community Planting Day</h4>
-                        <p>
-                          Our planting date is Saturday, October 4th 2025 from
-                          10 AM to 6 PM at the Triangle in front of Belmont High
-                          School by Clay Pit Pond, 221 Concord Ave.
-                          <br></br>
-                          <br></br>Our rain date is October 5th
-                          <br></br>
-                          <br></br>
-                          We are seeking volunteers to help bring Belmont's
-                          first mini-forest to life by planting hundreds of
-                          native plants. If you’d like to be part of this
-                          transformative project, please fill out this sign-up
-                          form to express your interest in volunteering. All
-                          ages able to participate in planting are encouraged to
-                          join!
-                          <br></br>
-                          <br></br>
-                          The forest will need stewards and volunteers to plant
-                          seedlings, spread mulch, and organize materials.
-                          <br></br>
-                          <br></br>
-                          After the planting, for the next three growing
-                          seasons, volunteers will maintain and monitor the
-                          forest. This including weeding, litter removal and
-                          data collection. More information on how to get
-                          involved with post-planting will be released later!
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
 
               {activeTab === "about" && (
                 <div className="tab-panel">
