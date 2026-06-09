@@ -32,7 +32,7 @@ function Header() {
     },
     {
       label: "Updates",
-      dropdown: [{ path: "/updates", label: "News" }],
+      dropdown: [{ path: "/updates", label: "News Archive" }],
     },
     { path: "/resources", label: "Resources" },
     { path: "/contact", label: "About Us" },

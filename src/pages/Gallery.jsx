@@ -66,7 +66,7 @@ function Gallery() {
             padding: "1.5rem", 
             borderRadius: "8px", 
             marginBottom: "2rem",
-            boxShadow: "0 2px 4px rgba(0,0,0,0.1)"
+            boxShadow: "0 2px 4px rgba(0,0,0,0.7)"
           }}>
             <p style={{ margin: 0, textAlign: "center", color: "#131313" }}>
               To view more photos from our site visits, pre-planting and post-planting, planting day, and more, visit this{" "}

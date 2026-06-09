@@ -259,8 +259,40 @@ function Updates() {
         </div>
       </section>
 
-      
-
+      {/* In the News */}
+      <section>
+        <div className="container">
+          <h2 style={{ textAlign: "center", marginBottom: "1.5rem" }}>In the News</h2>
+          <div style={{ textAlign: "center", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))", gap: "1.5rem", marginBottom: "2rem" }}>
+            {[
+              {
+                src: "/mighty.png",
+                title: "Belmont prepares for a 'Tiny but Mighty Forest'",
+                href: "https://belmontvoice.org/belmont-prerepares-for-a-tiny-but-mighty-forest/"
+              },
+              {
+                src: "/construction.png",
+                title: "A Miyawaki Forest Sprouts in Belmont",
+                href: "https://www.youtube.com/watch?v=FbT0SXctqVw"
+              },
+              {
+                src: "/gems.png",
+                title: "Garden Gems: Miyawaki Mini-Forest Coming to Belmont",
+                href: "https://belmontvoice.org/miyawaki-mini-forest-coming-to-belmont/"
+              }
+            ].map(({ src, title, href }) => (
+              <div key={href} style={{ borderRadius: "8px", overflow: "hidden", boxShadow: "0 2px 4px rgba(0,0,0,0.7)", backgroundColor: "white" }}>
+                <img src={src} alt={title} style={{ width: "100%", height: "200px", objectFit: "cover", display: "block" }} />
+                <div style={{ padding: "0.75rem 1rem" }}>
+                  <a href={href} target="_blank" rel="noopener noreferrer" style={{ color: "#719354", textDecoration: "underline", fontWeight: "600", fontSize: "0.95rem" }}>
+                    {title}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CMS News Updates */}
       {newsUpdates.length > 0 && (
@@ -326,41 +358,7 @@ function Updates() {
 
         
       )}
-      {/* Resources Section */}
-      <section className="ready-difference-section">
-        <div className="container" style={{ width: "100%" }}>
-          <div className="ready-difference-overlay">
-            <h2>Ready to Make a Difference?</h2>
-            <p>
-              Your support will benefit the<br /> forest, improving both human<br /> and non-human communities.
-            </p>
-            <div className="ready-difference-actions">
-              <button onClick={handleDonateClick} className="btn btn-primary">
-                <ExternalLink size={20} />
-                Donate To Support Our Forest
-              </button>
-              <button
-                onClick={handleVolunteerClick}
-                className="btn btn-secondary"
-              >
-                <ExternalLink size={20} />
-                Join Us As a Volunteer
-              </button>
-            </div>
-            <br />
-
-            <div className="ready-difference-contact">
-              <h4>Have questions about volunteering and more?</h4>
-              <p>
-                Contact Us:{" "}
-                <a href="mailto:miniforestbelmont@gmail.com">
-                  miniforestbelmont@gmail.com
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
       {/* Guestbook */}
       <Guestbook />
