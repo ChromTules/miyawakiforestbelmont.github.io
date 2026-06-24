@@ -57,7 +57,7 @@ We're working to plant our first Miyawaki forest in Belmont - a 3,000 square foo
 
 ## 🌐 Our Website
 
-Visit our website at [miyawakiforestsbelmont.github.io](https://miyawakiforestsbelmont.github.io) to:
+Visit our website at [https://miyawakiforestbelmont.netlify.app/](https://miyawakiforestbelmont.netlify.app/) to:
 
 - **Learn** about the Miyawaki method and its benefits
 - **Donate** securely through our online platform
