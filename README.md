@@ -115,24 +115,11 @@ Visit our website at [https://miyawakiforestbelmont.netlify.app/](https://miyawa
 
 _For technical team members managing the website_
 
-### Quick Deployment (GitHub Pages)
+### Quick Deployment (Netlify)
 
 1. **Push changes** to the main branch of this repository
-2. **GitHub Actions will automatically** build and deploy the site
-3. **Site will be live** at miyawakiforestsbelmont.github.io within 5-10 minutes
-
-### Manual Deployment
-
-```bash
-# Install dependencies (first time only)
-npm install
-
-# Build the website
-npm run build
-
-# Deploy to GitHub Pages
-npm run deploy
-```
+2. Netlify will build and deploy the site
+3. **Site will be live** at [https://miyawakiforestbelmont.netlify.app/](https://miyawakiforestbelmont.netlify.app/) within a few minutes
 
 ### Local Development
 
