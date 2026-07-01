@@ -63,6 +63,8 @@ function Footer() {
             All rights reserved.
           <br></br>
           Website created by Andrew Ma, and Michelle Oishi with the help of Holly Kong
+          <br></br>
+          Jason Zhao
         </div>
       </div>
     </footer>
