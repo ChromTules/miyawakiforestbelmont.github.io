@@ -64,6 +64,7 @@ function Footer() {
           <br></br>
           Website created by Andrew Ma, and Michelle Oishi with the help of Holly Kong
         </div>
+        Jason
       </div>
     </footer>
   );
