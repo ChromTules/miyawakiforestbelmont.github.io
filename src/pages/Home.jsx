@@ -178,14 +178,12 @@ function Home() {
               </h3>
 
               <div style={{ textAlign: "left", margin: "0 auto", maxWidth: "680px" }}>
-                <p style={{ fontSize: "1.3rem", lineHeight: "1.6", marginTop: "0.5rem", color: "#496914" }}>
-                  The Mini-forest needs you to observe and collect data on seasonal phenomena like bud break, leaf growth, flowering, fruiting, and leaf drop, starting <b>April 2026!</b>
+                <p style={{fontSize: "1.3rem", lineHeight: "1.6", marginTop: "0.5rem", color: "#496914",}}>
+                  Phenology Happy Hour will be on summer vacation <b>June 28–September 6</b>.
                   <br />
-                  <br />
-                  This data contributes to the National Phenology Network's research in studying trends in climate change.
+                  See you Sunday, <b>Sept. 13 at 4:00 PM!</b>
                 </p>
-                <br />
-
+ 
                 <p style={{ fontSize: "1.1rem", lineHeight: "1.5", marginTop: "0.75rem" }}>
                   See this short <a href="https://www.youtube.com/watch?v=Eo3rVgEePfw" target="_blank" rel="noopener noreferrer">video</a> for more information.
                   <br></br>
