@@ -566,7 +566,7 @@ main {
   text-shadow: 0 3px 14px rgba(0, 0, 0, 0.5);
 }
 
-.ready-difference-copy h2 {
+/*.ready-difference-copy h2 {
   margin: 0 0 0.5rem 0;
   color: white;
   font-size: clamp(2rem, 4.2vw, 3.4rem);
@@ -578,6 +578,22 @@ main {
   margin: 0;
   font-size: 1.05rem;
   color: white;
+}
+*/
+
+.ready-difference-copy h2 {
+  margin: 0 0 0.5rem 0;
+  color: white;
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.ready-difference-copy p {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: white;
+  line-height: 1.4;
 }
 
 .ready-difference-contact {
