@@ -1,6 +1,8 @@
 function PlantingDay() {
   return (
     <div className="planting-day">
+      
+      {/*}
       <section className="hero">
         <div className="container">
           <div className="hero-content">
@@ -11,7 +13,7 @@ function PlantingDay() {
           </div>
         </div>
       </section>
-
+      */}
       <section className="section-alt">
         <div className="container">
           <div className="planting-day-hero">

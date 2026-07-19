@@ -19,6 +19,7 @@ function Header() {
       label: "The Forest",
       dropdown: [
         { path: "/planting-day", label: "Planting Day" },
+        { path: "/interactive-map", label: "Interactive Map" },
         { path: "/gallery", label: "Photos" },
         { path: "/fosters", label: "Fosters" },
       ],
