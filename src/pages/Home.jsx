@@ -9,10 +9,14 @@ function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    { image: '/slide0.jpg', caption: 'Photo by Nick Geron' },
-    { image: '/slide1.png', caption: 'Student Photo-Op in anticipation of the forest. Photo by David Mussina' },
-    { image: '/slide2.png', caption: 'MFAB and volunteers building the winter fence!' }
-  ];
+  { image: '/slide0.jpg', caption: 'Photo by Nick Geron' },
+  { image: '/slide1.png', caption: 'Student Photo-Op in anticipation of the forest. Photo by David Mussina' },
+  { image: '/slide2.png', caption: 'MFAB and volunteers building the winter fence!' },
+  { image: '/slide3.jpg', caption: '' },
+  { image: '/slide4.jpg', caption: '' },
+  { image: '/slide5.jpg', caption: '' },
+  { image: '/slide6.jpg', caption: '' }
+];
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -112,86 +116,152 @@ function Home() {
           </div>
         </div>
       </section>
-      <section className="section-alt">
-        <div className="container home-intro-container">
-          <div className="home-intro-stack">
-            {/* First Card - We Planted The Forest */}
-            <div
-              className="card home-intro-card"
-              style={{ flex: 1, textAlign: "center" }}
-            >
-              <h3 style={{ marginTop: "1.5rem"}}>We Planted The Forest!</h3>
-              <p style={{ fontSize: "1.6rem", color: "#496914ff", marginTop: "-2rem"}}>
-                <br />
-                On Saturday, October 4th 2025, MFAB and <strong>275 volunteers</strong> planted <strong>over 1,100
-                saplings</strong> at Belmont High School.
-              </p>
+      <section className="home-feature-section">
+        <div className="home-feature-container">
+          <h2 className="home-announcements-title">Announcements</h2>
 
-              <a href="https://youtu.be/-snRZlOdbms" target="_blank" rel="noopener noreferrer">
-                <img 
-                  src="/digging.png" 
-                  alt="Volunteers digging - Click to watch video" 
-                  style={{ 
-                    width: "100%", 
-                    maxWidth: "500px", 
-                    margin: "1.5rem auto 0", 
-                    display: "block",
-                    borderRadius: "8px",
-                    cursor: "pointer"
-                  }} 
+          <div className="home-feature-row home-feature-top">
+            <div className="home-programs-column">
+              <div className="home-program-block home-poetry-block">
+                <h3>Enter Our 2026 Mini Poetry Contest</h3>
+
+                <p>
+                  We invite all Belmont students to participate in our 2026
+                  Mini-Poetry Contest.
+                </p>
+
+                <p>
+                  <strong>Prompt:</strong> What are you observing in or near the forest?
+                </p>
+
+                <h4>
+                  Submit to this{" "}
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSeFBv0lQYjxVebCbBkjFc5aEe0z_seKovkqDng6RLHWg2sogg/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    form
+                  </a>{" "}
+                  by September 4, 2026.
+                </h4>
+
+                <p className="home-feature-small">
+                  For more information, visit Programs.
+                </p>
+              </div>
+
+              <div className="home-feature-divider" aria-hidden="true"></div>
+
+              <div className="home-program-block home-phenology-block">
+                <h3>Collect data for the Phenology Project!</h3>
+
+                <p>
+                  Phenology Happy Hour will be on summer vacation{" "}
+                  <strong>June 28–September 6.</strong>
+                  <br />
+                  See you Sunday, <strong>Sept. 13 at 4:00 PM!</strong>
+                </p>
+
+                <p className="home-feature-small">
+                  See this short{" "}
+                  <a
+                    href="https://www.youtube.com/watch?v=Eo3rVgEePfw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    video
+                  </a>{" "}
+                  for more information.
+                </p>
+
+                <p className="home-feature-small">
+                  <em>More information under Programs</em>
+                </p>
+              </div>
+            </div>
+
+            <div className="home-feature-image-wrap">
+              <div
+                className="home-image-decoration home-image-decoration-yellow"
+                aria-hidden="true"
+              ></div>
+              <div
+                className="home-image-decoration home-image-decoration-sage"
+                aria-hidden="true"
+              ></div>
+              <img
+                src="/black-eyed-susans.jpg"
+                alt="Black-eyed Susans beside the Miyawaki Forest"
+                className="home-feature-image"
+              />
+            </div>
+          </div>
+
+          {/* Photo stand row */}
+          <div className="home-photo-stand-row">
+            <div className="home-photo-stand-group-wrap">
+              <img
+                src="/smiles.jpg"
+                alt="MFAB volunteers and supporters smiling in front of the forest"
+                className="home-photo-stand-group-image"
+              />
+              <p className="home-photo-stand-group-caption">
+                All smiles at the Forest!
+              </p>
+            </div>
+
+            <div className="home-photo-stand-info">
+              <div className="home-photo-stand-copy">
+                <h2>Our New<br />Photo Stand</h2>
+                <p>
+                  Come take photos at the photo stand and help document the
+                  growing forest through the seasons! Selfies welcome!
+                </p>
+                <p className="home-photo-stand-location">
+                  Located Southwest of the Forest, facing the school
+                </p>
+              </div>
+
+              <div className="home-photo-stand-image-wrap">
+                <img
+                  src="/photostand.jpg"
+                  alt="Wooden photo stand beside the Miyawaki Forest"
+                  className="home-photo-stand-image"
+                />
+                <p className="home-photo-stand-image-caption">Our Photo Stand</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="home-feature-row home-planted-row">
+            <div className="home-planted-copy">
+              <h2>We Planted The Forest!</h2>
+
+              <p>
+                On Saturday, October 4th 2025, MFAB and{" "}
+                <strong>275 volunteers</strong> planted{" "}
+                <strong>over 1,100 saplings</strong> at Belmont High School.
+              </p>
+            </div>
+
+            <div className="home-video-wrap">
+              <a
+                href="https://youtu.be/-snRZlOdbms"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="home-video-link"
+              >
+                <img
+                  src="/digging.png"
+                  alt="Volunteers planting the Miyawaki Forest"
+                  className="home-video-image"
                 />
               </a>
-              <p style={{ fontSize: "1rem", color: "#666", marginTop: "0.5rem" }}>
-                See this great two minute video our high school students made <br></br>{" "}
-             
+
+              <p className="home-video-caption">
+                See this great two minute video our high school students made
               </p>
-
-
-            </div>
-
-            {/* Announcements Card */}
-            <div
-              className="card home-intro-card"
-              style={{ flex: 1, textAlign: "center" }}
-            >
-              <h3 style={{ marginTop: "1.5rem" }}>Announcements</h3>
-              <p style={{ fontSize: "1.6rem", color: "#496914ff", marginTop: "-2rem" }}>
-                <br />
-                We invite all Belmont students to participate in our 2026 Mini-Poetry Contest!
-                <br />
-                Prompt: What you are observing in or near the forest?
-              </p><h3>
-                Submit to this <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFBv0lQYjxVebCbBkjFc5aEe0z_seKovkqDng6RLHWg2sogg/viewform">form</a> by September 4, 2026.</h3>
-              <p style={{ fontSize: "1.1rem", lineHeight: "1.5", marginTop: "0.75rem" }}>
-                <br />
-                For more information, visit Programs Tab.
-              </p>
-            </div>
-
-            {/* Second Card - We're not done yet */}
-            <div
-              className="card home-intro-card home-intro-card-wide"
-              style={{ flex: 1, textAlign: "center" }}
-            >
-              <h3 style={{ marginTop: "1.5rem" }}>
-                Collect data for the Phenology Project!
-              </h3>
-
-              <div style={{ textAlign: "left", margin: "0 auto", maxWidth: "680px" }}>
-                <p style={{fontSize: "1.3rem", lineHeight: "1.6", marginTop: "0.5rem", color: "#496914",}}>
-                  Phenology Happy Hour will be on summer vacation <b>June 28–September 6</b>.
-                  <br />
-                  See you Sunday, <b>Sept. 13 at 4:00 PM!</b>
-                </p>
- 
-                <p style={{ fontSize: "1.1rem", lineHeight: "1.5", marginTop: "0.75rem" }}>
-                  See this short <a href="https://www.youtube.com/watch?v=Eo3rVgEePfw" target="_blank" rel="noopener noreferrer">video</a> for more information.
-                  <br></br>
-                  <br></br>
-                  <i>More information under Programs</i>
-                </p>
-
-              </div>
             </div>
           </div>
         </div>

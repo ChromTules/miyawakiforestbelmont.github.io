@@ -11,6 +11,7 @@ import ProgramsPoetry from "./pages/ProgramsPoetry";
 import PlantingDay from "./pages/PlantingDay";
 import "./App.css";
 import InteractiveMap from "./pages/InteractiveMap";
+import StudyingForest from "./pages/StudyingForest";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/programs-poetry" element={<ProgramsPoetry />} />
             <Route path="/planting-day" element={<PlantingDay />} />
             <Route path="/interactive-map" element={<InteractiveMap />} />
+            <Route path="/studying-forest" element={<StudyingForest />} />
           </Routes>
         </main>
         <Footer />
