@@ -143,7 +143,7 @@ function Home() {
                   >
                     form
                   </a>{" "}
-                  by September 4, 2026.
+                  by September 18, 2026.
                 </h4>
 
                 <p className="home-feature-small">
