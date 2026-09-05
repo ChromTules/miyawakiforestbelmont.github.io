@@ -62,7 +62,7 @@ function Footer() {
             &copy; {new Date().getFullYear()} Miyawaki Forest Action Belmont.
             All rights reserved.
           <br></br>
-          Website created by Andrew Ma, and Michelle Oishi with the help of Holly Kong
+          Website maintained and developed by Jason Zhao
         </div>
       </div>
     </footer>

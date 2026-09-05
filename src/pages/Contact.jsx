@@ -202,8 +202,11 @@ function Contact() {
                 Anne-Marie Lambert <br />
                 Ranganath Nayak <br />
                 Michelle Oishi <br />
+                AJ Shaw <br />
+                Jessica Birte Smith <br />
                 Kirsten Waerstad <br />
                 Sarah Wang <br />
+                Jason Zhao <br />
               </div>
             </div>
           </div>

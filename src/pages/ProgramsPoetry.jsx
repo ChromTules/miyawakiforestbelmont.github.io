@@ -4,7 +4,9 @@ function ProgramsPoetry() {
       {/* Keep the green hero banner */}
       <section className="hero">
         <div className="container">
-          <h1>2026 Mini-Poetry Contest</h1>
+        <h1 style={{ transform: "translateY(30px)" }}>
+          2026 Mini-Poetry Contest
+        </h1>
 
           <p className="subtitle" style={{ paddingTop: "40px" }}>
             Contest details and submission information
@@ -54,7 +56,7 @@ function ProgramsPoetry() {
 
             <p>
               <strong>Submission Deadline:</strong> End of day Friday September
-              4, 2026
+              18, 2026
               <br />
               <strong>Categories:</strong> Separate winners for grades K-3, 4-6,
               7-8, and 9-13 &amp; up to three honorable mentions for each group

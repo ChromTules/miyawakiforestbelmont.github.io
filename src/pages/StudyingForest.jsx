@@ -4,18 +4,9 @@ import "../App.css";
 function StudyingForest() {
   return (
     <div>
-      <section className="hero studying-forest-hero">
-        <div className="container">
-          <h1>Phenology Project</h1>
-
-          <p className="subtitle">
-            Help us document how the forest changes through the seasons.
-          </p>
-        </div>
-      </section>
-
       <main className="studying-forest-page">
         <div className="studying-forest-container">
+
           <div className="phenology-image-wrapper">
             <img
               src="/phenology-red-maple.jpg"
@@ -29,6 +20,11 @@ function StudyingForest() {
           </div>
 
           <div className="phenology-content">
+
+            <h1 className="phenology-title">
+              Phenology Project
+            </h1>
+
             <p className="phenology-intro">
               Join us to collect data on seasonal phenomena such as bud break,
               leaf growth, flowering, fruiting, and leaf drop to help the
@@ -43,6 +39,16 @@ function StudyingForest() {
                 <li>On 9-10 trees during the growing season</li>
               </ul>
             </div>
+
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScEmt1Bg0T-mhlZ_dE6TRlVrZ7EQ34nygG8D-ELzAwk5Alkzw/viewform?usp=sharing&ouid=110659987342295856505"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="phenology-signup-button"
+            >
+              Sign up form
+            </a>
+
           </div>
         </div>
       </main>

@@ -107,18 +107,6 @@ function Fosters() {
 
   return (
     <div className="gallery">
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="container">
-          <div className="hero-content">
-            <h1>Our Fosters</h1>
-            <p className="subtitle" style={{ paddingTop: "40px" }}>
-              Meet the amazing people who are fostering saplings for our
-              Miyawaki forest
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* Gallery Grid */}
       <section>

@@ -145,9 +145,8 @@ function Home() {
                   </a>{" "}
                   by September 18, 2026.
                 </h4>
-
                 <p className="home-feature-small">
-                  For more information, visit Programs.
+                  <em>More information under Programs</em>
                 </p>
               </div>
 
@@ -206,9 +205,13 @@ function Home() {
                 alt="MFAB volunteers and supporters smiling in front of the forest"
                 className="home-photo-stand-group-image"
               />
+            
               <p className="home-photo-stand-group-caption">
                 All smiles at the Forest!
+              <br />
+                Pictured: Sarah Wang, AJ Shaw, Richard Waring, Jessica Smith, Jean Devine
               </p>
+
             </div>
 
             <div className="home-photo-stand-info">

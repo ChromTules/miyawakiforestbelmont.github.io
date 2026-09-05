@@ -10,16 +10,20 @@ main {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(
-    135deg,
-    var(--dark-teal) 20%,
-    var(--text-light) 80%
-  );
   color: white;
   padding: 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+
+/* Standard green banner for interior pages only */
+.hero:not(.home-hero) {
+  background: #5f7f4a;
+  height: 260px;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .hero-content {
@@ -149,8 +153,8 @@ main {
 }
 
 .home-feature-container {
-  width: min(1240px, 100%);
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 }
 
 .home-announcements-title {
@@ -178,7 +182,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0 0.5rem max(2rem, calc((100vw - 1240px) / 2));
 }
 
 .home-program-block {
@@ -192,11 +196,6 @@ main {
   font-size: clamp(1.75rem, 2.4vw, 2.2rem);
   line-height: 1.2;
   font-weight: 500;
-}
-
-.home-phenology-block h3 {
-  color: var(--forest-green);
-  font-weight: 700;
 }
 
 .home-program-block h4 {
@@ -237,9 +236,9 @@ main {
   height: 100%;
   min-height: 575px;
   display: grid;
-  grid-template-columns: 7% 14% 1fr;
+  grid-template-columns: 9% 9% 1fr;
   overflow: hidden;
-  border-radius: 0 24px 24px 0;
+  border-radius: 0;
 }
 
 .home-image-decoration {
@@ -315,33 +314,39 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transform: translateX(-1.5rem);
 }
 
 .home-photo-stand-copy h2 {
   color: var(--forest-green);
-  font-size: clamp(2.2rem, 3.4vw, 3.25rem);
-  line-height: 1.02;
-  margin: 0 0 1.4rem;
+  font-size: clamp(2.6rem, 3.8vw, 3.6rem);
+  line-height: 1.05;
+  margin: 0 0 1.5rem;
 }
 
 .home-photo-stand-copy p {
   color: var(--sage-green);
-  font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+  font-size: clamp(1.3rem, 1.9vw, 1.65rem);
   line-height: 1.45;
   margin-bottom: 1.4rem;
 }
 
 .home-photo-stand-location {
-  margin-top: auto;
+  margin-top: 1.25rem !important;
   margin-bottom: 0 !important;
+  font-size: 1.15rem !important;
+  font-style: italic;
+  line-height: 1.4;
 }
 
 .home-photo-stand-image-wrap {
   position: relative;
   min-height: 390px;
-  border: 6px solid #f1c94a;
+  border: 7px solid #f4cf5a;
   border-radius: 30px;
+  padding: 7px;
   overflow: hidden;
+  background: white;
 }
 
 .home-photo-stand-image {
@@ -351,6 +356,7 @@ main {
   object-fit: cover;
   object-position: center;
   display: block;
+  border-radius: 20px;
 }
 
 .home-photo-stand-image-caption {
@@ -1031,7 +1037,7 @@ main {
 
   .home-feature-image-wrap {
     min-height: 430px;
-    grid-template-columns: 8% 15% 1fr;
+    grid-template-columns: 9% 9% 1fr;
   }
 
   .home-feature-image {
@@ -1248,144 +1254,152 @@ main {
    STUDYING THE FOREST / PHENOLOGY
    ========================================= */
 
-.studying-forest-hero {
-  padding: 3.5rem 0;
-  min-height: auto;
-}
+/* =========================================
+   STUDYING THE FOREST / PHENOLOGY
+   ========================================= */
 
-.studying-forest-hero h1 {
-  margin: 0;
-  color: white;
-  font-size: clamp(3rem, 5vw, 4.6rem);
-}
-
-.studying-forest-hero .subtitle {
-  margin: 1rem 0 0;
-  padding: 0 !important;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: clamp(1.25rem, 2vw, 1.6rem);
-}
-
-.studying-forest-page {
-  padding: 4rem 2rem 5rem;
-  background: white;
-}
-
-.studying-forest-container {
-  width: min(1450px, 100%);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(380px, 0.8fr) minmax(0, 1.6fr);
-  gap: clamp(4rem, 7vw, 7rem);
-  align-items: stretch;
-}
-
-.phenology-image-wrapper {
-  position: relative;
-  height: 600px;
-}
-
-.phenology-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 42px;
-  display: block;
-}
-
-.phenology-image-caption {
-  position: absolute;
-  bottom: 18px;
-  left: 30px;
-  color: white;
-  font-size: 1.15rem;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-}
-
-.phenology-content {
-  height: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.phenology-intro {
-  color: var(--forest-green);
-  font-size: clamp(2rem, 2.7vw, 2.65rem);
-  line-height: 1.28;
-  margin: 0 0 3rem;
-  max-width: 900px;
-}
-
-.phenology-training {
-  color: var(--sage-green);
-}
-
-.phenology-training p {
-  color: var(--sage-green);
-  font-size: clamp(1.85rem, 2.5vw, 2.35rem);
-  line-height: 1.3;
-  margin: 0 0 0.65rem;
-}
-
-.phenology-training ul {
-  margin: 0;
-  padding-left: 3.25rem;
-}
-
-.phenology-training li {
-  color: var(--sage-green);
-  font-size: clamp(1.75rem, 2.35vw, 2.2rem);
-  line-height: 1.4;
-  padding-left: 0.35rem;
-}
-
-@media (max-width: 900px) {
-  .studying-forest-hero {
-    padding: 2.75rem 1rem;
+   .studying-forest-page {
+    padding: 3rem 4rem 4rem;
+    background: white;
   }
-
-  .studying-forest-page {
-    padding: 3rem 1.25rem;
-  }
-
+  
   .studying-forest-container {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+    width: min(1380px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(380px, 500px) minmax(0, 1fr);
+    gap: clamp(3rem, 5vw, 5rem);
+    align-items: center;
   }
-
+  
+  /* LEFT IMAGE */
+  
   .phenology-image-wrapper {
-    height: 520px;
+    position: relative;
+    height: 650px;
   }
-
+  
+  .phenology-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 55px;
+    display: block;
+  }
+  
+  .phenology-image-caption {
+    position: absolute;
+    bottom: 22px;
+    left: 36px;
+    color: white;
+    font-size: 1.05rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* RIGHT CONTENT */
+  
   .phenology-content {
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 850px;
   }
-
+  
+  .phenology-title {
+    color: var(--forest-green);
+    font-size: clamp(2.8rem, 4vw, 4rem);
+    line-height: 1.05;
+    font-weight: 700;
+    margin: 0 0 2.5rem;
+  }
+  
   .phenology-intro {
-    font-size: 1.7rem;
+    color: var(--forest-green);
+    font-size: clamp(1.65rem, 2.2vw, 2.1rem);
+    line-height: 1.35;
+    margin: 0 0 2.5rem;
+  }
+  
+  .phenology-training {
+    color: #5f7d2b;
     margin-bottom: 2rem;
   }
-
+  
   .phenology-training p {
-    font-size: 1.6rem;
+    color: #5f7d2b;
+    font-size: clamp(1.55rem, 2vw, 1.9rem);
+    line-height: 1.3;
+    margin: 0 0 0.35rem;
   }
-
+  
+  .phenology-training ul {
+    margin: 0;
+    padding-left: 2.6rem;
+  }
+  
   .phenology-training li {
-    font-size: 1.5rem;
+    color: #5f7d2b;
+    font-size: clamp(1.45rem, 1.9vw, 1.8rem);
+    line-height: 1.35;
+    padding-left: 0.5rem;
   }
-}
-
-.poetry-submit-section {
-  display: flex;
-  justify-content: center;
-  margin: 2.25rem 0;
-}
-
-.poetry-submit-btn {
-  padding: 0.9rem 2.25rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 10px;
-}
+  
+  /* SIGN-UP BUTTON */
+  
+  .phenology-signup-button {
+    display: inline-block;
+    width: fit-content;
+    background: #dbead2;
+    color: #704018;
+    padding: 0.8rem 3.5rem;
+    border-radius: 14px;
+    font-size: 2rem;
+    line-height: 1.2;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  
+  .phenology-signup-button:hover {
+    background: #cfdfc6;
+    transform: translateY(-2px);
+  }
+  
+  /* MOBILE */
+  
+  @media (max-width: 900px) {
+    .studying-forest-page {
+      padding: 2.5rem 1.25rem;
+    }
+  
+    .studying-forest-container {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  
+    .phenology-image-wrapper {
+      height: 520px;
+    }
+  
+    .phenology-title {
+      font-size: 2.6rem;
+      margin-bottom: 1.75rem;
+    }
+  
+    .phenology-intro {
+      font-size: 1.5rem;
+    }
+  
+    .phenology-training p {
+      font-size: 1.45rem;
+    }
+  
+    .phenology-training li {
+      font-size: 1.35rem;
+    }
+  
+    .phenology-signup-button {
+      font-size: 1.6rem;
+    }
+  }
