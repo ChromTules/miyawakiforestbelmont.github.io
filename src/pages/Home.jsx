@@ -113,6 +113,13 @@ function Home() {
               <ExternalLink size={20} />
               Join Us As a Volunteer
             </button>
+            <button
+              onClick={() => (window.location.href = "/interactive-map")}
+              className="btn btn-secondary"
+            >
+              <ExternalLink size={20} />
+              Check Out Our Interactive Map!
+            </button>
           </div>
         </div>
       </section>
@@ -122,63 +129,65 @@ function Home() {
 
           <div className="home-feature-row home-feature-top">
             <div className="home-programs-column">
-              <div className="home-program-block home-poetry-block">
-                <h3>Enter Our 2026 Mini Poetry Contest</h3>
+                <div className="home-program-block home-poetry-block">
+                  <h3 style={{ color: "#3f642f" }}>Enter Our 2026 Mini Poetry Contest</h3>
 
-                <p>
-                  We invite all Belmont students to participate in our 2026
-                  Mini-Poetry Contest.
-                </p>
+                  <p>
+                    We invite all Belmont students to participate in our 2026
+                    Mini-Poetry Contest.
+                  </p>
 
-                <p>
-                  <strong>Prompt:</strong> What are you observing in or near the forest?
-                </p>
+                  <p>
+                    <strong>Prompt:</strong> What are you observing in or near the forest?
+                  </p>
 
-                <h4>
-                  Submit to this{" "}
-                  <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSeFBv0lQYjxVebCbBkjFc5aEe0z_seKovkqDng6RLHWg2sogg/viewform"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    form
-                  </a>{" "}
-                  by September 18, 2026.
-                </h4>
-                <p className="home-feature-small">
-                  <em>More information under Programs</em>
-                </p>
+                  <h4>
+                    Submit to this{" "}
+                    <a
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSeFBv0lQYjxVebCbBkjFc5aEe0z_seKovkqDng6RLHWg2sogg/viewform"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      form
+                    </a>{" "}
+                    by September 18, 2026.
+                  </h4>
+
+                  <p className="home-feature-small">
+                    <em>For more information, visit Programs.</em>
+                  </p>
+                </div>
+
+                <div className="home-feature-divider" aria-hidden="true"></div>
+
+                <div className="home-program-block home-phenology-block">
+                  <h3 style={{ color: "#3f642f" }}>Collect data for the Phenology Project!</h3>
+
+                  <p>
+                    Phenology Happy Hour will be on summer vacation{" "}
+                    <strong>June 28–September 6.</strong>
+                    <br />
+                    See you Sunday, <strong>Sept. 13 at 4:00 PM!</strong>
+                  </p>
+
+                  <p className="home-feature-small">
+                    See this short{" "}
+                    <a
+                      href="https://www.youtube.com/watch?v=Eo3rVgEePfw"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      video
+                    </a>{" "}
+                    for more information.
+                  </p>
+
+                  <p className="home-feature-small">
+                    <em>More information under Programs</em>
+                  </p>
+                </div>
+
               </div>
-
-              <div className="home-feature-divider" aria-hidden="true"></div>
-
-              <div className="home-program-block home-phenology-block">
-                <h3>Collect data for the Phenology Project!</h3>
-
-                <p>
-                  Phenology Happy Hour will be on summer vacation{" "}
-                  <strong>June 28–September 6.</strong>
-                  <br />
-                  See you Sunday, <strong>Sept. 13 at 4:00 PM!</strong>
-                </p>
-
-                <p className="home-feature-small">
-                  See this short{" "}
-                  <a
-                    href="https://www.youtube.com/watch?v=Eo3rVgEePfw"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    video
-                  </a>{" "}
-                  for more information.
-                </p>
-
-                <p className="home-feature-small">
-                  <em>More information under Programs</em>
-                </p>
-              </div>
-            </div>
 
             <div className="home-feature-image-wrap">
               <div
@@ -197,6 +206,186 @@ function Home() {
             </div>
           </div>
 
+          {/* Community Dedication announcement */}
+          <div
+            className="home-dedication-section"
+            style={{
+              marginTop: "3rem",
+              padding: "0 clamp(1.5rem, 4vw, 4rem)",
+            }}
+          >
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "minmax(0, 1.15fr) minmax(320px, 0.85fr)",
+                gap: "2rem",
+                alignItems: "stretch",
+                background: "white",
+                overflow: "hidden",
+              }}
+            >
+              <div
+                className="home-dedication-block"
+                style={{
+                  color: "#5f7d52",
+                  position: "relative",
+                  padding: "1.25rem 1.5rem",
+                }}
+              >
+                <h2
+                  style={{
+                    color: "#3f642f",
+                    fontSize: "clamp(1.6rem, 2.5vw, 2.2rem)",
+                    lineHeight: "1.15",
+                    margin: "0 0 0.8rem",
+                  }}
+                >
+                  Come help us celebrate the Belmont High School Mini-Forest One
+                  Year after Planting!
+                </h2>
+
+                <p style={{ marginBottom: "0.7rem", lineHeight: "1.5", color: "#5f7d52" }}>
+                  <strong style={{ color: "#5f7d52" }}>Who:</strong> Volunteers, students, teachers, and all
+                  Belmont community members looking for good news about restoring
+                  land to a healthier state.
+                </p>
+
+                <p style={{ marginBottom: "0.7rem", lineHeight: "1.5", color: "#5f7d52" }}>
+                  <strong style={{ color: "#5f7d52" }}>What:</strong> Belmont High School Mini-Forest Community
+                  Dedication. We will celebrate with a Birthday Party featuring
+                  Arts &amp; Crafts, Mini-Forest Tours, Mini-Poetry Contest
+                  Winners, Science Stories and Games about the Forest, and more!
+                </p>
+
+                <p style={{ marginBottom: "0.7rem", lineHeight: "1.5", color: "#5f7d52" }}>
+                  <strong style={{ color: "#5f7d52" }}>Where:</strong> Outside the entrance to Belmont High
+                  School,{" "}
+                  <a
+                    href="https://www.google.com/maps/search/221+Concord+Avenue?entry=gmail&source=g"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "#6f42a1" }}
+                  >
+                    221 Concord Avenue
+                  </a>
+                </p>
+
+                <p style={{ marginBottom: "0.7rem", lineHeight: "1.5", color: "#5f7d52" }}>
+                  <strong style={{ color: "#5f7d52" }}>When:</strong>{" "}
+                  <span style={{ color: "#d35400", fontWeight: 700 }}>
+                    2:00 - 3:30 PM, Saturday, October 3, 2026
+                  </span>
+                </p>
+
+                <p style={{ marginBottom: "1rem", lineHeight: "1.6" }}>
+                  <strong style={{ color: "#5f7d52" }}>Why:</strong>{" "}
+                  <span style={{ color: "#5f7d52" }}>
+                    Miyawaki Forest Action Belmont (MFAB) would like to thank
+                    those who made the forest possible with a Birthday Party,
+                    and invite educators to use the Mini-Forest as a Living
+                    Laboratory to help us navigate climate challenges ahead as
+                    a community.
+                  </span>
+                </p>
+
+                <p style={{ margin: 0, lineHeight: "1.5", color: "#5f7d52" }}>
+                  <strong style={{ color: "#5f7d52" }}>More information:</strong>{" "}
+                  <a href="mailto:miniforestbelmont@gmail.com" style={{ color: "#6f42a1" }}>
+                    miniforestbelmont@gmail.com
+                  </a>
+                </p>
+              </div>
+
+              <div
+                style={{
+                  minHeight: "100%",
+                  background: "white",
+                }}
+              >
+                <img
+                  src="/dedication-drone.jpg"
+                  alt="Recent aerial view of the Belmont High School Mini-Forest"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    minHeight: "340px",
+                    objectFit: "cover",
+                    display: "block",
+                    borderRadius: "24px",
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Native Plant Perennial Collar Planting announcement */}
+          <div
+            className="home-perennial-section"
+            style={{
+              marginTop: "2rem",
+              padding: "0 clamp(1.5rem, 4vw, 4rem)",
+            }}
+          >
+            <div
+              style={{
+                background: "white",
+                padding: "1rem 0",
+                color: "#5f7d52",
+              }}
+            >
+              <h3
+                style={{
+                  color: "#3f642f",
+                  fontSize: "clamp(1.75rem, 2.4vw, 2.2rem)",
+                  lineHeight: "1.2",
+                  fontWeight: 500,
+                  margin: "0 0 0.7rem",
+                }}
+              >
+                Native Plant Perennial Collar Planting
+              </h3>
+
+              <p style={{ margin: "0 0 0.7rem", lineHeight: "1.5", color: "#5f7d52" }}>
+                The BHS Mini-Forest is getting a collar of perennial plants! The
+                forest does not exist in isolation but lives with a transitional
+                border that protects it from drying heat and wind. We planted a
+                forest, and now we are starting the first of three installments
+                of a forest edge. This first planting will consist of 25
+                perennial species totaling 343 plants, all native to our
+                ecoregion, which will support pollinators and, by extension, the
+                greater habitat. We invite you to help grow this piece of nature
+                restoration in Belmont!
+              </p>
+
+              <p style={{ margin: "0 0 0.7rem", lineHeight: "1.5" }}>
+                <a
+                  href="https://grasshoppersignup.com/respond/aeb53106-492f-4521-b762-dfc8ea2717b8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#6f42a1" }}
+                >
+                  Sign up here
+                </a>{" "}
+                <span style={{ color: "#d35400", fontWeight: 700 }}>
+                  Friday Sept. 18, 10 - noon
+                </span>{" "}
+                to help prep and stage and/or{" "}
+                <span style={{ color: "#d35400", fontWeight: 700 }}>
+                  Saturday Sept. 19, 1 - 4
+                </span>{" "}
+                to plant.
+              </p>
+
+              <p style={{ margin: 0, lineHeight: "1.5", color: "#5f7d52" }}>
+                Questions? Email Sarah at{" "}
+                <a href="mailto:miniforestbelmont@gmail.com" style={{ color: "#6f42a1" }}>
+                  miniforestbelmont@gmail.com
+                </a>
+                .
+              </p>
+            </div>
+          </div>
+
           {/* Photo stand row */}
           <div className="home-photo-stand-row">
             <div className="home-photo-stand-group-wrap">
@@ -205,13 +394,9 @@ function Home() {
                 alt="MFAB volunteers and supporters smiling in front of the forest"
                 className="home-photo-stand-group-image"
               />
-            
               <p className="home-photo-stand-group-caption">
                 All smiles at the Forest!
-              <br />
-                Pictured: Sarah Wang, AJ Shaw, Richard Waring, Jessica Smith, Jean Devine
               </p>
-
             </div>
 
             <div className="home-photo-stand-info">
