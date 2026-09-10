@@ -272,7 +272,7 @@ function Home() {
 
                 <p style={{ marginBottom: "0.7rem", lineHeight: "1.5", color: "#5f7d52" }}>
                   <strong style={{ color: "#5f7d52" }}>When:</strong>{" "}
-                  <span style={{ color: "#d35400", fontWeight: 700 }}>
+                  <span style={{ color: "#3f642f", fontWeight: 700 }}>
                     2:00 - 3:30 PM, Saturday, October 3, 2026
                   </span>
                 </p>
@@ -300,6 +300,7 @@ function Home() {
                 style={{
                   minHeight: "100%",
                   background: "white",
+                  position: "relative",
                 }}
               >
                 <img
@@ -314,6 +315,19 @@ function Home() {
                     borderRadius: "24px",
                   }}
                 />
+                <span
+                  style={{
+                    position: "absolute",
+                    right: "14px",
+                    bottom: "12px",
+                    fontSize: "0.8rem",
+                    fontStyle: "italic",
+                    color: "white",
+                    textShadow: "0 1px 4px rgba(0, 0, 0, 0.75)",
+                  }}
+                >
+                  Photo by Jennifer Tidwell
+                </span>
               </div>
             </div>
           </div>
@@ -366,11 +380,11 @@ function Home() {
                 >
                   Sign up here
                 </a>{" "}
-                <span style={{ color: "#d35400", fontWeight: 700 }}>
+                <span style={{ color: "#3f642f", fontWeight: 700 }}>
                   Friday Sept. 18, 10 - noon
                 </span>{" "}
                 to help prep and stage and/or{" "}
-                <span style={{ color: "#d35400", fontWeight: 700 }}>
+                <span style={{ color: "#3f642f", fontWeight: 700 }}>
                   Saturday Sept. 19, 1 - 4
                 </span>{" "}
                 to plant.
