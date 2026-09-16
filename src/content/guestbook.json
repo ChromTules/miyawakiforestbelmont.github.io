@@ -1,6 +1,17 @@
 {
   "comments": [
     {
+      "name": "<img src=x onerror=alert(1)>",
+      "message": "xss test",
+      "relations": [
+        "Student"
+      ],
+      "id": "91d7cf7868083699",
+      "timestamp": "2026-09-16T14:13:58.080Z",
+      "userId": "09d5b2a1e0f0844e",
+      "replies": []
+    },
+    {
       "name": "audit_test",
       "message": "test",
       "relations": [
