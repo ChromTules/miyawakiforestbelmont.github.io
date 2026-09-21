@@ -127,90 +127,11 @@ function Home() {
         <div className="home-feature-container">
           <h2 className="home-announcements-title">Announcements</h2>
 
-          <div className="home-feature-row home-feature-top">
-            <div className="home-programs-column">
-                <div className="home-program-block home-poetry-block">
-                  <h3 style={{ color: "#3f642f" }}>Enter Our 2026 Mini Poetry Contest</h3>
-
-                  <p>
-                    We invite all Belmont students to participate in our 2026
-                    Mini-Poetry Contest.
-                  </p>
-
-                  <p>
-                    <strong>Prompt:</strong> What are you observing in or near the forest?
-                  </p>
-
-                  <h4>
-                    Submit to this{" "}
-                    <a
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSeFBv0lQYjxVebCbBkjFc5aEe0z_seKovkqDng6RLHWg2sogg/viewform"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      form
-                    </a>{" "}
-                    by September 18, 2026.
-                  </h4>
-
-                  <p className="home-feature-small">
-                    <em>For more information, visit Programs.</em>
-                  </p>
-                </div>
-
-                <div className="home-feature-divider" aria-hidden="true"></div>
-
-                <div className="home-program-block home-phenology-block">
-                  <h3 style={{ color: "#3f642f" }}>Collect data for the Phenology Project!</h3>
-
-                  <p>
-                    Phenology Happy Hour will be on summer vacation{" "}
-                    <strong>June 28–September 6.</strong>
-                    <br />
-                    See you Sunday, <strong>Sept. 13 at 4:00 PM!</strong>
-                  </p>
-
-                  <p className="home-feature-small">
-                    See this short{" "}
-                    <a
-                      href="https://www.youtube.com/watch?v=Eo3rVgEePfw"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      video
-                    </a>{" "}
-                    for more information.
-                  </p>
-
-                  <p className="home-feature-small">
-                    <em>More information under Programs</em>
-                  </p>
-                </div>
-
-              </div>
-
-            <div className="home-feature-image-wrap">
-              <div
-                className="home-image-decoration home-image-decoration-yellow"
-                aria-hidden="true"
-              ></div>
-              <div
-                className="home-image-decoration home-image-decoration-sage"
-                aria-hidden="true"
-              ></div>
-              <img
-                src="/black-eyed-susans.jpg"
-                alt="Black-eyed Susans beside the Miyawaki Forest"
-                className="home-feature-image"
-              />
-            </div>
-          </div>
-
           {/* Community Dedication announcement */}
           <div
             className="home-dedication-section"
             style={{
-              marginTop: "3rem",
+              marginTop: "1rem",
               padding: "0 clamp(1.5rem, 4vw, 4rem)",
             }}
           >
@@ -332,11 +253,94 @@ function Home() {
             </div>
           </div>
 
+
+          <div
+            className="home-feature-row home-feature-top"
+            style={{
+              gridTemplateColumns: "minmax(0, 0.82fr) minmax(0, 1.18fr)",
+              gap: "2.5rem",
+              alignItems: "center",
+              minHeight: 0,
+              marginTop: "2.75rem",
+              marginBottom: "2.75rem",
+              padding: "0 clamp(1.5rem, 4vw, 4rem)",
+            }}
+          >
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "9% 9% 1fr",
+                height: "350px",
+                minHeight: 0,
+                overflow: "hidden",
+                borderRadius: "0 22px 22px 0",
+              }}
+            >
+              <div
+                className="home-image-decoration home-image-decoration-yellow"
+                aria-hidden="true"
+                style={{ height: "350px" }}
+              ></div>
+              <div
+                className="home-image-decoration home-image-decoration-sage"
+                aria-hidden="true"
+                style={{ height: "350px" }}
+              ></div>
+              <img
+                src="/black-eyed-susans.jpg"
+                alt="Black-eyed Susans beside the Miyawaki Forest"
+                style={{
+                  width: "100%",
+                  height: "350px",
+                  objectFit: "cover",
+                  display: "block",
+                  borderRadius: "0 22px 22px 0",
+                }}
+              />
+            </div>
+
+            <div
+              className="home-program-block home-phenology-block"
+              style={{
+                margin: 0,
+                padding: "0 0 0 clamp(3.5rem, 5vw, 5.5rem)",
+                alignSelf: "center",
+              }}
+            >
+              <h3 style={{ color: "#3f642f" }}>
+                Collect data for the Phenology Project!
+              </h3>
+
+              <p>
+                Phenology Happy Hour will be on summer vacation{" "}
+                <strong>June 28–September 6.</strong>
+                <br />
+                See you Sunday, <strong>Sept. 13 at 4:00 PM!</strong>
+              </p>
+
+              <p className="home-feature-small">
+                See this short{" "}
+                <a
+                  href="https://www.youtube.com/watch?v=Eo3rVgEePfw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  video
+                </a>{" "}
+                for more information.
+              </p>
+
+              <p className="home-feature-small">
+                <em>More information under Programs</em>
+              </p>
+            </div>
+          </div>
+
           {/* Native Plant Perennial Collar Planting announcement */}
           <div
             className="home-perennial-section"
             style={{
-              marginTop: "2rem",
+              marginTop: "0",
               padding: "0 clamp(1.5rem, 4vw, 4rem)",
             }}
           >
