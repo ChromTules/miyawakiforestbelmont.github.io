@@ -8,6 +8,9 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Resources from "./pages/Resources";
 import ProgramsPoetry from "./pages/ProgramsPoetry";
+import ProgramsDedication from "./pages/ProgramsDedication";
+import ProgramsPerennialPlanting from "./pages/ProgramsPerennialPlanting";
+import Events from "./pages/Events";
 import PlantingDay from "./pages/PlantingDay";
 import "./App.css";
 import InteractiveMap from "./pages/InteractiveMap";
@@ -27,10 +30,13 @@ function App() {
             <Route path="/resources" element={<Resources />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/programs-poetry" element={<ProgramsPoetry />} />
+            <Route path="/programs-dedication" element={<ProgramsDedication />} />
+            <Route path="/programs-perennial-planting" element={<ProgramsPerennialPlanting />} />
             <Route path="/planting-day" element={<PlantingDay />} />
             <Route path="/interactive-map" element={<InteractiveMap />} />
             <Route path="/studying-forest" element={<StudyingForest />} />
-          </Routes>
+            <Route path="/events" element={<Events />} />
+        </Routes>
         </main>
         <Footer />
       </div>

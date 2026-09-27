@@ -6,8 +6,6 @@ media_folder: public/assets/images
 public_folder: public/assets/images
 
 collections:
-  # Add these collections to your existing config.yml
-
   # Timeline Management
   - name: "timeline"
     label: "Project Timeline"
@@ -94,6 +92,7 @@ collections:
               - label: "location"
                 name: "location"
                 widget: "string"
+
   - name: "Supporters"
     label: "Supporters"
     files:
@@ -108,6 +107,56 @@ collections:
               - label: "Name"
                 name: "name"
                 widget: "string"
+
+  - name: "Events"
+    label: "Events"
+    files:
+      - name: "events"
+        label: "Events"
+        file: "src/content/events.json"
+        fields:
+          - label: "Events"
+            name: "events"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.date}}"
+            fields:
+              - label: "Event Title"
+                name: "title"
+                widget: "string"
+              - label: "Date"
+                name: "date"
+                widget: "datetime"
+                date_format: "YYYY-MM-DD"
+                time_format: false
+              - label: "Start Time"
+                name: "startTime"
+                widget: "string"
+                required: false
+                hint: "Example: 2:00 PM"
+              - label: "End Time"
+                name: "endTime"
+                widget: "string"
+                required: false
+                hint: "Example: 3:30 PM"
+              - label: "Location"
+                name: "location"
+                widget: "string"
+                required: false
+              - label: "Short Description"
+                name: "description"
+                widget: "text"
+              - label: "Image"
+                name: "image"
+                widget: "image"
+                required: false
+              - label: "RSVP Link"
+                name: "rsvpLink"
+                widget: "string"
+                required: false
+              - label: "More Information Link"
+                name: "detailsLink"
+                widget: "string"
+                required: false
 
   # # Project Statistics
   # - name: "stats"

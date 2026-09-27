@@ -10,20 +10,16 @@ main {
 
 /* Hero Section */
 .hero {
+  background: linear-gradient(
+    135deg,
+    var(--dark-teal) 20%,
+    var(--text-light) 80%
+  );
   color: white;
   padding: 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
-}
-
-/* Standard green banner for interior pages only */
-.hero:not(.home-hero) {
-  background: #5f7f4a;
-  height: 260px;
-  padding: 0;
-  display: flex;
-  align-items: center;
 }
 
 .hero-content {
@@ -153,8 +149,8 @@ main {
 }
 
 .home-feature-container {
-  width: 100%;
-  margin: 0;
+  width: min(1240px, 100%);
+  margin: 0 auto;
 }
 
 .home-announcements-title {
@@ -182,7 +178,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0.5rem 0 0.5rem max(2rem, calc((100vw - 1240px) / 2));
+  padding: 0.5rem 0;
 }
 
 .home-program-block {
@@ -196,6 +192,11 @@ main {
   font-size: clamp(1.75rem, 2.4vw, 2.2rem);
   line-height: 1.2;
   font-weight: 500;
+}
+
+.home-phenology-block h3 {
+  color: var(--forest-green);
+  font-weight: 700;
 }
 
 .home-program-block h4 {
@@ -236,9 +237,9 @@ main {
   height: 100%;
   min-height: 575px;
   display: grid;
-  grid-template-columns: 9% 9% 1fr;
+  grid-template-columns: 7% 14% 1fr;
   overflow: hidden;
-  border-radius: 0;
+  border-radius: 0 24px 24px 0;
 }
 
 .home-image-decoration {
@@ -314,39 +315,33 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transform: translateX(-1.5rem);
 }
 
 .home-photo-stand-copy h2 {
   color: var(--forest-green);
-  font-size: clamp(2.6rem, 3.8vw, 3.6rem);
-  line-height: 1.05;
-  margin: 0 0 1.5rem;
+  font-size: clamp(2.2rem, 3.4vw, 3.25rem);
+  line-height: 1.02;
+  margin: 0 0 1.4rem;
 }
 
 .home-photo-stand-copy p {
   color: var(--sage-green);
-  font-size: clamp(1.3rem, 1.9vw, 1.65rem);
+  font-size: clamp(1.15rem, 1.7vw, 1.45rem);
   line-height: 1.45;
   margin-bottom: 1.4rem;
 }
 
 .home-photo-stand-location {
-  margin-top: 1.25rem !important;
+  margin-top: auto;
   margin-bottom: 0 !important;
-  font-size: 1.15rem !important;
-  font-style: italic;
-  line-height: 1.4;
 }
 
 .home-photo-stand-image-wrap {
   position: relative;
   min-height: 390px;
-  border: 7px solid #f4cf5a;
+  border: 6px solid #f1c94a;
   border-radius: 30px;
-  padding: 7px;
   overflow: hidden;
-  background: white;
 }
 
 .home-photo-stand-image {
@@ -356,7 +351,6 @@ main {
   object-fit: cover;
   object-position: center;
   display: block;
-  border-radius: 20px;
 }
 
 .home-photo-stand-image-caption {
@@ -1037,7 +1031,7 @@ main {
 
   .home-feature-image-wrap {
     min-height: 430px;
-    grid-template-columns: 9% 9% 1fr;
+    grid-template-columns: 8% 15% 1fr;
   }
 
   .home-feature-image {
@@ -1254,152 +1248,749 @@ main {
    STUDYING THE FOREST / PHENOLOGY
    ========================================= */
 
-/* =========================================
-   STUDYING THE FOREST / PHENOLOGY
-   ========================================= */
+.studying-forest-hero {
+  padding: 3.5rem 0;
+  min-height: auto;
+}
 
-   .studying-forest-page {
-    padding: 3rem 4rem 4rem;
-    background: white;
+.studying-forest-hero h1 {
+  margin: 0;
+  color: white;
+  font-size: clamp(3rem, 5vw, 4.6rem);
+}
+
+.studying-forest-hero .subtitle {
+  margin: 1rem 0 0;
+  padding: 0 !important;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+}
+
+.studying-forest-page {
+  padding: 4rem 2rem 5rem;
+  background: white;
+}
+
+.studying-forest-container {
+  width: min(1450px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(380px, 0.8fr) minmax(0, 1.6fr);
+  gap: clamp(4rem, 7vw, 7rem);
+  align-items: stretch;
+}
+
+.phenology-image-wrapper {
+  position: relative;
+  height: 600px;
+}
+
+.phenology-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 42px;
+  display: block;
+}
+
+.phenology-image-caption {
+  position: absolute;
+  bottom: 18px;
+  left: 30px;
+  color: white;
+  font-size: 1.15rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.phenology-content {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.phenology-intro {
+  color: var(--forest-green);
+  font-size: clamp(2rem, 2.7vw, 2.65rem);
+  line-height: 1.28;
+  margin: 0 0 3rem;
+  max-width: 900px;
+}
+
+.phenology-training {
+  color: var(--sage-green);
+}
+
+.phenology-training p {
+  color: var(--sage-green);
+  font-size: clamp(1.85rem, 2.5vw, 2.35rem);
+  line-height: 1.3;
+  margin: 0 0 0.65rem;
+}
+
+.phenology-training ul {
+  margin: 0;
+  padding-left: 3.25rem;
+}
+
+.phenology-training li {
+  color: var(--sage-green);
+  font-size: clamp(1.75rem, 2.35vw, 2.2rem);
+  line-height: 1.4;
+  padding-left: 0.35rem;
+}
+
+@media (max-width: 900px) {
+  .studying-forest-hero {
+    padding: 2.75rem 1rem;
   }
-  
+
+  .studying-forest-page {
+    padding: 3rem 1.25rem;
+  }
+
   .studying-forest-container {
-    width: min(1380px, 100%);
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: minmax(380px, 500px) minmax(0, 1fr);
-    gap: clamp(3rem, 5vw, 5rem);
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
-  
-  /* LEFT IMAGE */
-  
+
   .phenology-image-wrapper {
-    position: relative;
-    height: 650px;
+    height: 520px;
   }
-  
-  .phenology-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 55px;
-    display: block;
-  }
-  
-  .phenology-image-caption {
-    position: absolute;
-    bottom: 22px;
-    left: 36px;
-    color: white;
-    font-size: 1.05rem;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-  }
-  
-  /* RIGHT CONTENT */
-  
+
   .phenology-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 850px;
+    height: auto;
   }
-  
-  .phenology-title {
-    color: var(--forest-green);
-    font-size: clamp(2.8rem, 4vw, 4rem);
-    line-height: 1.05;
-    font-weight: 700;
-    margin: 0 0 2.5rem;
-  }
-  
+
   .phenology-intro {
-    color: var(--forest-green);
-    font-size: clamp(1.65rem, 2.2vw, 2.1rem);
-    line-height: 1.35;
-    margin: 0 0 2.5rem;
-  }
-  
-  .phenology-training {
-    color: #5f7d2b;
+    font-size: 1.7rem;
     margin-bottom: 2rem;
   }
-  
+
   .phenology-training p {
-    color: #5f7d2b;
-    font-size: clamp(1.55rem, 2vw, 1.9rem);
-    line-height: 1.3;
-    margin: 0 0 0.35rem;
+    font-size: 1.6rem;
   }
-  
-  .phenology-training ul {
-    margin: 0;
-    padding-left: 2.6rem;
-  }
-  
+
   .phenology-training li {
-    color: #5f7d2b;
-    font-size: clamp(1.45rem, 1.9vw, 1.8rem);
-    line-height: 1.35;
-    padding-left: 0.5rem;
+    font-size: 1.5rem;
   }
-  
-  /* SIGN-UP BUTTON */
-  
-  .phenology-signup-button {
-    display: inline-block;
-    width: fit-content;
-    background: #dbead2;
-    color: #704018;
-    padding: 0.8rem 3.5rem;
-    border-radius: 14px;
-    font-size: 2rem;
-    line-height: 1.2;
-    text-decoration: none;
-    margin-top: 0.5rem;
-    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.poetry-submit-section {
+  display: flex;
+  justify-content: center;
+  margin: 2.25rem 0;
+}
+
+.poetry-submit-btn {
+  padding: 0.9rem 2.25rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 10px;
+}
+/* Community Dedication: compact Home preview */
+.home-dedication-preview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.9fr);
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+  margin: 0 0 3.25rem;
+}
+
+.home-dedication-preview-copy {
+  padding-left: 0;
+}
+
+.home-dedication-preview-copy h2 {
+  color: var(--forest-green);
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.12;
+  margin: 0 0 1.2rem;
+}
+
+.home-dedication-preview-copy p {
+  color: var(--sage-green);
+  font-size: clamp(1.1rem, 1.55vw, 1.3rem);
+  line-height: 1.55;
+  margin: 0 0 1rem;
+}
+
+.home-dedication-preview-date {
+  color: var(--forest-green) !important;
+  font-weight: 700;
+}
+
+.home-more-info-link {
+  color: #6b3c91;
+  font-size: 1rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.home-dedication-preview-image-wrap {
+  position: relative;
+  height: 360px;
+}
+
+.home-dedication-preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 24px;
+}
+
+.home-dedication-photo-credit {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  color: white;
+  font-size: 0.8rem;
+  font-style: italic;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.75);
+}
+
+/* Community Dedication detail page */
+.dedication-detail-section {
+  background: white;
+  padding: 4rem 0 5rem;
+}
+
+.dedication-detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.9fr);
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.dedication-detail-copy h2 {
+  color: var(--forest-green);
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.15;
+  margin: 0 0 1.75rem;
+}
+
+.dedication-detail-copy p {
+  color: var(--sage-green);
+  font-size: clamp(1.08rem, 1.45vw, 1.25rem);
+  line-height: 1.65;
+  margin: 0 0 1.2rem;
+}
+
+.dedication-detail-copy strong,
+.dedication-detail-date {
+  color: var(--forest-green);
+  font-weight: 700;
+}
+
+.dedication-detail-copy a {
+  color: #6b3c91;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.dedication-detail-figure {
+  position: relative;
+  margin: 0;
+}
+
+.dedication-detail-figure img {
+  width: 100%;
+  min-height: 500px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 24px;
+}
+
+.dedication-detail-figure figcaption {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  color: white;
+  font-size: 0.8rem;
+  font-style: italic;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 800px) {
+  .home-dedication-preview,
+  .dedication-detail-layout {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
   }
-  
-  .phenology-signup-button:hover {
-    background: #cfdfc6;
-    transform: translateY(-2px);
+
+  .home-dedication-preview-image-wrap {
+    height: 300px;
   }
-  
-  /* MOBILE */
-  
-  @media (max-width: 900px) {
-    .studying-forest-page {
-      padding: 2.5rem 1.25rem;
-    }
-  
-    .studying-forest-container {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-  
-    .phenology-image-wrapper {
-      height: 520px;
-    }
-  
-    .phenology-title {
-      font-size: 2.6rem;
-      margin-bottom: 1.75rem;
-    }
-  
-    .phenology-intro {
-      font-size: 1.5rem;
-    }
-  
-    .phenology-training p {
-      font-size: 1.45rem;
-    }
-  
-    .phenology-training li {
-      font-size: 1.35rem;
-    }
-  
-    .phenology-signup-button {
-      font-size: 1.6rem;
-    }
+
+  .dedication-detail-figure img {
+    min-height: 320px;
   }
+}
+
+
+/* ===== Home announcement redesign ===== */
+.home-feature-section {
+  background: #fff;
+  padding: 4.75rem 0 5rem;
+}
+.home-feature-container {
+  width: min(1240px, calc(100% - 3rem));
+  margin: 0 auto;
+}
+.home-announcements-title { margin: 0 0 3.5rem; }
+
+/* Dedication: image left, text right */
+.home-dedication-section { margin: 0 !important; padding: 0 !important; }
+.home-dedication-section > div {
+  grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr) !important;
+  gap: clamp(2.75rem,6vw,5.5rem) !important;
+  align-items: center !important;
+}
+.home-dedication-section .home-dedication-block {
+  grid-column: 2; grid-row: 1;
+  padding: 2rem 1rem !important;
+}
+.home-dedication-section > div > div:last-child {
+  grid-column: 1; grid-row: 1;
+  min-height: 390px !important;
+  position: relative;
+  display: grid;
+  grid-template-columns: 7% 11% 1fr;
+  overflow: hidden;
+  border-radius: 0 24px 24px 0;
+}
+.home-dedication-section > div > div:last-child::before,
+.home-dedication-section > div > div:last-child::after {
+  content:""; display:block; height:100%; grid-row:1;
+}
+.home-dedication-section > div > div:last-child::before {
+  background:#c8cb7b; grid-column:1;
+}
+.home-dedication-section > div > div:last-child::after {
+  background:#dbe8cf; grid-column:2;
+}
+.home-dedication-section > div > div:last-child img {
+  grid-column:3; grid-row:1;
+  width:100% !important; height:390px !important; min-height:390px !important;
+  border-radius:0 24px 24px 0 !important;
+}
+.home-dedication-section > div > div:last-child span { z-index:2; }
+.home-dedication-block h2 {
+  font-size:clamp(2rem,3vw,3rem) !important;
+  line-height:1.08 !important;
+  margin-bottom:1.15rem !important;
+}
+
+/* Phenology: text left, image right */
+.home-feature-row.home-feature-top {
+  grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr) !important;
+  gap:clamp(2.75rem,6vw,5.5rem) !important;
+  margin:5rem 0 1rem !important;
+  padding:0 !important;
+  align-items:center !important;
+}
+.home-feature-row.home-feature-top > div:first-child {
+  grid-column:2; grid-row:1;
+  grid-template-columns:1fr 9% 9% !important;
+  border-radius:24px 0 0 24px !important;
+}
+.home-feature-row.home-feature-top > div:first-child .home-image-decoration-yellow {
+  grid-column:3; grid-row:1;
+}
+.home-feature-row.home-feature-top > div:first-child .home-image-decoration-sage {
+  grid-column:2; grid-row:1;
+}
+.home-feature-row.home-feature-top > div:first-child img {
+  grid-column:1; grid-row:1;
+  border-radius:24px 0 0 24px !important;
+}
+.home-feature-row.home-feature-top .home-phenology-block {
+  grid-column:1; grid-row:1;
+  padding:2rem 1rem !important;
+  max-width:610px;
+}
+.home-phenology-block h3,
+.home-dedication-block h2 {
+  color:#3f642f !important;
+  font-size:clamp(2rem,3vw,3rem) !important;
+  line-height:1.08 !important;
+}
+.home-feature-small a,
+.home-dedication-block a {
+  color:#6b3c91;
+  text-underline-offset:3px;
+}
+
+@media (max-width:800px) {
+  .home-feature-container { width:min(calc(100% - 2rem),680px); }
+  .home-dedication-section > div,
+  .home-feature-row.home-feature-top {
+    grid-template-columns:1fr !important;
+    gap:1.5rem !important;
+  }
+  .home-dedication-section .home-dedication-block,
+  .home-dedication-section > div > div:last-child,
+  .home-feature-row.home-feature-top > div:first-child,
+  .home-feature-row.home-feature-top .home-phenology-block {
+    grid-column:1 !important;
+  }
+  .home-dedication-section > div > div:last-child,
+  .home-feature-row.home-feature-top > div:first-child { grid-row:1 !important; }
+  .home-dedication-section .home-dedication-block,
+  .home-feature-row.home-feature-top .home-phenology-block {
+    grid-row:2 !important; padding:.75rem 0 !important;
+  }
+}
+
+
+/* ===== Events page ===== */
+.events-section {
+  background: #f8faf5;
+  padding: 4.5rem 0 5.5rem;
+}
+
+.events-section-no-hero {
+  padding-top: 2.75rem;
+}
+
+.events-container {
+  width: min(1180px, calc(100% - 3rem));
+}
+
+.events-page-heading {
+  margin-bottom: 2rem;
+}
+
+.events-page-heading h1 {
+  color: #3f642f;
+  font-size: clamp(2.5rem, 4vw, 3.7rem);
+  margin: 0 0 .35rem;
+}
+
+.events-page-heading p {
+  color: #5f7d52;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.events-calendar-card {
+  background: white;
+  border-radius: 24px;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+  box-shadow: 0 10px 34px rgba(50, 76, 40, 0.08);
+  border: 1px solid rgba(95, 125, 82, 0.13);
+}
+
+.events-calendar-header {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.events-calendar-header h2 {
+  margin: 0;
+  text-align: center;
+  color: #3f642f;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+}
+
+.events-calendar-header button {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: #eef4e9;
+  color: #3f642f;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.events-calendar-header button:hover {
+  background: #dfead8;
+}
+
+.events-weekdays,
+.events-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.events-weekdays {
+  color: #5f7d52;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: .65rem;
+}
+
+.events-calendar-day {
+  appearance: none;
+  font: inherit;
+  text-align: left;
+  min-height: 168px;
+  border: 0;
+  border-top: 1px solid #e4eadf;
+  border-right: 1px solid #e4eadf;
+  padding: .65rem;
+  background: white;
+  color: inherit;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.events-calendar-day:nth-child(7n + 1) {
+  border-left: 1px solid #e4eadf;
+}
+
+.events-calendar-day.empty {
+  background: #fafbf9;
+  cursor: default;
+}
+
+.events-calendar-day.has-event {
+  background: #f4f8ef;
+}
+
+.events-calendar-day:not(.empty):hover {
+  background: #eef5e8;
+}
+
+.events-calendar-day.selected {
+  box-shadow: inset 0 0 0 2px #5f7f4a;
+  background: #edf5e7;
+}
+
+.events-day-number {
+  display: block;
+  width: 100%;
+  text-align: left;
+  color: #4e6844;
+  font-weight: 700;
+  margin: 0 0 .55rem 0;
+  flex-shrink: 0;
+}
+
+.events-day-events {
+  display: grid;
+  gap: .35rem;
+}
+
+.events-calendar-event {
+  display: block;
+  background: #5f7f4a;
+  color: white;
+  border-radius: 8px;
+  padding: .42rem .5rem;
+  font-size: .78rem;
+  line-height: 1.25;
+}
+
+.events-more-count {
+  color: #5f7d52;
+  font-size: .76rem;
+  font-weight: 700;
+  padding-left: .2rem;
+}
+
+.selected-day-panel {
+  background: white;
+  margin-top: 1.5rem;
+  border-radius: 20px;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  border: 1px solid rgba(95, 125, 82, .13);
+  box-shadow: 0 8px 26px rgba(50, 76, 40, .06);
+}
+
+.selected-day-heading {
+  border-bottom: 1px solid #e4eadf;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.selected-day-heading span {
+  color: #6b3c91;
+  font-size: .82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.selected-day-heading h2 {
+  color: #3f642f;
+  font-size: clamp(1.65rem, 3vw, 2.3rem);
+  margin: .2rem 0 0;
+}
+
+.selected-day-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.selected-day-event + .selected-day-event {
+  border-top: 1px solid #e4eadf;
+  padding-top: 1rem;
+}
+
+.selected-day-event-content h3 {
+  color: #3f642f;
+  font-size: 1.45rem;
+  margin: 0 0 .65rem;
+}
+
+.selected-day-empty {
+  color: #5f7d52;
+  margin: 0;
+}
+
+.events-upcoming {
+  margin-top: 3.5rem;
+}
+
+.events-section-heading {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-bottom: 1.75rem;
+  color: #3f642f;
+}
+
+.events-section-heading h2 {
+  margin: 0;
+  color: #3f642f;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+}
+
+.events-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.event-card {
+  display: grid;
+  grid-template-columns: 90px minmax(180px, 300px) 1fr;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(50, 76, 40, 0.07);
+}
+
+.event-date-badge {
+  background: #5f7f4a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+
+.event-date-badge span {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.event-date-badge strong {
+  font-size: 2.6rem;
+  line-height: 1;
+  margin-top: .3rem;
+}
+
+.event-card-image {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+}
+
+.event-card-content {
+  padding: 1.65rem 2rem;
+}
+
+.event-card-content h3 {
+  color: #3f642f;
+  font-size: 1.7rem;
+  margin: 0 0 .8rem;
+}
+
+.event-meta {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  color: #5f7d52;
+  margin: .35rem 0;
+}
+
+.event-description {
+  color: #5f7d52;
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+
+.event-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.event-links a {
+  color: #6b3c91;
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+.events-empty {
+  color: #5f7d52;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 800px) {
+  .events-section-no-hero {
+    padding-top: 2rem;
+  }
+
+  .events-container {
+    width: min(calc(100% - 1.5rem), 680px);
+  }
+
+  .events-calendar-card {
+    overflow-x: auto;
+  }
+
+  .events-weekdays,
+  .events-calendar-grid {
+    min-width: 650px;
+  }
+
+  .events-calendar-day {
+    min-height: 150px;
+  }
+
+  .event-card {
+    grid-template-columns: 72px 1fr;
+  }
+
+  .event-date-badge {
+    min-height: 180px;
+  }
+
+  .event-card-image {
+    grid-column: 2;
+    min-height: 180px;
+  }
+
+  .event-card-content {
+    grid-column: 1 / -1;
+    padding: 1.4rem;
+  }
+}

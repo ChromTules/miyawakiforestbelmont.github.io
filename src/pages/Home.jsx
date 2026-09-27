@@ -128,131 +128,44 @@ function Home() {
           <h2 className="home-announcements-title">Announcements</h2>
 
           {/* Community Dedication announcement */}
-          <div
-            className="home-dedication-section"
-            style={{
-              marginTop: "1rem",
-              padding: "0 clamp(1.5rem, 4vw, 4rem)",
-            }}
-          >
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "minmax(0, 1.15fr) minmax(320px, 0.85fr)",
-                gap: "2rem",
-                alignItems: "stretch",
-                background: "white",
-                overflow: "hidden",
-              }}
-            >
-              <div
-                className="home-dedication-block"
-                style={{
-                  color: "#5f7d52",
-                  position: "relative",
-                  padding: "1.25rem 1.5rem",
-                }}
-              >
-                <h2
-                  style={{
-                    color: "#3f642f",
-                    fontSize: "clamp(1.6rem, 2.5vw, 2.2rem)",
-                    lineHeight: "1.15",
-                    margin: "0 0 0.8rem",
-                  }}
+          <div className="home-dedication-preview">
+            <div className="home-dedication-preview-copy">
+              <h2>Belmont High School Mini-Forest Community Dedication</h2>
+              <p>
+                Come celebrate the Belmont High School Mini-Forest one year after
+                planting! Join us for a Birthday Party featuring Arts &amp; Crafts,
+                Mini-Forest Tours, Mini-Poetry Contest winners, science stories,
+                games about the forest, and more.
+              </p>
+              <p className="home-dedication-preview-date">
+                Saturday, October 3, 2026 &bull; 2:00 - 3:30 PM
+              </p>
+              <p>
+                <a
+                  className="home-more-info-link"
+                  href="https://forms.gle/Jnh8rg1zDfWEyNtj7"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Come help us celebrate the Belmont High School Mini-Forest One
-                  Year after Planting!
-                </h2>
+                  RSVP to help us estimate attendance →
+                </a>
+              </p>
+              <a className="home-more-info-link" href="/programs-dedication">
+                <em>More information under Programs →</em>
+              </a>
+            </div>
 
-                <p style={{ marginBottom: "0.7rem", lineHeight: "1.5", color: "#5f7d52" }}>
-                  <strong style={{ color: "#5f7d52" }}>Who:</strong> Volunteers, students, teachers, and all
-                  Belmont community members looking for good news about restoring
-                  land to a healthier state.
-                </p>
-
-                <p style={{ marginBottom: "0.7rem", lineHeight: "1.5", color: "#5f7d52" }}>
-                  <strong style={{ color: "#5f7d52" }}>What:</strong> Belmont High School Mini-Forest Community
-                  Dedication. We will celebrate with a Birthday Party featuring
-                  Arts &amp; Crafts, Mini-Forest Tours, Mini-Poetry Contest
-                  Winners, Science Stories and Games about the Forest, and more!
-                </p>
-
-                <p style={{ marginBottom: "0.7rem", lineHeight: "1.5", color: "#5f7d52" }}>
-                  <strong style={{ color: "#5f7d52" }}>Where:</strong> Outside the entrance to Belmont High
-                  School,{" "}
-                  <a
-                    href="https://www.google.com/maps/search/221+Concord+Avenue?entry=gmail&source=g"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: "#6f42a1" }}
-                  >
-                    221 Concord Avenue
-                  </a>
-                </p>
-
-                <p style={{ marginBottom: "0.7rem", lineHeight: "1.5", color: "#5f7d52" }}>
-                  <strong style={{ color: "#5f7d52" }}>When:</strong>{" "}
-                  <span style={{ color: "#3f642f", fontWeight: 700 }}>
-                    2:00 - 3:30 PM, Saturday, October 3, 2026
-                  </span>
-                </p>
-
-                <p style={{ marginBottom: "1rem", lineHeight: "1.6" }}>
-                  <strong style={{ color: "#5f7d52" }}>Why:</strong>{" "}
-                  <span style={{ color: "#5f7d52" }}>
-                    Miyawaki Forest Action Belmont (MFAB) would like to thank
-                    those who made the forest possible with a Birthday Party,
-                    and invite educators to use the Mini-Forest as a Living
-                    Laboratory to help us navigate climate challenges ahead as
-                    a community.
-                  </span>
-                </p>
-
-                <p style={{ margin: 0, lineHeight: "1.5", color: "#5f7d52" }}>
-                  <strong style={{ color: "#5f7d52" }}>More information:</strong>{" "}
-                  <a href="mailto:miniforestbelmont@gmail.com" style={{ color: "#6f42a1" }}>
-                    miniforestbelmont@gmail.com
-                  </a>
-                </p>
-              </div>
-
-              <div
-                style={{
-                  minHeight: "100%",
-                  background: "white",
-                  position: "relative",
-                }}
-              >
-                <img
-                  src="/dedication-drone.jpg"
-                  alt="Recent aerial view of the Belmont High School Mini-Forest"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    minHeight: "340px",
-                    objectFit: "cover",
-                    display: "block",
-                    borderRadius: "24px",
-                  }}
-                />
-                <span
-                  style={{
-                    position: "absolute",
-                    right: "14px",
-                    bottom: "12px",
-                    fontSize: "0.8rem",
-                    fontStyle: "italic",
-                    color: "white",
-                    textShadow: "0 1px 4px rgba(0, 0, 0, 0.75)",
-                  }}
-                >
-                  Photo by Jennifer Tidwell
-                </span>
-              </div>
+            <div className="home-dedication-preview-image-wrap">
+              <img
+                src="/dedication-drone.jpg"
+                alt="Recent aerial view of the Belmont High School Mini-Forest"
+                className="home-dedication-preview-image"
+              />
+              <span className="home-dedication-photo-credit">
+                Photo by Jennifer Tidwell
+              </span>
             </div>
           </div>
-
 
           <div
             className="home-feature-row home-feature-top"
@@ -331,75 +244,9 @@ function Home() {
               </p>
 
               <p className="home-feature-small">
-                <em>More information under Programs</em>
-              </p>
-            </div>
-          </div>
-
-          {/* Native Plant Perennial Collar Planting announcement */}
-          <div
-            className="home-perennial-section"
-            style={{
-              marginTop: "0",
-              padding: "0 clamp(1.5rem, 4vw, 4rem)",
-            }}
-          >
-            <div
-              style={{
-                background: "white",
-                padding: "1rem 0",
-                color: "#5f7d52",
-              }}
-            >
-              <h3
-                style={{
-                  color: "#3f642f",
-                  fontSize: "clamp(1.75rem, 2.4vw, 2.2rem)",
-                  lineHeight: "1.2",
-                  fontWeight: 500,
-                  margin: "0 0 0.7rem",
-                }}
-              >
-                Native Plant Perennial Collar Planting
-              </h3>
-
-              <p style={{ margin: "0 0 0.7rem", lineHeight: "1.5", color: "#5f7d52" }}>
-                The BHS Mini-Forest is getting a collar of perennial plants! The
-                forest does not exist in isolation but lives with a transitional
-                border that protects it from drying heat and wind. We planted a
-                forest, and now we are starting the first of three installments
-                of a forest edge. This first planting will consist of 25
-                perennial species totaling 343 plants, all native to our
-                ecoregion, which will support pollinators and, by extension, the
-                greater habitat. We invite you to help grow this piece of nature
-                restoration in Belmont!
-              </p>
-
-              <p style={{ margin: "0 0 0.7rem", lineHeight: "1.5" }}>
-                <a
-                  href="https://grasshoppersignup.com/respond/aeb53106-492f-4521-b762-dfc8ea2717b8"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: "#6f42a1" }}
-                >
-                  Sign up here
-                </a>{" "}
-                <span style={{ color: "#3f642f", fontWeight: 700 }}>
-                  Friday Sept. 18, 10 - noon
-                </span>{" "}
-                to help prep and stage and/or{" "}
-                <span style={{ color: "#3f642f", fontWeight: 700 }}>
-                  Saturday Sept. 19, 1 - 4
-                </span>{" "}
-                to plant.
-              </p>
-
-              <p style={{ margin: 0, lineHeight: "1.5", color: "#5f7d52" }}>
-                Questions? Email Sarah at{" "}
-                <a href="mailto:miniforestbelmont@gmail.com" style={{ color: "#6f42a1" }}>
-                  miniforestbelmont@gmail.com
+                <a href="/studying-forest">
+                  <em>More information under Programs →</em>
                 </a>
-                .
               </p>
             </div>
           </div>
