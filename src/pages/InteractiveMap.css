@@ -193,3 +193,588 @@
   .map-search-wrap > button { display: none; }
   .map-tool-buttons button { min-width: 36px; height: 38px; padding: 0 8px; }
 }
+.map-tree-marker.search-dimmed {
+  opacity: 0.12;
+}
+
+.map-tree-marker.search-highlight {
+  opacity: 1;
+  z-index: 4;
+  box-shadow: 0 0 0 3px rgba(255, 211, 79, 0.9),
+              0 0 0 6px rgba(255, 255, 255, 0.8);
+}
+
+
+/* =========================================================
+   Fostered Trees + Phenology Project
+   ========================================================= */
+
+.map-tree-marker.foster-highlight {
+  opacity: 1;
+  background: #b79ad8;
+  border-color: #ffffff;
+  box-shadow:
+    0 0 0 3px rgba(183, 154, 216, 0.95),
+    0 5px 14px rgba(0, 0, 0, 0.46);
+  transform: translate(-50%, -50%) scale(1.35);
+  z-index: 4;
+}
+
+.map-tree-marker.phenology-east {
+  opacity: 1;
+  background: #f2cf45;
+  border-color: #7d8288;
+  box-shadow:
+    0 0 0 3px rgba(125, 130, 136, 0.95),
+    0 5px 14px rgba(0, 0, 0, 0.46);
+  transform: translate(-50%, -50%) scale(1.35);
+  z-index: 4;
+}
+
+.map-tree-marker.phenology-north {
+  opacity: 1;
+  background: #ef8b2c;
+  border-color: #ffffff;
+  box-shadow:
+    0 0 0 3px rgba(239, 139, 44, 0.95),
+    0 5px 14px rgba(0, 0, 0, 0.46);
+  transform: translate(-50%, -50%) scale(1.35);
+  z-index: 4;
+}
+
+.map-tree-marker.phenology-west {
+  opacity: 1;
+  background: #3478c8;
+  border-color: #ffffff;
+  box-shadow:
+    0 0 0 3px rgba(52, 120, 200, 0.95),
+    0 5px 14px rgba(0, 0, 0, 0.46);
+  transform: translate(-50%, -50%) scale(1.35);
+  z-index: 4;
+}
+
+.map-tree-marker.layer-dimmed {
+  opacity: 0.12;
+  filter: grayscale(0.8);
+}
+
+/* This key is a child of .map-viewport, so it is locked to the map.
+   It does not affect layout height and scrolls away with the map. */
+.map-phenology-map-key {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  z-index: 25;
+  width: 165px;
+  padding: 11px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 14px;
+  background: rgba(17, 24, 39, 0.84);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+}
+
+.map-phenology-map-key-title {
+  margin-bottom: 8px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.map-phenology-map-key-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 0.82rem;
+  line-height: 1.2;
+}
+
+.map-phenology-map-key .trail-dot {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.map-phenology-map-key .trail-east {
+  background: #f2cf45;
+  border: 3px solid #7d8288;
+}
+
+.map-phenology-map-key .trail-north {
+  background: #ef8b2c;
+  border: 2px solid #ffffff;
+}
+
+.map-phenology-map-key .trail-west {
+  background: #3478c8;
+  border: 2px solid #ffffff;
+}
+
+
+/* =========================================================
+   Clean map-to-footer transition
+   Remove decorative bottom strips so the map section ends cleanly.
+   ========================================================= */
+
+.map-workspace::after,
+.interactive-map-page::after {
+  display: none !important;
+  content: none !important;
+}
+
+.interactive-map-page {
+  margin: 0;
+  padding: 0;
+}
+
+.map-app-shell {
+  margin-bottom: 0;
+}
+
+.map-workspace {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+
+/* =========================================================
+   Dynamic layer information
+   Keeps the right sidebar the same overall height. Long species
+   lists scroll inside the information area instead of extending
+   the map section.
+   ========================================================= */
+
+.map-filter-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.map-filter-copy {
+  min-height: 0;
+}
+
+.map-layer-species {
+  margin-top: 16px;
+}
+
+.map-layer-species-heading {
+  margin: 0 0 8px;
+  color: #173f2b;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.map-layer-species-list {
+  max-height: 210px;
+  overflow-y: auto;
+  padding-right: 5px;
+  scrollbar-width: thin;
+}
+
+.map-layer-species-item {
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(30, 74, 47, 0.12);
+}
+
+.map-layer-species-item:last-child {
+  border-bottom: 0;
+}
+
+.map-layer-species-common,
+.map-layer-species-scientific {
+  display: block;
+}
+
+.map-layer-species-common {
+  color: #173f2b;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.map-layer-species-scientific {
+  margin-top: 2px;
+  color: #68756c;
+  font-size: 0.82rem;
+  font-style: italic;
+  line-height: 1.25;
+}
+
+.map-filter-buttons {
+  flex: 0 0 auto;
+}
+
+
+/* =========================================================
+   Right-panel layer detail view
+   The normal filter buttons are replaced by information rather
+   than stacking both views and increasing the page height.
+   ========================================================= */
+
+.map-layer-detail-card {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.map-layer-back {
+  appearance: none;
+  width: fit-content;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0 0 18px;
+  color: #315b3a;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.map-layer-back span:first-child {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.map-layer-back:hover {
+  color: #173f2b;
+}
+
+.map-layer-detail-content {
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 5px;
+  scrollbar-width: thin;
+}
+
+.map-layer-detail-content .map-layer-species-list {
+  max-height: none;
+  overflow: visible;
+}
+
+
+/* =========================================================
+   Fixed-height species list
+   Only the species list scrolls; it cannot extend the sidebar.
+   ========================================================= */
+
+.map-layer-detail-content {
+  overflow: hidden;
+}
+
+.map-layer-detail-content .map-layer-species {
+  margin-top: 16px;
+}
+
+.map-layer-detail-content .map-layer-species-list {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.map-layer-detail-content .map-layer-species-list::-webkit-scrollbar {
+  width: 7px;
+}
+
+.map-layer-detail-content .map-layer-species-list::-webkit-scrollbar-thumb {
+  background: rgba(49, 91, 58, 0.35);
+  border-radius: 999px;
+}
+
+.map-layer-detail-content .map-layer-species-list::-webkit-scrollbar-track {
+  background: rgba(49, 91, 58, 0.08);
+  border-radius: 999px;
+}
+
+
+/* =========================================================
+   Map compass
+   Locked to the upper-left corner of the aerial map viewport.
+   ========================================================= */
+
+.map-compass {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 25;
+  width: 52px;
+  height: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 14px;
+  background: rgba(17, 24, 39, 0.78);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+}
+
+.map-compass-n {
+  margin-bottom: -3px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.map-compass-arrow {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+
+/* =========================================================
+   INTERACTIVE MAP — PHONE ONLY
+   Every rule in this section applies only at 480px and below.
+   Desktop and tablet layouts remain unchanged.
+   ========================================================= */
+
+.map-hint-phone {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .interactive-map-page {
+    min-height: 0;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .map-app-shell {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+  }
+
+  /* Put the map/search first and the plant information below it. */
+  .map-workspace {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .map-sidebar {
+    order: 2;
+    width: 100%;
+    min-height: 0;
+    max-height: none;
+    padding: 22px 16px 28px;
+    overflow: visible;
+    border-right: 0;
+    border-top: 1px solid rgba(31, 41, 55, 0.1);
+    box-shadow: none;
+  }
+
+  .map-info-panel {
+    overflow: visible;
+    padding: 0;
+  }
+
+  /* Welcome text remains, but remove the four large desktop instruction cards. */
+  .map-instruction-grid {
+    display: none !important;
+  }
+
+  .map-welcome-card h1 {
+    font-size: 1.75rem;
+  }
+
+  .map-lede {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Compact mobile search/control bar. */
+  .map-topbar {
+    order: 1;
+    width: 100%;
+    padding: 10px;
+    gap: 6px;
+  }
+
+  .map-search-wrap {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 44px;
+  }
+
+  .map-search-icon {
+    padding-left: 13px;
+    font-size: 1.05rem;
+  }
+
+  .map-search-wrap input {
+    min-width: 0;
+    padding: 0 8px;
+    font-size: 16px;
+  }
+
+  .map-tool-buttons {
+    flex: 0 0 auto;
+    gap: 4px;
+  }
+
+  .map-tool-buttons button {
+    min-width: 34px;
+    width: 34px;
+    height: 38px;
+    padding: 0;
+    border-radius: 12px;
+    font-size: 0.9rem;
+  }
+
+  .map-tool-buttons button:nth-child(2) {
+    width: auto;
+    min-width: 50px;
+    padding: 0 8px;
+    font-size: 0.76rem;
+  }
+
+  /* The map itself is 4:3, matching the aerial photograph. */
+  .map-viewport {
+    order: 2;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    touch-action: none;
+  }
+
+  /* Compass now sits over the aerial map instead of a large empty navy area. */
+  .map-compass {
+    top: 10px;
+    left: 10px;
+    width: 42px;
+    height: 58px;
+    border-radius: 12px;
+  }
+
+  .map-compass-n {
+    font-size: 0.68rem;
+  }
+
+  .map-compass-arrow {
+    font-size: 1.55rem;
+  }
+
+  /* Replace the desktop mouse instruction with one concise touch instruction. */
+  .map-hint {
+    left: 50%;
+    right: auto;
+    bottom: 8px;
+    width: max-content;
+    max-width: calc(100% - 20px);
+    transform: translateX(-50%);
+    padding: 7px 10px;
+    font-size: 0.68rem;
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .map-hint-desktop {
+    display: none;
+  }
+
+  .map-hint-phone {
+    display: inline;
+  }
+
+  /* Keep the phenology legend compact inside the map. */
+  .map-phenology-map-key {
+    left: 10px;
+    bottom: 42px;
+    width: 142px;
+    padding: 8px 9px;
+  }
+
+  .map-phenology-map-key-title {
+    margin-bottom: 5px;
+    font-size: 0.62rem;
+  }
+
+  .map-phenology-map-key-item {
+    gap: 6px;
+    margin-top: 4px;
+    font-size: 0.7rem;
+  }
+
+  /* Layer/filter panel becomes a normal section below the map. */
+  .map-right-panel {
+    order: 3;
+    display: block;
+    width: 100%;
+    padding: 20px 16px 26px;
+    border-left: 0;
+    border-top: 1px solid rgba(31, 41, 55, 0.1);
+    box-shadow: none;
+  }
+
+  .map-filter-card,
+  .map-layer-detail-card {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .map-filter-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .map-layer-filter {
+    min-width: 0;
+    padding: 11px 10px;
+    border-radius: 13px;
+    text-align: center;
+    font-size: 0.82rem;
+  }
+
+  .map-layer-detail-content {
+    overflow: visible;
+  }
+
+  .map-layer-detail-content .map-layer-species-list {
+    max-height: 260px;
+    overflow-y: auto;
+  }
+
+  /* Selected plant information is a normal full-width mobile card below map. */
+  .map-tree-card {
+    padding-bottom: 0;
+  }
+
+  .map-species-photo {
+    max-height: 300px;
+  }
+}

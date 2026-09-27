@@ -1593,22 +1593,22 @@ main {
   align-items:center !important;
 }
 .home-feature-row.home-feature-top > div:first-child {
-  grid-column:2; grid-row:1;
-  grid-template-columns:1fr 9% 9% !important;
+  grid-column:1; grid-row:1;
+  grid-template-columns:9% 9% 1fr !important;
   border-radius:24px 0 0 24px !important;
 }
 .home-feature-row.home-feature-top > div:first-child .home-image-decoration-yellow {
-  grid-column:3; grid-row:1;
+  grid-column:1; grid-row:1;
 }
 .home-feature-row.home-feature-top > div:first-child .home-image-decoration-sage {
   grid-column:2; grid-row:1;
 }
 .home-feature-row.home-feature-top > div:first-child img {
-  grid-column:1; grid-row:1;
-  border-radius:24px 0 0 24px !important;
+  grid-column:3; grid-row:1;
+  border-radius:0 !important;
 }
 .home-feature-row.home-feature-top .home-phenology-block {
-  grid-column:1; grid-row:1;
+  grid-column:2; grid-row:1;
   padding:2rem 1rem !important;
   max-width:610px;
 }
@@ -1992,5 +1992,175 @@ main {
   .event-card-content {
     grid-column: 1 / -1;
     padding: 1.4rem;
+  }
+}
+
+
+/* =========================================================
+   HOME HERO — PHONE ONLY
+   Keeps desktop/tablet hero unchanged.
+   ========================================================= */
+@media (max-width: 480px) {
+  .home-hero {
+    min-height: 600px;
+  }
+
+  .home-hero .hero-overlay {
+    min-height: 600px;
+    padding: 0;
+    display: block;
+  }
+
+  .home-hero .home-hero-title-box {
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+    max-width: none;
+    padding: 1rem 1.15rem;
+  }
+
+  /* More specific than the generic .hero h1 rule. */
+  .home-hero h1.home-hero-title {
+    font-size: clamp(1.9rem, 9vw, 2.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  .home-hero .cta-buttons {
+    position: absolute;
+    left: auto;
+    right: 1rem;
+    bottom: 1rem;
+    width: 33%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.55rem;
+  }
+
+  .home-hero .cta-buttons .btn {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.65rem 0.7rem;
+    margin: 0;
+    font-size: 0.78rem;
+    line-height: 1.2;
+    white-space: normal;
+    justify-content: center;
+  }
+
+  .home-hero .cta-buttons .btn svg {
+    display: none;
+  }
+
+  .home-hero .hero-caption {
+    left: 1rem;
+    right: auto;
+    bottom: 1rem;
+    margin: 0;
+    max-width: calc(67% - 2rem);
+    font-size: 0.82rem;
+    line-height: 1.25;
+    text-align: left;
+    z-index: 11;
+  }
+
+  .home-hero .hero-nav-arrow {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .home-feature-top > div:first-child {
+    display: none !important;
+  }
+}
+
+/* PHONE ONLY — fix planted-forest video + caption */
+@media screen and (max-width: 480px) {
+  .home-planted-row {
+    display: block;
+  }
+
+  .home-video-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin-top: 2rem;
+  }
+
+  .home-video-link {
+    display: block;
+    width: 100%;
+    flex: none;
+  }
+
+  .home-video-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    object-fit: cover;
+  }
+
+  .home-video-caption {
+    position: static;
+    display: block;
+    width: 100%;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    text-align: center;
+    line-height: 1.35;
+  }
+}
+/* PHONE ONLY — Upcoming Events cards */
+@media screen and (max-width: 480px) {
+  /* Completely remove event photos on phones */
+  .events-page .event-card-image {
+    display: none !important;
+  }
+
+  /* Rebuild card as date badge + event information */
+  .events-page .event-card {
+    grid-template-columns: 72px minmax(0, 1fr) !important;
+    width: 100%;
+  }
+
+  .events-page .event-date-badge {
+    min-height: 0;
+    height: auto;
+  }
+
+  .events-page .event-card-content {
+    min-width: 0;
+    padding: 1.25rem;
+  }
+
+  .events-page .event-card-content h3 {
+    overflow-wrap: anywhere;
+  }
+
+  .events-page .event-meta {
+    min-width: 0;
+  }
+
+  .events-page .event-meta span {
+    overflow-wrap: anywhere;
+  }
+
+  .events-page .event-description {
+    overflow-wrap: anywhere;
+  }
+
+  .events-page .event-links {
+    flex-wrap: wrap;
   }
 }

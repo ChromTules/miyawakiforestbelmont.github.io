@@ -170,7 +170,7 @@ function Home() {
           <div
             className="home-feature-row home-feature-top"
             style={{
-              gridTemplateColumns: "minmax(0, 0.82fr) minmax(0, 1.18fr)",
+              gridTemplateColumns: "minmax(0, 1.18fr) minmax(0, 0.82fr)",
               gap: "2.5rem",
               alignItems: "center",
               minHeight: 0,
@@ -181,12 +181,15 @@ function Home() {
           >
             <div
               style={{
+                gridColumn: "1",
+                gridRow: "1",
+                order: 1,
                 display: "grid",
                 gridTemplateColumns: "9% 9% 1fr",
                 height: "350px",
                 minHeight: 0,
                 overflow: "hidden",
-                borderRadius: "0 22px 22px 0",
+                borderRadius: "22px 0 0 22px",
               }}
             >
               <div
@@ -215,8 +218,11 @@ function Home() {
             <div
               className="home-program-block home-phenology-block"
               style={{
+                gridColumn: "2",
+                gridRow: "1",
+                order: 2,
                 margin: 0,
-                padding: "0 0 0 clamp(3.5rem, 5vw, 5.5rem)",
+                padding: "0 clamp(1.5rem, 4vw, 4rem) 0 0",
                 alignSelf: "center",
               }}
             >

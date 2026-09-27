@@ -1,7 +1,9 @@
-import {
-  speciesCodeFromTree,
-  speciesForTree,
-} from "../../data/species";
+import { speciesForTree } from "../../data/species";
+
+const displayTreeNumber = (tree) => {
+  const id = String(tree.tree_id || tree.label || "").trim();
+  return id.replace(/^[A-Za-z]+\s*/, "");
+};
 
 function WelcomePanel() {
   return (
@@ -27,13 +29,12 @@ export default function MapInfoPanel({ tree }) {
   if (!tree) return <WelcomePanel />;
 
   const species = speciesForTree(tree);
-  const code = speciesCodeFromTree(tree);
-  
+
   return (
     <div className="map-tree-card map-species-profile-card">
       <p className="map-eyebrow">
-  Selected Tree · {tree.tree_id || tree.label}
-</p>
+        Selected Tree · {displayTreeNumber(tree)}
+      </p>
 
       {species.image ? (
         <img
@@ -46,7 +47,7 @@ export default function MapInfoPanel({ tree }) {
         <div className="map-future-box">No species image available yet.</div>
       )}
 
-      <div className="map-layer-pill">{species.layer} · {code}</div>
+      <div className="map-layer-pill">{species.layer}</div>
       <h1 className="map-species-name">{species.common}</h1>
       <p className="map-scientific-name">{species.scientific}</p>
 
