@@ -1530,637 +1530,215 @@ main {
   }
 }
 
-
-/* ===== Home announcement redesign ===== */
-.home-feature-section {
+/* Poetry Contest Results */
+.poetry-results-section {
+  padding: 4.5rem 0 5rem;
   background: #fff;
-  padding: 4.75rem 0 5rem;
 }
-.home-feature-container {
-  width: min(1240px, calc(100% - 3rem));
+
+.poetry-results-intro {
+  max-width: 760px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.poetry-results-kicker {
+  color: var(--sage-green);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem;
+}
+
+.poetry-results-intro h1 {
+  color: var(--forest-green);
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  margin: 0 0 0.8rem;
+}
+
+.poetry-results-subtitle {
+  color: var(--forest-green);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  margin: 0 0 1.35rem;
+}
+
+.poetry-results-intro-copy {
+  color: var(--text-light);
+  font-size: 1.12rem;
+  line-height: 1.65;
+  max-width: 680px;
   margin: 0 auto;
 }
-.home-announcements-title { margin: 0 0 3.5rem; }
 
-/* Dedication: image left, text right */
-.home-dedication-section { margin: 0 !important; padding: 0 !important; }
-.home-dedication-section > div {
-  grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr) !important;
-  gap: clamp(2.75rem,6vw,5.5rem) !important;
-  align-items: center !important;
-}
-.home-dedication-section .home-dedication-block {
-  grid-column: 2; grid-row: 1;
-  padding: 2rem 1rem !important;
-}
-.home-dedication-section > div > div:last-child {
-  grid-column: 1; grid-row: 1;
-  min-height: 390px !important;
-  position: relative;
-  display: grid;
-  grid-template-columns: 7% 11% 1fr;
-  overflow: hidden;
-  border-radius: 0 24px 24px 0;
-}
-.home-dedication-section > div > div:last-child::before,
-.home-dedication-section > div > div:last-child::after {
-  content:""; display:block; height:100%; grid-row:1;
-}
-.home-dedication-section > div > div:last-child::before {
-  background:#c8cb7b; grid-column:1;
-}
-.home-dedication-section > div > div:last-child::after {
-  background:#dbe8cf; grid-column:2;
-}
-.home-dedication-section > div > div:last-child img {
-  grid-column:3; grid-row:1;
-  width:100% !important; height:390px !important; min-height:390px !important;
-  border-radius:0 24px 24px 0 !important;
-}
-.home-dedication-section > div > div:last-child span { z-index:2; }
-.home-dedication-block h2 {
-  font-size:clamp(2rem,3vw,3rem) !important;
-  line-height:1.08 !important;
-  margin-bottom:1.15rem !important;
+.poetry-group {
+  margin-bottom: 4.5rem;
 }
 
-/* Phenology: text left, image right */
-.home-feature-row.home-feature-top {
-  grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr) !important;
-  gap:clamp(2.75rem,6vw,5.5rem) !important;
-  margin:5rem 0 1rem !important;
-  padding:0 !important;
-  align-items:center !important;
-}
-.home-feature-row.home-feature-top > div:first-child {
-  grid-column:1; grid-row:1;
-  grid-template-columns:9% 9% 1fr !important;
-  border-radius:24px 0 0 24px !important;
-}
-.home-feature-row.home-feature-top > div:first-child .home-image-decoration-yellow {
-  grid-column:1; grid-row:1;
-}
-.home-feature-row.home-feature-top > div:first-child .home-image-decoration-sage {
-  grid-column:2; grid-row:1;
-}
-.home-feature-row.home-feature-top > div:first-child img {
-  grid-column:3; grid-row:1;
-  border-radius:0 !important;
-}
-.home-feature-row.home-feature-top .home-phenology-block {
-  grid-column:2; grid-row:1;
-  padding:2rem 1rem !important;
-  max-width:610px;
-}
-.home-phenology-block h3,
-.home-dedication-block h2 {
-  color:#3f642f !important;
-  font-size:clamp(2rem,3vw,3rem) !important;
-  line-height:1.08 !important;
-}
-.home-feature-small a,
-.home-dedication-block a {
-  color:#6b3c91;
-  text-underline-offset:3px;
-}
-
-@media (max-width:800px) {
-  .home-feature-container { width:min(calc(100% - 2rem),680px); }
-  .home-dedication-section > div,
-  .home-feature-row.home-feature-top {
-    grid-template-columns:1fr !important;
-    gap:1.5rem !important;
-  }
-  .home-dedication-section .home-dedication-block,
-  .home-dedication-section > div > div:last-child,
-  .home-feature-row.home-feature-top > div:first-child,
-  .home-feature-row.home-feature-top .home-phenology-block {
-    grid-column:1 !important;
-  }
-  .home-dedication-section > div > div:last-child,
-  .home-feature-row.home-feature-top > div:first-child { grid-row:1 !important; }
-  .home-dedication-section .home-dedication-block,
-  .home-feature-row.home-feature-top .home-phenology-block {
-    grid-row:2 !important; padding:.75rem 0 !important;
-  }
-}
-
-
-/* ===== Events page ===== */
-.events-section {
-  background: #f8faf5;
-  padding: 4.5rem 0 5.5rem;
-}
-
-.events-section-no-hero {
-  padding-top: 2.75rem;
-}
-
-.events-container {
-  width: min(1180px, calc(100% - 3rem));
-}
-
-.events-page-heading {
-  margin-bottom: 2rem;
-}
-
-.events-page-heading h1 {
-  color: #3f642f;
-  font-size: clamp(2.5rem, 4vw, 3.7rem);
-  margin: 0 0 .35rem;
-}
-
-.events-page-heading p {
-  color: #5f7d52;
-  font-size: 1.1rem;
-  margin: 0;
-}
-
-.events-calendar-card {
-  background: white;
-  border-radius: 24px;
-  padding: clamp(1.25rem, 3vw, 2.25rem);
-  box-shadow: 0 10px 34px rgba(50, 76, 40, 0.08);
-  border: 1px solid rgba(95, 125, 82, 0.13);
-}
-
-.events-calendar-header {
-  display: grid;
-  grid-template-columns: 44px 1fr 44px;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.75rem;
-}
-
-.events-calendar-header h2 {
-  margin: 0;
+.poetry-group > h2 {
+  color: var(--forest-green);
   text-align: center;
-  color: #3f642f;
-  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  margin: 0 0 2rem;
 }
 
-.events-calendar-header button {
-  width: 44px;
-  height: 44px;
-  border: 0;
-  border-radius: 50%;
-  background: #eef4e9;
-  color: #3f642f;
+/* Columns create a masonry layout, so short poems do not leave row-sized gaps. */
+.poetry-results-grid {
   display: grid;
-  place-items: center;
-  cursor: pointer;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  align-items: start;
 }
 
-.events-calendar-header button:hover {
-  background: #dfead8;
-}
-
-.events-weekdays,
-.events-calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-}
-
-.events-weekdays {
-  color: #5f7d52;
-  font-weight: 700;
-  text-align: center;
-  padding-bottom: .65rem;
-}
-
-.events-calendar-day {
-  appearance: none;
-  font: inherit;
-  text-align: left;
-  min-height: 168px;
-  border: 0;
-  border-top: 1px solid #e4eadf;
-  border-right: 1px solid #e4eadf;
-  padding: .65rem;
-  background: white;
-  color: inherit;
-  cursor: pointer;
-  overflow: hidden;
+.poetry-results-column {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  gap: 2rem;
 }
 
-.events-calendar-day:nth-child(7n + 1) {
-  border-left: 1px solid #e4eadf;
-}
-
-.events-calendar-day.empty {
-  background: #fafbf9;
-  cursor: default;
-}
-
-.events-calendar-day.has-event {
-  background: #f4f8ef;
-}
-
-.events-calendar-day:not(.empty):hover {
-  background: #eef5e8;
-}
-
-.events-calendar-day.selected {
-  box-shadow: inset 0 0 0 2px #5f7f4a;
-  background: #edf5e7;
-}
-
-.events-day-number {
-  display: block;
+.poetry-result-card {
+  display: inline-block;
   width: 100%;
-  text-align: left;
-  color: #4e6844;
+  box-sizing: border-box;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  margin: 0;
+  background: #fff;
+  border: 1px solid rgba(63, 100, 47, 0.08);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.poetry-result-label {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  color: var(--forest-green);
+  font-size: 0.78rem;
   font-weight: 700;
-  margin: 0 0 .55rem 0;
-  flex-shrink: 0;
-}
-
-.events-day-events {
-  display: grid;
-  gap: .35rem;
-}
-
-.events-calendar-event {
-  display: block;
-  background: #5f7f4a;
-  color: white;
-  border-radius: 8px;
-  padding: .42rem .5rem;
-  font-size: .78rem;
-  line-height: 1.25;
-}
-
-.events-more-count {
-  color: #5f7d52;
-  font-size: .76rem;
-  font-weight: 700;
-  padding-left: .2rem;
-}
-
-.selected-day-panel {
-  background: white;
-  margin-top: 1.5rem;
-  border-radius: 20px;
-  padding: clamp(1.4rem, 3vw, 2rem);
-  border: 1px solid rgba(95, 125, 82, .13);
-  box-shadow: 0 8px 26px rgba(50, 76, 40, .06);
-}
-
-.selected-day-heading {
-  border-bottom: 1px solid #e4eadf;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-}
-
-.selected-day-heading span {
-  color: #6b3c91;
-  font-size: .82rem;
-  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  letter-spacing: .08em;
 }
 
-.selected-day-heading h2 {
-  color: #3f642f;
-  font-size: clamp(1.65rem, 3vw, 2.3rem);
-  margin: .2rem 0 0;
+.poetry-result-card h3 {
+  color: #2d5016;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
 }
 
-.selected-day-list {
+.poetry-author {
+  margin: 0 0 1.5rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.poetry-text {
+  line-height: 1.7;
+  white-space: normal;
+}
+
+/* Home poetry announcement */
+.home-poetry-announcement {
+  width: min(1000px, 100%);
+  margin: 0 auto 4.5rem;
   display: grid;
-  gap: 1rem;
-}
-
-.selected-day-event + .selected-day-event {
-  border-top: 1px solid #e4eadf;
-  padding-top: 1rem;
-}
-
-.selected-day-event-content h3 {
-  color: #3f642f;
-  font-size: 1.45rem;
-  margin: 0 0 .65rem;
-}
-
-.selected-day-empty {
-  color: #5f7d52;
-  margin: 0;
-}
-
-.events-upcoming {
-  margin-top: 3.5rem;
-}
-
-.events-section-heading {
-  display: flex;
+  grid-template-columns: minmax(280px, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
   align-items: center;
-  gap: .8rem;
-  margin-bottom: 1.75rem;
-  color: #3f642f;
 }
 
-.events-section-heading h2 {
-  margin: 0;
-  color: #3f642f;
-  font-size: clamp(2rem, 3.5vw, 3rem);
-}
-
-.events-list {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.event-card {
-  display: grid;
-  grid-template-columns: 90px minmax(180px, 300px) 1fr;
-  background: white;
-  border-radius: 20px;
+.home-poetry-announcement-image-wrap {
+  width: 100%;
   overflow: hidden;
-  box-shadow: 0 8px 28px rgba(50, 76, 40, 0.07);
+  border-radius: 20px;
 }
 
-.event-date-badge {
-  background: #5f7f4a;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 220px;
-}
-
-.event-date-badge span {
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-}
-
-.event-date-badge strong {
-  font-size: 2.6rem;
-  line-height: 1;
-  margin-top: .3rem;
-}
-
-.event-card-image {
+.home-poetry-announcement-image {
+  display: block;
   width: 100%;
-  height: 100%;
-  min-height: 220px;
+  height: 360px;
   object-fit: cover;
 }
 
-.event-card-content {
-  padding: 1.65rem 2rem;
+.home-poetry-announcement-copy {
+  text-align: left;
 }
 
-.event-card-content h3 {
-  color: #3f642f;
-  font-size: 1.7rem;
-  margin: 0 0 .8rem;
+.home-poetry-announcement-copy h2 {
+  color: var(--forest-green);
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  line-height: 1.12;
+  margin: 0 0 1.1rem;
 }
 
-.event-meta {
-  display: flex;
-  align-items: center;
-  gap: .55rem;
-  color: #5f7d52;
-  margin: .35rem 0;
+.home-poetry-announcement-copy p {
+  color: var(--sage-green);
+  font-size: clamp(1.05rem, 1.35vw, 1.2rem);
+  line-height: 1.65;
+  margin: 0 0 1.15rem;
 }
 
-.event-description {
-  color: #5f7d52;
-  line-height: 1.6;
-  margin: 1rem 0;
+.home-poetry-announcement-copy .home-more-info-link {
+  display: inline-block;
+  font-size: 1rem;
 }
 
-.event-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-}
-
-.event-links a {
-  color: #6b3c91;
-  font-weight: 600;
-  text-underline-offset: 3px;
-}
-
-.events-empty {
-  color: #5f7d52;
-  font-size: 1.1rem;
-}
-
-@media (max-width: 800px) {
-  .events-section-no-hero {
-    padding-top: 2rem;
+@media screen and (max-width: 480px) {
+  .poetry-results-section {
+    padding: 3rem 0;
   }
 
-  .events-container {
-    width: min(calc(100% - 1.5rem), 680px);
+  .poetry-results-intro {
+    margin-bottom: 3rem;
+    padding: 0 0.5rem;
   }
 
-  .events-calendar-card {
-    overflow-x: auto;
+  .poetry-results-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
-  .events-weekdays,
-  .events-calendar-grid {
-    min-width: 650px;
+  .poetry-results-column {
+    gap: 1.25rem;
   }
 
-  .events-calendar-day {
-    min-height: 150px;
-  }
-
-  .event-card {
-    grid-template-columns: 72px 1fr;
-  }
-
-  .event-date-badge {
-    min-height: 180px;
-  }
-
-  .event-card-image {
-    grid-column: 2;
-    min-height: 180px;
-  }
-
-  .event-card-content {
-    grid-column: 1 / -1;
+  .poetry-result-card {
     padding: 1.4rem;
   }
-}
 
-
-/* =========================================================
-   HOME HERO — PHONE ONLY
-   Keeps desktop/tablet hero unchanged.
-   ========================================================= */
-@media (max-width: 480px) {
-  .home-hero {
-    min-height: 600px;
+  .poetry-group {
+    margin-bottom: 3.5rem;
   }
 
-  .home-hero .hero-overlay {
-    min-height: 600px;
-    padding: 0;
-    display: block;
-  }
-
-  .home-hero .home-hero-title-box {
-    top: 1rem;
-    left: 1rem;
-    right: 1rem;
-    width: auto;
-    max-width: none;
-    padding: 1rem 1.15rem;
-  }
-
-  /* More specific than the generic .hero h1 rule. */
-  .home-hero h1.home-hero-title {
-    font-size: clamp(1.9rem, 9vw, 2.6rem);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    margin: 0;
-  }
-
-  .home-hero .cta-buttons {
-    position: absolute;
-    left: auto;
-    right: 1rem;
-    bottom: 1rem;
-    width: 33%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.55rem;
-  }
-
-  .home-hero .cta-buttons .btn {
-    width: 100%;
-    min-height: 44px;
-    padding: 0.65rem 0.7rem;
-    margin: 0;
-    font-size: 0.78rem;
-    line-height: 1.2;
-    white-space: normal;
-    justify-content: center;
-  }
-
-  .home-hero .cta-buttons .btn svg {
-    display: none;
-  }
-
-  .home-hero .hero-caption {
-    left: 1rem;
-    right: auto;
-    bottom: 1rem;
-    margin: 0;
-    max-width: calc(67% - 2rem);
-    font-size: 0.82rem;
-    line-height: 1.25;
-    text-align: left;
-    z-index: 11;
-  }
-
-  .home-hero .hero-nav-arrow {
-    top: 50%;
-    bottom: auto;
-    transform: translateY(-50%);
-    width: 42px;
-    height: 42px;
+  .home-poetry-announcement {
+    margin-bottom: 3rem;
+    padding: 0 0.5rem;
   }
 }
+
+
+/* PHONE ONLY — poetry announcement */
 @media screen and (max-width: 480px) {
-  .home-feature-top > div:first-child {
-    display: none !important;
-  }
-}
-
-/* PHONE ONLY — fix planted-forest video + caption */
-@media screen and (max-width: 480px) {
-  .home-planted-row {
-    display: block;
+  .home-poetry-announcement {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
   }
 
-  .home-video-wrap {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    min-height: 0;
-    margin-top: 2rem;
+  .home-poetry-announcement-image {
+    height: 250px;
   }
 
-  .home-video-link {
-    display: block;
-    width: 100%;
-    flex: none;
-  }
-
-  .home-video-image {
-    display: block;
-    width: 100%;
-    height: auto;
-    min-height: 0;
-    object-fit: cover;
-  }
-
-  .home-video-caption {
-    position: static;
-    display: block;
-    width: 100%;
-    margin: 0.75rem 0 0;
-    padding: 0;
+  .home-poetry-announcement-copy {
     text-align: center;
-    line-height: 1.35;
-  }
-}
-/* PHONE ONLY — Upcoming Events cards */
-@media screen and (max-width: 480px) {
-  /* Completely remove event photos on phones */
-  .events-page .event-card-image {
-    display: none !important;
   }
 
-  /* Rebuild card as date badge + event information */
-  .events-page .event-card {
-    grid-template-columns: 72px minmax(0, 1fr) !important;
-    width: 100%;
+  .home-poetry-announcement-copy h2 {
+    font-size: 2rem;
   }
 
-  .events-page .event-date-badge {
-    min-height: 0;
-    height: auto;
-  }
-
-  .events-page .event-card-content {
-    min-width: 0;
-    padding: 1.25rem;
-  }
-
-  .events-page .event-card-content h3 {
-    overflow-wrap: anywhere;
-  }
-
-  .events-page .event-meta {
-    min-width: 0;
-  }
-
-  .events-page .event-meta span {
-    overflow-wrap: anywhere;
-  }
-
-  .events-page .event-description {
-    overflow-wrap: anywhere;
-  }
-
-  .events-page .event-links {
-    flex-wrap: wrap;
+  .home-poetry-announcement-copy p {
+    font-size: 1.05rem;
   }
 }

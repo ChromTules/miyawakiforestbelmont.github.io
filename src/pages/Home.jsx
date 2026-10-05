@@ -127,133 +127,26 @@ function Home() {
         <div className="home-feature-container">
           <h2 className="home-announcements-title">Announcements</h2>
 
-          {/* Community Dedication announcement */}
-          <div className="home-dedication-preview">
-            <div className="home-dedication-preview-copy">
-              <h2>Belmont High School Mini-Forest Community Dedication</h2>
+          {/* 2026 Mini-Poetry Contest announcement */}
+          <div className="home-poetry-announcement">
+            <div className="home-poetry-announcement-copy">
+              <h2>2026 Mini-Poetry Contest Winners</h2>
               <p>
-                Come celebrate the Belmont High School Mini-Forest one year after
-                planting! Join us for a Birthday Party featuring Arts &amp; Crafts,
-                Mini-Forest Tours, Mini-Poetry Contest winners, science stories,
-                games about the forest, and more.
+                Congratulations to the winners and honorable mentions of our 2026
+                Mini-Poetry Contest! Thank you to all of the students who shared
+                their creativity and observations of the natural world with us.
               </p>
-              <p className="home-dedication-preview-date">
-                Saturday, October 3, 2026 &bull; 2:00 - 3:30 PM
-              </p>
-              <p>
-                <a
-                  className="home-more-info-link"
-                  href="https://forms.gle/Jnh8rg1zDfWEyNtj7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  RSVP to help us estimate attendance →
-                </a>
-              </p>
-              <a className="home-more-info-link" href="/programs-dedication">
-                <em>More information under Programs →</em>
+              <a className="home-more-info-link" href="/programs-poetry">
+                <em>Read the poems →</em>
               </a>
             </div>
 
-            <div className="home-dedication-preview-image-wrap">
-              <img
-                src="/dedication-drone.jpg"
-                alt="Recent aerial view of the Belmont High School Mini-Forest"
-                className="home-dedication-preview-image"
-              />
-              <span className="home-dedication-photo-credit">
-                Photo by Jennifer Tidwell
-              </span>
-            </div>
-          </div>
-
-          <div
-            className="home-feature-row home-feature-top"
-            style={{
-              gridTemplateColumns: "minmax(0, 1.18fr) minmax(0, 0.82fr)",
-              gap: "2.5rem",
-              alignItems: "center",
-              minHeight: 0,
-              marginTop: "2.75rem",
-              marginBottom: "2.75rem",
-              padding: "0 clamp(1.5rem, 4vw, 4rem)",
-            }}
-          >
-            <div
-              style={{
-                gridColumn: "1",
-                gridRow: "1",
-                order: 1,
-                display: "grid",
-                gridTemplateColumns: "9% 9% 1fr",
-                height: "350px",
-                minHeight: 0,
-                overflow: "hidden",
-                borderRadius: "22px 0 0 22px",
-              }}
-            >
-              <div
-                className="home-image-decoration home-image-decoration-yellow"
-                aria-hidden="true"
-                style={{ height: "350px" }}
-              ></div>
-              <div
-                className="home-image-decoration home-image-decoration-sage"
-                aria-hidden="true"
-                style={{ height: "350px" }}
-              ></div>
+            <div className="home-poetry-announcement-image-wrap">
               <img
                 src="/black-eyed-susans.jpg"
-                alt="Black-eyed Susans beside the Miyawaki Forest"
-                style={{
-                  width: "100%",
-                  height: "350px",
-                  objectFit: "cover",
-                  display: "block",
-                  borderRadius: "0 22px 22px 0",
-                }}
+                alt="Black-eyed Susans at the Mini-Forest"
+                className="home-poetry-announcement-image"
               />
-            </div>
-
-            <div
-              className="home-program-block home-phenology-block"
-              style={{
-                gridColumn: "2",
-                gridRow: "1",
-                order: 2,
-                margin: 0,
-                padding: "0 clamp(1.5rem, 4vw, 4rem) 0 0",
-                alignSelf: "center",
-              }}
-            >
-              <h3 style={{ color: "#3f642f" }}>
-                Collect data for the Phenology Project!
-              </h3>
-
-              <p>
-                Phenology Happy Hour will be on summer vacation{" "}
-                <strong>June 28–September 6.</strong>
-                <br />
-                See you Sunday, <strong>Sept. 13 at 4:00 PM!</strong>
-              </p>
-
-              <p className="home-feature-small">
-                See this short{" "}
-                <a
-                  href="https://www.youtube.com/watch?v=Eo3rVgEePfw"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  video
-                </a>{" "}
-                for more information.
-              </p>
-
-              <p className="home-feature-small">
-                <a href="/studying-forest">
-                  <em>More information under Programs →</em>
-                </a>
-              </p>
             </div>
           </div>
 
