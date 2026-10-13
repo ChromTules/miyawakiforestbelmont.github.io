@@ -16,31 +16,22 @@ const honorableMentions = [
   { title: "The Oak", author: "Megan Espelin", grade: "Grade 12", school: "Belmont High School", category: "Grades 11–13", lines: ["Past the others, We sit beneath", "The leaves that cover", "What once was heath.", "", "Now with plots, Shiny; neat", "I see the old ‘neath obsolete", "", "Will they notice?", "The Oak’s defeat", "Strong and curious, roots buried deep", "", "Twirling late on a summer’s eve", "Will this tree be next to leave?"] },
 ];
 
-const winnerColumns = [
-  [winners[0], winners[2], winners[5]],
-  [winners[1], winners[3], winners[4]],
-];
-
-const honorableMentionColumns = [
-  [honorableMentions[0], honorableMentions[2], honorableMentions[5]],
-  [honorableMentions[1], honorableMentions[3], honorableMentions[4]],
-];
 
 function PoemCard({ poem, result }) {
   return (
     <article className="poetry-result-card">
       <div className="poetry-result-label">{result} · {poem.category}</div>
       <h3>{poem.title}</h3>
-      <p className="poetry-author">
-        <strong>{poem.author}</strong> · {poem.grade}
-        <br />
-        {poem.school}
-      </p>
       <div className="poetry-text">
         {poem.lines.map((line, index) =>
           line === "" ? <br key={index} /> : <div key={index}>{line}</div>
         )}
       </div>
+      <p className="poetry-author">
+        <strong>{poem.author}</strong> · {poem.grade}
+        <br />
+        {poem.school}
+      </p>
     </article>
   );
 }
@@ -61,18 +52,29 @@ function ProgramsPoetry() {
             </p>
           </div>
 
+          <div className="poetry-judges">
+            <p>
+              We are grateful to poets{" "}
+              <a href="https://wendydrexlerpoetry.com/" target="_blank" rel="noopener noreferrer">Wendy Drexler</a>,{" "}
+              <a href="https://www.pw.org/directory/writers/richard_waring" target="_blank" rel="noopener noreferrer">Richard Waring</a>,{" "}
+              <a href="https://english.fas.harvard.edu/people/stephanie-burt" target="_blank" rel="noopener noreferrer">Stephanie Burt</a>, and{" "}
+              <a href="https://www.catherinerockwood.com/" target="_blank" rel="noopener noreferrer">Catherine Rockwood</a>{" "}
+              for generously sharing their expertise in judging this year&apos;s Mini-Poetry Contest.
+            </p>
+          </div>
+
           <div className="poetry-group">
             <h2>Winners</h2>
             <div className="poetry-results-grid">
-              {winnerColumns.map((column, columnIndex) => (
-                <div className="poetry-results-column" key={columnIndex}>
-                  {column.map((poem) => (
-                    <PoemCard
-                      key={poem.title}
-                      poem={poem}
-                      result={poem.category === "Grades 7–8" ? "Co-Winner" : "Winner"}
-                    />
-                  ))}
+              {winners.map((poem) => (
+                <div
+                  className={poem.title === "What It Becomes" ? "poetry-results-full-row" : "poetry-result-item"}
+                  key={poem.title}
+                >
+                  <PoemCard
+                    poem={poem}
+                    result={poem.category === "Grades 7–8" ? "Co-Winner" : "Winner"}
+                  />
                 </div>
               ))}
             </div>
@@ -81,15 +83,15 @@ function ProgramsPoetry() {
           <div className="poetry-group">
             <h2>Honorable Mentions</h2>
             <div className="poetry-results-grid">
-              {honorableMentionColumns.map((column, columnIndex) => (
-                <div className="poetry-results-column" key={columnIndex}>
-                  {column.map((poem) => (
-                    <PoemCard
-                      key={poem.title}
-                      poem={poem}
-                      result="Honorable Mention"
-                    />
-                  ))}
+              {honorableMentions.map((poem) => (
+                <div
+                  className={poem.title === "Lovely Mini-Forest" ? "poetry-results-full-row" : "poetry-result-item"}
+                  key={poem.title}
+                >
+                  <PoemCard
+                    poem={poem}
+                    result={"Honorable Mention"}
+                  />
                 </div>
               ))}
             </div>

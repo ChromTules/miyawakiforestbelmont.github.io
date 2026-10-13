@@ -1572,6 +1572,27 @@ main {
   margin: 0 auto;
 }
 
+
+.poetry-judges {
+  max-width: 900px;
+  margin: -2rem auto 4rem;
+  text-align: center;
+}
+
+.poetry-judges p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.poetry-judges a {
+  color: var(--forest-green);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .poetry-group {
   margin-bottom: 4.5rem;
 }
@@ -1583,32 +1604,35 @@ main {
   margin: 0 0 2rem;
 }
 
-/* Columns create a masonry layout, so short poems do not leave row-sized gaps. */
+/* Poetry results: balanced columns with uniform spacing.
+   The two specified long poems span the full width. */
 .poetry-results-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
-  align-items: start;
-}
-
-.poetry-results-column {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.poetry-result-item {
+  width: min(900px, 100%);
+  margin: 0;
+}
+
+.poetry-results-full-row {
+  width: min(900px, 100%);
+  margin: 0;
 }
 
 .poetry-result-card {
-  display: inline-block;
+  display: block;
   width: 100%;
   box-sizing: border-box;
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  margin: 0;
   background: #fff;
   border: 1px solid rgba(63, 100, 47, 0.08);
   border-radius: 18px;
   padding: 2rem;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 }
 
 .poetry-result-label {
@@ -1628,7 +1652,7 @@ main {
 }
 
 .poetry-author {
-  margin: 0 0 1.5rem;
+  margin: 1.5rem 0 0;
   color: #555;
   line-height: 1.5;
 }
@@ -1636,6 +1660,10 @@ main {
 .poetry-text {
   line-height: 1.7;
   white-space: normal;
+}
+
+.poetry-text > div {
+  max-width: 100%;
 }
 
 /* Home poetry announcement */
@@ -1695,16 +1723,28 @@ main {
   }
 
   .poetry-results-grid {
-    grid-template-columns: 1fr;
     gap: 1.25rem;
   }
 
-  .poetry-results-column {
-    gap: 1.25rem;
+  .poetry-result-item,
+  .poetry-results-full-row {
+    width: 100%;
   }
 
   .poetry-result-card {
+    width: 100%;
+    max-width: 100%;
     padding: 1.4rem;
+    overflow: hidden;
+  }
+
+  .poetry-text,
+  .poetry-text > div {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    overflow-wrap: break-word;
+    word-break: normal;
   }
 
   .poetry-group {
@@ -1742,3 +1782,6 @@ main {
     font-size: 1.05rem;
   }
 }
+
+
+
